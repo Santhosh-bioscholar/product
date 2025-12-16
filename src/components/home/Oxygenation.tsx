@@ -1,77 +1,81 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { TimelineAnimation } from "./oxygenation/TimelineAnimation";
+import { ContentBlock } from "./oxygenation/ContentBlock";
 
 export function Oxygenation() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"],
-    });
-
-    const y1 = useTransform(scrollYProgress, [0, 1], [100, -100]);
-    const opacity = useTransform(scrollYProgress, [0, 0.3, 0.8, 1], [0, 1, 1, 0]);
-
     return (
-        <section ref={containerRef} className="py-32 px-6 bg-[#0A2540] relative overflow-hidden text-white">
-            {/* Background Effect */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0A2540] to-[#0A2540] opacity-50" />
+        <section className="relative min-h-screen w-full overflow-hidden">
+            {/* Background gradient */}
+            <div
+                className="absolute inset-0 opacity-60 bg-gradient-to-b from-[#0A2540] to-[#0B1215]"
+            />
 
-            <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                {/* Right Content (Text) - Swapped order for visual balance if desired, but sticking to Prompt Split Layout Right is Text */}
-                <div className="order-2 md:order-2 flex flex-col gap-8">
-                    <motion.div style={{ opacity }}>
-                        <h2 className="text-[#0FA57D] font-bold tracking-widest uppercase mb-4">Origins</h2>
-                        <h3 className="text-4xl md:text-5xl font-bold mb-6">THE GREAT <br /> OXYGENATION EVENT</h3>
-                        <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                            Algae photosynthetic respiration triggered the Great Oxygenation Event 2.4 billion years ago, making modern life possible. Today, we continue that legacy through green biotechnology, empowering a cleaner, safer, and smarter planet.
-                        </p>
+            {/* Ambient glow effects */}
+            <div className="absolute inset-0 pointer-events-none">
+                <motion.div
+                    className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full"
+                    style={{
+                        background: "radial-gradient(circle, hsl(175 70% 50% / 0.08) 0%, transparent 70%)",
+                    }}
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.3, 0.5, 0.3],
+                    }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div
+                    className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full"
+                    style={{
+                        background: "radial-gradient(circle, hsl(145 60% 40% / 0.1) 0%, transparent 70%)",
+                    }}
+                    animate={{
+                        scale: [1.2, 1, 1.2],
+                        opacity: [0.4, 0.6, 0.4],
+                    }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                />
+            </div>
 
-                        <div className="pl-6 border-l-2 border-green-500/50">
-                            <p className="text-xl italic text-green-200">
-                                "From the first breath of the Earth to the future of sustainable life."
-                            </p>
-                        </div>
+            {/* Content container */}
+            <div className="relative z-10 container mx-auto px-4 py-16 md:py-24">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
+                    {/* Left: Timeline Animation */}
+                    <motion.div
+                        className="order-2 lg:order-1 flex justify-center"
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <TimelineAnimation />
+                    </motion.div>
+
+                    {/* Right: Content Block */}
+                    <motion.div
+                        className="order-1 lg:order-2"
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    >
+                        <ContentBlock />
                     </motion.div>
                 </div>
-
-                {/* Left Animation: Timeline */}
-                <div className="order-1 md:order-1 relative h-[600px] border-l border-white/10 ml-8 md:ml-0 pl-8 md:pl-16">
-                    {/* Timeline Events */}
-                    <div className="flex flex-col gap-24 py-12">
-                        <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="relative">
-                            <span className="absolute -left-[45px] md:-left-[77px] top-2 w-4 h-4 bg-gray-600 rounded-full border border-gray-400" />
-                            <h4 className="text-2xl font-bold text-gray-400">Ancient Earth</h4>
-                            <p className="text-sm text-gray-500">Anaerobic Atmosphere</p>
-                        </motion.div>
-
-                        <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative">
-                            <span className="absolute -left-[45px] md:-left-[77px] top-2 w-4 h-4 bg-[#0FA57D] rounded-full border border-green-300 shadow-[0_0_15px_rgba(15,165,125,0.5)]" />
-                            <h4 className="text-2xl font-bold text-[#0FA57D]">Algae Emergence</h4>
-                            <p className="text-sm text-gray-300">Photosynthesis Begins</p>
-                        </motion.div>
-
-                        <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="relative">
-                            <span className="absolute -left-[45px] md:-left-[77px] top-2 w-4 h-4 bg-[#0AB3A3] rounded-full border border-blue-300 shadow-[0_0_20px_rgba(10,179,163,0.6)]" />
-                            <h4 className="text-2xl font-bold text-[#0AB3A3]">Oxygen Rise</h4>
-                            <p className="text-sm text-gray-300">Modern Atmosphere Formed</p>
-                        </motion.div>
-
-                        <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className="relative">
-                            <span className="absolute -left-[45px] md:-left-[77px] top-2 w-4 h-4 bg-white rounded-full border border-white shadow-[0_0_25px_rgba(255,255,255,0.8)] animate-pulse" />
-                            <h4 className="text-2xl font-bold text-white">Modern Era</h4>
-                            <p className="text-sm text-gray-300">Aroora Biotech Legacy</p>
-                        </motion.div>
-                    </div>
-
-                    {/* Moving Line */}
-                    <motion.div
-                        style={{ height: useTransform(scrollYProgress, [0.2, 0.8], ["0%", "100%"]) }}
-                        className="absolute top-0 left-[-1px] w-0.5 bg-gradient-to-b from-transparent via-[#0FA57D] to-[#0AB3A3]"
-                    />
-                </div>
             </div>
+
+            {/* Bottom decorative line */}
+            <motion.div
+                className="absolute bottom-0 left-0 right-0 h-px"
+                style={{
+                    background: "linear-gradient(90deg, transparent 0%, hsl(175 70% 50% / 0.3) 50%, transparent 100%)",
+                }}
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, delay: 0.5 }}
+            />
         </section>
     );
 }

@@ -16,6 +16,7 @@ export function ProductShowcase() {
     return (
         <section className="h-screen w-full  relative overflow-hidden bg-[#0A2540]">
             <Swiper
+                key={'product-showcase-swiper'}
                 modules={[Navigation, Pagination, Mousewheel, Keyboard, EffectFade]}
                 effect={'fade'}
                 speed={700}
@@ -23,10 +24,14 @@ export function ProductShowcase() {
                 slidesPerView={1}
                 navigation={true}
                 pagination={{ clickable: true }}
+                observer={true}
+                observeParents={true}
                 mousewheel={{
                     releaseOnEdges: true,
                     forceToAxis: true,
-                    sensitivity: 1
+                    sensitivity: 0.5,
+                    thresholdDelta: 10,
+                    thresholdTime: 500
                 }}
                 keyboard={true}
                 className="h-full w-full product-swiper-fullscreen "
