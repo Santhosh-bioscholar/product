@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bio-green: #0FA57D;
+  --color-teal-accent: #0AB3A3;
+  --color-deep-blue: #0A2540;
+  --color-neutral-white: #FFFFFF;
+  --color-soft-gray: #F5F7F8;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --foreground: #ffffff;
+}
+
+body {
+  background: linear-gradient(180deg,
+      #0A2540 0%,
+      #0FA57D 100%);
+  background-attachment: fixed;
+  /* Ensure gradient covers full scroll */
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
