@@ -64,14 +64,14 @@ export function ProductShowcase() {
                     {productsRaw.map((product, idx) => (
                         <div
                             key={product.id}
-                            className="flex-shrink-0 w-screen h-full flex items-center justify-center px-8 md:px-16"
+                            className="flex-shrink-0 w-screen h-full flex items-center justify-center px-8 md:px-32"
                         >
                             <div className="container mx-auto max-w-7xl">
                                 {/* Layout Grid */}
-                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center w-full">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center w-full ">
                                     {/* Text Content */}
                                     <motion.div
-                                        className="flex flex-col text-left space-y-8"
+                                        className="flex flex-col text-left space-y-3"
                                         initial={{ opacity: 0, x: -50 }}
                                         animate={{
                                             opacity: activeStage === idx ? 1 : 0.3,
@@ -81,20 +81,20 @@ export function ProductShowcase() {
                                     >
                                         <div className="space-y-4">
                                             <div className="flex items-center gap-3">
-                                                <span className={`px-4 py-1.5 rounded-full text-sm font-bold tracking-wider uppercase bg-gradient-to-r ${product.gradient} bg-clip-text text-transparent border border-white/10 bg-white/5`}>
+                                                <span className={`px-6 py-1.5 rounded-full text-sm font-bold tracking-wider uppercase bg-gradient-to-r ${product.gradient} bg-clip-text text-transparent border border-white/10 bg-white/5`}>
                                                     {product.category}
                                                 </span>
                                             </div>
-                                            <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight leading-tight">
+                                            <h2 className="text-5xl md:text-5xl font-bold text-white tracking-tight leading-tight">
                                                 {product.name}
                                             </h2>
-                                            <p className="text-xl md:text-lg text-gray-300 font-light leading-relaxed max-w-xl">
+                                            <p className="text-xl md:text-[15px] text-gray-300 font-light leading-relaxed max-w-xl">
                                                 {product.description}
                                             </p>
                                         </div>
 
                                         <div className="space-y-4">
-                                            <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Key Benefits</h4>
+                                            <h4 className="text-xs font-semibold text-gray-100 uppercase tracking-widest ">Key Benefits</h4>
                                             <ul className="grid grid-cols-1 gap-3">
                                                 {product.benefits.slice(0, 3).map((benefit, idx) => (
                                                     <li key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors">
