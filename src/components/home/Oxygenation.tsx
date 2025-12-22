@@ -6,41 +6,11 @@ import { ContentBlock } from "./oxygenation/ContentBlock";
 
 export function Oxygenation() {
     return (
-        <section className="relative min-h-screen w-full overflow-hidden">
-            {/* Background gradient */}
-            <div
-                className="absolute inset-0 opacity-60 bg-gradient-to-b from-[#0A2540] to-[#0B1215]"
-            />
-
-            {/* Ambient glow effects */}
-            <div className="absolute inset-0 pointer-events-none">
-                <motion.div
-                    className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full"
-                    style={{
-                        background: "radial-gradient(circle, hsl(175 70% 50% / 0.08) 0%, transparent 70%)",
-                    }}
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.5, 0.3],
-                    }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.div
-                    className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full"
-                    style={{
-                        background: "radial-gradient(circle, hsl(145 60% 40% / 0.1) 0%, transparent 70%)",
-                    }}
-                    animate={{
-                        scale: [1.2, 1, 1.2],
-                        opacity: [0.4, 0.6, 0.4],
-                    }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                />
-            </div>
+        <section className="relative pb-12 min-h-[80vh] w-full overflow-hidden bg-[#131313]">
 
             {/* Content container */}
-            <div className="relative z-10 container mx-auto px-4 py-16 md:py-24">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
+            <div className="relative z-10 container mx-auto px-5 py-16 md:py-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-1 items-center min-h-[80vh]">
                     {/* Left: Timeline Animation */}
                     <motion.div
                         className="order-2 lg:order-1 flex justify-center"
@@ -79,3 +49,4 @@ export function Oxygenation() {
         </section>
     );
 }
+

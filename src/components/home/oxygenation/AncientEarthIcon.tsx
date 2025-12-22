@@ -99,3 +99,4 @@ export const AncientEarthIcon = ({ isActive }: AncientEarthIconProps) => {
         </div>
     );
 };
+

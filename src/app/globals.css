@@ -1,30 +1,892 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-bio-green: #0FA57D;
-  --color-teal-accent: #0AB3A3;
-  --color-deep-blue: #0A2540;
-  --color-neutral-white: #FFFFFF;
-  --color-soft-gray: #F5F7F8;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-glow: hsl(var(--primary-glow));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-radius: var(--radius);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --color-sidebar-background: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  /* Custom biotech theme colors */
+  --color-algae: hsl(var(--algae));
+  --color-algae-light: hsl(var(--algae-light));
+  --color-algae-glow: hsl(var(--algae-glow));
+  --color-cyan: hsl(var(--cyan));
+  --color-cyan-light: hsl(var(--cyan-light));
+  --color-oxygen: hsl(var(--oxygen));
+  --color-carbon: hsl(var(--carbon));
+  --color-nutrient: hsl(var(--nutrient));
 }
 
-:root {
-  --foreground: #ffffff;
+@layer base {
+  :root {
+    /* Deep ocean base - cinematic depth */
+    --background: 0 0% 7.5%;
+    --foreground: 200 20% 95%;
+
+    /* Cards with subtle depth */
+    --card: 0 0% 10%;
+    --card-foreground: 200 20% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 200 20% 95%;
+
+    /* Primary: Algae Green - Primary brand color */
+    --primary: 152 55% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 152 55% 50%;
+
+    /* Secondary: Soft Cyan - Secondary accent */
+    --secondary: 180 35% 35%;
+    --secondary-foreground: 0 0% 95%;
+
+    /* Muted: Deep ocean tones */
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    /* Accent: Teal blend */
+    --accent: 168 45% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 152 55% 42%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for biotech theme */
+    --algae: 152 55% 42%;
+    --algae-light: 152 45% 55%;
+    --algae-glow: 152 60% 45%;
+    --cyan: 180 40% 45%;
+    --cyan-light: 180 35% 60%;
+    --oxygen: 200 70% 60%;
+    --carbon: 0 0% 40%;
+    --nutrient: 45 70% 55%;
+
+    /* Cinematic shadows */
+    --shadow-ambient: 0 8px 32px -8px hsl(152 55% 42% / 0.15);
+    --shadow-glow: 0 0 40px hsl(152 55% 42% / 0.2);
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.3);
+
+    /* Typography */
+    --font-sans: 'Outfit', 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 152 55% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 152 55% 42%;
+
+    /* Timeline component colors */
+    --earth-blue: 200 70% 55%;
+    --earth-green: 150 50% 45%;
+    --bio-orange: 25 85% 60%;
+    --bio-red: 0 70% 55%;
+    --bio-yellow: 45 90% 65%;
+    --future-teal: 175 60% 50%;
+    --biotech-stroke: 175 50% 50%;
+    --biotech-stroke-dim: 210 30% 20%;
+    --flow-line: 175 40% 40%;
+    --flow-pulse: 175 70% 60%;
+    --glow-primary: 152 55% 50%;
+    --icon-neutral: 200 15% 50%;
+
+    /* Biotech process cards tokens */
+    --glass-bg: 220 20% 6%;
+    --glass-border: 220 15% 20%;
+    --glow-secondary: 185 60% 45%;
+    --grain-opacity: 0.03;
+
+    /* Process cards specific - teal/cyan theme */
+    --process-card-bg: 0 0% 4%;
+    --process-card-border: 180 100% 45%;
+    --process-teal: 180 100% 45%;
+    --process-teal-glow: 180 100% 50%;
+    --process-teal-dim: 180 60% 35%;
+  }
+
+  .dark {
+    --background: 0 0% 7.5%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 152 55% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 35% 35%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 168 45% 38%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 152 55% 42%;
+  }
 }
 
-body {
-  background: linear-gradient(180deg,
-      #0A2540 0%,
-      #0FA57D 100%);
-  background-attachment: fixed;
-  /* Ensure gradient covers full scroll */
-  color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
-  min-height: 100vh;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium tracking-tight;
+  }
+
+  code,
+  pre {
+    font-family: var(--font-mono);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-xl border border-border/20;
+    background: linear-gradient(135deg, hsl(var(--card) / 0.7) 0%, hsl(var(--card) / 0.4) 100%);
+    backdrop-filter: blur(20px) saturate(150%);
+    box-shadow: var(--shadow-ambient);
+  }
+
+  .scientific-label {
+    font-family: var(--font-mono);
+    @apply text-[10px] text-muted-foreground tracking-[0.2em] uppercase font-medium;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--primary-glow)) 100%);
+  }
+
+  .scene-dot {
+    @apply w-1.5 h-1.5 rounded-full transition-all duration-700;
+  }
+
+  .scene-dot.active {
+    @apply w-6 bg-primary;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  .scene-dot.past {
+    @apply bg-primary/30;
+  }
+
+  .scene-dot.future {
+    @apply bg-muted-foreground/20;
+  }
+
+  .biotech-gradient {
+    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(210 35% 8%) 50%, hsl(var(--background)) 100%);
+  }
+
+  .gradient-biotech {
+    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(210 35% 8%) 50%, hsl(var(--background)) 100%);
+  }
+
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+  }
+
+  .text-gradient-algae {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--algae-light)), hsl(var(--cyan-light)));
+  }
+
+  .glow-soft {
+    filter: drop-shadow(0 0 8px hsl(var(--glow-primary) / 0.3));
+  }
+
+  .glow-algae {
+    box-shadow: 0 0 30px hsl(var(--algae) / 0.3), 0 0 60px hsl(var(--algae) / 0.1);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 30px hsl(var(--cyan) / 0.3), 0 0 60px hsl(var(--cyan) / 0.1);
+  }
+
+  .card {
+    padding: 2em;
+  }
+
+  /* Biotech Process Cards Design System */
+
+  /* Glass card base */
+  .glass-card {
+    @apply relative overflow-hidden rounded-xl;
+    background: linear-gradient(135deg,
+        hsl(var(--process-card-bg) / 0.95) 0%,
+        hsl(var(--process-card-bg) / 0.9) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--process-card-border) / 0.2);
+  }
+
+  .glass-card-active {
+    border-color: hsl(var(--process-teal) / 0.5);
+    box-shadow:
+      0 0 30px -10px hsl(var(--process-teal-glow) / 0.4),
+      inset 0 1px 0 0 hsl(var(--process-teal) / 0.15);
+  }
+
+  /* Grain overlay */
+  .grain-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: var(--grain-opacity);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* Light sweep animation */
+  .light-sweep::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+        transparent 0%,
+        transparent 40%,
+        hsl(var(--process-teal) / 0.05) 45%,
+        hsl(var(--process-teal) / 0.08) 50%,
+        hsl(var(--process-teal) / 0.05) 55%,
+        transparent 60%,
+        transparent 100%);
+    animation: sweep 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Number badge outline */
+  .number-badge {
+    @apply relative inline-flex items-center justify-center;
+    @apply text-xs font-mono font-medium tracking-wider;
+    @apply px-3 py-1 rounded-full;
+    background: hsl(var(--process-card-bg) / 0.8);
+    border: 1px solid hsl(var(--process-teal) / 0.4);
+    color: hsl(var(--process-teal));
+  }
+
+  .number-badge-active {
+    border-color: hsl(var(--process-teal) / 0.8);
+    color: hsl(var(--process-teal-glow));
+    background: hsl(var(--glow-primary) / 0.1);
+  }
+}
+
+@layer utilities {
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Vite default styles */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* GlobalGenerationalImpact SVG animations */
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes flow-path {
+
+  0%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.7;
+  }
+
+  50% {
+    stroke-dashoffset: 20;
+    opacity: 1;
+  }
+}
+
+@keyframes flow-up {
+  0% {
+    stroke-dashoffset: 200;
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.4;
+  }
+}
+
+@keyframes rise-fade {
+  0% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+
+@keyframes draw-loop {
+
+  0%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dashoffset: 100;
+  }
+}
+
+@keyframes orbit-flow {
+  0% {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+
+@keyframes flow-dot {
+
+  0%,
+  100% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flow-dot-vertical {
+
+  0%,
+  100% {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float-gentle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Biotech Process Cards Flow Animations */
+@keyframes sweep {
+
+  0%,
+  100% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes flow-inward {
+  0% {
+    opacity: 0;
+    transform: scale(1.2) translateX(10px);
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateX(-10px);
+  }
+}
+
+@keyframes flow-circular {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes flow-loop {
+
+  0%,
+  100% {
+    transform: translateX(-5px);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateX(5px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes flow-upward {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}
+
+/* Process Flow Section Animations */
+@keyframes process-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.4);
+  }
+}
+
+@keyframes process-number-bounce {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes process-arrow-flow {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(10px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes process-card-hover {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(-5px) scale(1.02);
+  }
+}
+
+.process-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-card:hover {
+  animation: process-card-hover 0.3s ease-out forwards;
+}
+
+.process-number {
+  animation: process-number-bounce 2s ease-in-out infinite;
+}
+
+.process-arrow {
+  animation: process-arrow-flow 2s ease-in-out infinite;
+}
+
+.process-glow-effect {
+  animation: process-glow 3s ease-in-out infinite;
+}
+
+/* Noise overlay for texture */
+.noise-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Enhanced Arrow Animations */
+@keyframes arrow-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px hsl(var(--primary) / 0.3));
+  }
+
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px hsl(var(--primary) / 0.6));
+  }
+}
+
+@keyframes arrow-flow-horizontal {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateX(5px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(20px);
+    opacity: 0.4;
+  }
+}
+
+@keyframes arrow-flow-vertical {
+  0% {
+    transform: translateY(-8px);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateY(4px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(16px);
+    opacity: 0.4;
+  }
+}
+
+@keyframes line-flow {
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes particle-drift {
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(60px, -10px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-drift-vertical {
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-5px, 40px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.arrow-enhanced {
+  animation: arrow-pulse 3s ease-in-out infinite;
+}
+
+.arrow-flow-h {
+  animation: arrow-flow-horizontal 2s ease-in-out infinite;
+}
+
+.arrow-flow-v {
+  animation: arrow-flow-vertical 2s ease-in-out infinite;
+}
+
+.line-animated {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      hsl(var(--primary) / 0.3) 25%,
+      hsl(var(--primary)) 50%,
+      hsl(var(--primary) / 0.3) 75%,
+      transparent 100%);
+  background-size: 200% 100%;
+  animation: line-flow 2s linear infinite;
+}
+
+.particle-flow {
+  animation: particle-drift 3s ease-out infinite;
+}
+
+.particle-flow-vertical {
+  animation: particle-drift-vertical 3s ease-out infinite;
+}
+
+/* Process Flow Enhancements */
+.process-arrow-container {
+  position: relative;
+  overflow: visible;
+}
+
+.process-arrow-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+      hsl(var(--primary) / 0.2) 0%,
+      hsl(var(--primary) / 0.6) 50%,
+      hsl(var(--primary) / 0.2) 100%);
+  transform: translateY(-50%);
+  animation: line-flow 3s ease-in-out infinite;
+}
+
+.process-arrow-glow {
+  filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.4));
+  transition: filter 0.3s ease;
+}
+
+.process-arrow-glow:hover {
+  filter: drop-shadow(0 0 16px hsl(var(--primary) / 0.8));
 }

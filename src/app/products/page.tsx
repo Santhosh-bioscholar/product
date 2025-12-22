@@ -5,10 +5,10 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Our Products | Aroora Biotech",
-    description: "Explore our range of sustainable biotech products for human nutrition and animal feed, powered by nature's intelligence.",
+    description: "Explore our range of sustainable biotech products for human nutrition and animal food, powered by nature's intelligence.",
 };
 
-const humanFeedProducts = [
+const humanfoodProducts = [
     {
         id: "fermbiotic",
         name: "Fermbiotic",
@@ -29,11 +29,11 @@ const humanFeedProducts = [
     },
 ];
 
-const animalFeedProducts = [
+const animalfoodProducts = [
     {
         id: "algabiotic",
         name: "Algabiotic",
-        desc: "Algae-based feed additive that improves aquatic animal health and reduces reliance on antibiotics.",
+        desc: "Algae-based food additive that improves aquatic animal health and reduces reliance on antibiotics.",
         gradient: "from-teal-600 to-green-600",
     },
     {
@@ -46,20 +46,21 @@ const animalFeedProducts = [
 
 export default function ProductsPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-[#0A2540]">
+        <div className="flex flex-col min-h-screen bg-[#131313]">
             <ProductsHero />
             <ProductCategory
-                title="Human Feed Products"
+                title="Human food Products"
                 description="Nutraceuticals designed to empower human potential."
-                products={humanFeedProducts}
+                products={humanfoodProducts}
             />
             <ProductCategory
-                title="Animal Feed Products"
+                title="Animal food Products"
                 description="Next-generation biotransformation for sustainable aquaculture."
-                products={animalFeedProducts}
+                products={animalfoodProducts}
                 align="right"
             />
             <ProductSustainability />
         </div>
     );
 }
+

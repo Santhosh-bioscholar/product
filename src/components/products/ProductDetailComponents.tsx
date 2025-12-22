@@ -62,3 +62,4 @@ export function ScientificValidation({ text }: { text: string }) {
         </div>
     );
 }
+

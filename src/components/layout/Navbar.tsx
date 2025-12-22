@@ -12,19 +12,11 @@ const navItems = [
         href: "/products",
         dropdown: [
             { title: "ALL PRODUCTS", href: "/products" },
-            { title: "PRODUCT 1", href: "/products/product-1" },
-            { title: "PRODUCT 2", href: "/products/product-2" },
-            { title: "PRODUCT 3", href: "/products/product-3" },
-            { title: "PRODUCT 4", href: "/products/product-4" },
-            { title: "PRODUCT 5", href: "/products/product-5" },
-        ],
-    },
-    {
-        title: "INNOVATION",
-        href: "/innovation",
-        dropdown: [
-            { title: "INNOVATION 1", href: "/innovation/1" },
-            { title: "INNOVATION 2", href: "/innovation/2" },
+            { title: "FERMBIOTIC", href: "/products/fermbiotic" },
+            { title: "BLEUBIOTIC", href: "/products/bleubiotic" },
+            { title: "SPIROTIC", href: "/products/spirotic" },
+            { title: "ALGABIOTIC", href: "/products/algabiotic" },
+            { title: "GLOWBIOTIC", href: "/products/glowbiotic" },
         ],
     },
     {
@@ -36,6 +28,11 @@ const navItems = [
             { title: "NEWS & UPDATE", href: "/news" },
             { title: "PUBLICATIONS", href: "/publications" },
         ],
+    },
+     {
+        title: "INNOVATION",
+        href: "/innovation",
+        
     },
     {
         title: "CONTACT",
@@ -68,14 +65,15 @@ export function Navbar() {
         <nav
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                scrolled ? "bg-black/20 backdrop-blur-md py-2" : "bg-transparent py-4"
+                scrolled ? "bg-[#131313]/20 backdrop-blur-md py-1 bg-[#131313]" : "bg-transparent py-1 bg-[#131313]"
             )}
         >
             <div className="relative max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="text-2xl font-bold tracking-widest text-white flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-green-400 to-blue-500 animate-pulse" />
-                    AROORA
+                    {/* <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-green-400 to-blue-500 animate-pulse" />
+                    AROORA */}
+                    <img src='../images (3).png' className="w-[80px]" />
                 </Link>
 
                 {/* Desktop Menu */}
@@ -181,3 +179,4 @@ export function Navbar() {
         </nav>
     );
 }
+

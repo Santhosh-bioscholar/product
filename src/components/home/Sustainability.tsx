@@ -62,7 +62,7 @@ const steps: StepProps[] = [
 
 export function Sustainability() {
     return (
-        <section className="relative w-full py-24 px-12 bg-[#0B1215] overflow-hidden min-h-[600px] flex items-center justify-center">
+        <section className="relative w-full py-24 px-12 bg-[#131313] overflow-hidden min-h-[600px] flex items-center justify-center">
 
             <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-center">
 
@@ -243,3 +243,4 @@ export const AnimatedArrow = ({ fromColor, toColor, delay = 0 }: AnimatedArrowPr
         </div>
     );
 };
+

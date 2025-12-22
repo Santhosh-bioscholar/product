@@ -2,6 +2,7 @@ import { AboutHero } from "@/components/about/AboutHero";
 import { OurPurpose } from "@/components/about/OurPurpose";
 import { SustainabilityValues } from "@/components/about/SustainabilityValues";
 import { GlobalPresence } from "@/components/about/GlobalPresence";
+import { EvolutionHealthyFuture } from "@/components/about/EvolutionHealthyFuture";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,11 +12,13 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-[#0A2540]">
+        <div className="flex flex-col min-h-screen bg-[#131313]">
             <AboutHero />
             <OurPurpose />
             <SustainabilityValues />
+            <EvolutionHealthyFuture />
             <GlobalPresence />
         </div>
     );
 }
+

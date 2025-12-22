@@ -1,9 +1,11 @@
-import { ImpactHero } from "@/components/impact/ImpactHero";
+
 import { ImpactLegacy } from "@/components/impact/ImpactLegacy";
 import { HumanImpact } from "@/components/impact/HumanImpact";
 import { AnimalImpact } from "@/components/impact/AnimalImpact";
 import { ImpactCTA } from "@/components/impact/ImpactCTA";
 import { Metadata } from "next";
+import ImpactHero from "@/components/impact/ImpactHero";
+import SystemPipeline from "@/components/impact/SystemPipeline";
 
 export const metadata: Metadata = {
     title: "Global Impact | Aroora Biotech",
@@ -12,12 +14,14 @@ export const metadata: Metadata = {
 
 export default function GlobalImpactPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-[#0A2540]">
-            <ImpactHero />
+        <div className="flex flex-col min-h-screen ">
+           <ImpactHero/>
             <ImpactLegacy />
+            <SystemPipeline />
             <HumanImpact />
             <AnimalImpact />
             <ImpactCTA />
         </div>
     );
 }
+

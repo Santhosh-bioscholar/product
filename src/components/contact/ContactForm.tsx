@@ -5,7 +5,7 @@ import { Send } from "lucide-react";
 
 export function ContactForm() {
     return (
-        <FadeIn direction="right" className="bg-[#0A2540] p-8 rounded-3xl border border-white/10 shadow-xl">
+        <FadeIn direction="right" className="bg-[#131313] p-8 rounded-3xl border border-white/10 shadow-xl">
             <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -21,7 +21,7 @@ export function ContactForm() {
 
                 <div className="space-y-2">
                     <label htmlFor="subject" className="text-sm font-medium text-gray-300">Subject</label>
-                    <select id="subject" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-green-400 transition-colors">
+                    <select id="subject" className="w-full px-4 py-3 bg-[#131313] border border-white/10 rounded-xl text-white focus:outline-none focus:border-green-400 transition-colors">
                         <option value="general">General Inquiry</option>
                         <option value="sales">Sales & Partnership</option>
                         <option value="press">Press & Media</option>
@@ -41,3 +41,4 @@ export function ContactForm() {
         </FadeIn>
     );
 }
+

@@ -92,3 +92,4 @@ export const TimelineConnector = ({ progress, fromColor, toColor }: TimelineConn
         </div>
     );
 };
+

@@ -85,3 +85,4 @@ export function AlgaeCanvas() {
         </div>
     );
 }
+

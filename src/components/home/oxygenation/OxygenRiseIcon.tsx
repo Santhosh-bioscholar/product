@@ -161,3 +161,4 @@ export const OxygenRiseIcon = ({ isActive }: OxygenRiseIconProps) => {
         </div>
     );
 };
+

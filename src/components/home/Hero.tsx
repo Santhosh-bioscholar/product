@@ -28,7 +28,7 @@ export function Hero() {
             <HeroParticles />
 
             {/* Overlay Gradient for readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0A2540]/90 via-[#0A2540]/50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-0 " />
 
             {/* Content */}
             <div className="relative z-20 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2">
@@ -76,3 +76,4 @@ export function Hero() {
         </section>
     );
 }
+

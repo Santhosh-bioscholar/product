@@ -22,7 +22,7 @@ export function HeroBanner() {
     }, []);
 
     return (
-        <section className="relative h-screen w-full overflow-hidden flex items-center bg-[#0A2540]">
+        <section className="relative h-screen w-full overflow-hidden flex items-center bg-[#131313]">
             {/* 1. Video Background */}
             <video
                 autoPlay
@@ -97,3 +97,4 @@ export function HeroBanner() {
         </section>
     );
 }
+

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-[#0A2540]">
+        <div className="flex flex-col min-h-screen bg-[#131313]">
             <ContactHero />
             <div className="max-w-7xl mx-auto w-full px-6 pb-24 grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <ContactForm />
@@ -19,3 +19,4 @@ export default function ContactPage() {
         </div>
     );
 }
+

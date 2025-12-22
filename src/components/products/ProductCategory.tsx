@@ -20,12 +20,18 @@ interface ProductCategoryProps {
 
 export function ProductCategory({ title, description, products, align = "left" }: ProductCategoryProps) {
     return (
-        <section className="py-24 px-6 bg-[#0A2540] border-b border-white/5">
+        <section className="py-24 px-6 bg-[#131313] border-b border-white/5">
             <div className="max-w-7xl mx-auto">
-                <div className={`flex flex-col gap-6 mb-16 ${align === "right" ? "md:text-right md:items-end" : "md:text-left md:items-start"}`}>
+                <div className={`flex flex-col gap-6 mb-16 ${align === "right" ? "md:text-center md:items-center" : "md:text-center md:items-center"}`}>
                     <FadeIn direction="up">
-                        <h2 className="text-4xl font-bold text-white mb-4">{title}</h2>
+                        {/* <h2 className="text-4xl font-bold text-white mb-4">{title}</h2> */}
+                    <h2 className="text-4xl font-bold  block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400 mb-4">
+                     {title}
+                    </h2>
                         <p className="text-gray-400 max-w-2xl text-lg">{description}</p>
+                          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                    {/* <span className="block text-white">The Great</span> */}
+                </h2>
                     </FadeIn>
                 </div>
 
@@ -54,3 +60,4 @@ export function ProductCategory({ title, description, products, align = "left" }
         </section>
     );
 }
+

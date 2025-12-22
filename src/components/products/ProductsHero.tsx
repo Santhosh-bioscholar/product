@@ -4,7 +4,7 @@ import { FadeIn } from "../animations/FadeIn";
 
 export function ProductsHero() {
     return (
-        <section className="relative h-[50vh] w-full flex items-center justify-center bg-[#0A2540] overflow-hidden">
+        <section className="relative h-[50vh] w-full flex items-center justify-center bg-[#131313] overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-[#0A2540] to-[#0A2540]" />
 
             {/* Decorative Circles */}
@@ -27,3 +27,4 @@ export function ProductsHero() {
         </section>
     );
 }
+

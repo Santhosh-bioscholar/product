@@ -1,74 +1,130 @@
 "use client";
 
-import { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Sphere, MeshDistortMaterial } from "@react-three/drei";
-import { FadeIn } from "../animations/FadeIn";
-import * as THREE from "three";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import {
+    AlgaeSourceIcon,
+    BioprocessIcon,
+    SafeNutritionIcon,
+    EcosystemIcon,
+    ContinuityIcon,
+} from "./ProcessIcons";
+import { FlowConnector, FlowConnectorMobile } from "./FlowConnector";
+import ImpactCard from "./ImpactCard";
+import ImpactSection from "./ImpactSection";
 
-function AnimatedGlobe(props: any) {
-    const meshRef = useRef<THREE.Mesh>(null!);
+const processSteps = [
+    {
+        icon: AlgaeSourceIcon,
+        label: "Algae Source",
+        description: "Nature-first innovation",
+    },
+    {
+        icon: BioprocessIcon,
+        label: "Green Bioprocess",
+        description: "Clean transformation",
+    },
+    {
+        icon: SafeNutritionIcon,
+        label: "Safe Nutrition",
+        description: "Human & animal safety",
+    },
+    {
+        icon: EcosystemIcon,
+        label: "Ecosystem Balance",
+        description: "Environmental harmony",
+    },
+    {
+        icon: ContinuityIcon,
+        label: "Generational Continuity",
+        description: "Long-term global impact",
+    },
+];
 
-    useFrame((state) => {
-        if (meshRef.current) {
-            meshRef.current.rotation.y += 0.005;
-            meshRef.current.rotation.x = Math.sin(state.clock.getElapsedTime() * 0.2) * 0.1;
-        }
-    });
+export const ImpactWithoutBordersSection = () => {
+    const sectionRef = useRef<HTMLElement>(null);
+    const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     return (
-        <Sphere ref={meshRef} args={[1, 64, 64]} scale={2.5} {...props}>
-            <MeshDistortMaterial
-                color="#0AB3A3"
-                attach="material"
-                distort={0.4}
-                speed={1.5}
-                roughness={0.4}
-                metalness={0.8}
-                wireframe={true}
-            />
-        </Sphere>
-    );
-}
+        <section
+            ref={sectionRef}
+            className="min-h-screen gradient-biotech  overflow-hidden"
+        >
+            <div className="container mx-auto px-6 lg:px-12">
+                <div className="">
+                    {/* LEFT SIDE - Animated Process Flow */}
+                  
 
-export function GlobalPresence() {
-    return (
-        <section className="py-24 px-6 bg-[#0A2540] overflow-hidden">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="order-2 lg:order-1 h-[400px] w-full relative">
-                    <Canvas camera={{ position: [0, 0, 5] }}>
-                        <ambientLight intensity={2} />
-                        <pointLight position={[10, 10, 10]} />
-                        <AnimatedGlobe />
-                    </Canvas>
-                </div>
+                    {/* RIGHT SIDE - Content */}
+                    <div className="order-1 lg:order-2 lg:pl-12">
+                        {/* Label */}
 
-                <div className="order-1 lg:order-2">
-                    <FadeIn direction="left">
-                        <h2 className="text-green-400 font-bold tracking-widest uppercase mb-4">Global Reach</h2>
-                        <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Impact Without <br /> Borders
-                        </h3>
-                    </FadeIn>
+                            <motion.div
+                className="text-center  px-6"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
+                transition={{ duration: 0.8 }}
+            > <motion.p
+          className="text-primary text-sm tracking-[0.3em] uppercase font-display mb-6 "
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+         Global Reach
+        </motion.p>
+      <motion.span
+                    className="inline-block text-xs font-medium tracking-[0.2em] uppercase text-cyan-400 mb-4"
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : {}}
+                    transition={{ delay: 0.4 }}
+                >
+                    Earth&apos;s Greatest Transformation
+                </motion.span>
 
-                    <FadeIn direction="up" delay={0.2}>
-                        <p className="text-lg text-gray-300 leading-relaxed mb-8">
-                            From our headquarters in Aroora, we are expanding our footprint across continents. Our biotechnology solutions are designed to be universally adaptable, helping diverse ecosystems thrive from the tropics to the poles.
-                        </p>
+                {/* Title */}
+                 
+          <h2 className="text-2xl lg:text-4xl font-semibold text-foreground mb-4">
+             Impact{" "}
+            <span className=" text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400">
+             Without Borders
+            </span>
+          </h2>
+                
+                <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto">
+                    Our algae-based biotechnology adapts seamlessly across ecosystems,
+                            improving human health, animal nutrition, and environmental
+                            resilience without compromising safety or sustainability.
+                </p>
+            </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                        >
+                           
+                        </motion.div>
 
-                        <div className="grid grid-cols-2 gap-6">
-                            <div>
-                                <h4 className="text-2xl font-bold text-white mb-1">15+</h4>
-                                <p className="text-sm text-gray-400">Countries Served</p>
-                            </div>
-                            <div>
-                                <h4 className="text-2xl font-bold text-white mb-1">3</h4>
-                                <p className="text-sm text-gray-400">R&D Centers</p>
-                            </div>
-                        </div>
-                    </FadeIn>
+                        {/* Key points */}
+                     
+                    </div>
+                   <ImpactSection/>
                 </div>
             </div>
         </section>
     );
-}
+};
+
+export default ImpactWithoutBordersSection;
+
+// Keep the old GlobalPresence export for backward compatibility
+export const GlobalPresence = ImpactWithoutBordersSection;
+

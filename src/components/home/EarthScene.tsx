@@ -68,26 +68,27 @@ function CO2Particles() {
         particlesRef.current.geometry.attributes.position.needsUpdate = true;
     });
 
-    return (
-        <points ref={particlesRef}>
-            <bufferGeometry>
-                <bufferAttribute
-                    attach="attributes-position"
-                    count={count}
-                    array={positions}
-                    itemSize={3}
-                    args={[positions, 3]}
-                />
-            </bufferGeometry>
-            <pointsMaterial
-                size={0.04}
-                color="#4a5568"
-                transparent
-                opacity={0.6}
-                sizeAttenuation
-            />
-        </points>
-    );
+ return (
+  <points ref={particlesRef}>
+    <bufferGeometry>
+      <bufferAttribute
+        attach="attributes-position"
+        count={count}
+        array={positions}
+        itemSize={3}
+        args={[positions, 3]}
+      />
+    </bufferGeometry>
+    <pointsMaterial
+      size={0.04}
+      color="#ef4444"   // red
+      transparent
+      opacity={0.6}
+      sizeAttenuation
+    />
+  </points>
+);
+
 }
 
 // O2 Particles flowing outward from Earth
@@ -155,26 +156,38 @@ function O2Particles() {
         particlesRef.current.geometry.attributes.position.needsUpdate = true;
     });
 
-    return (
-        <points ref={particlesRef}>
-            <bufferGeometry>
-                <bufferAttribute
-                    attach="attributes-position"
-                    count={count}
-                    array={positions}
-                    itemSize={3}
-                    args={[positions, 3]}
-                />
-            </bufferGeometry>
-            <pointsMaterial
-                size={0.06}
-                color="#22d3ee"
-                transparent
-                opacity={0.8}
-                sizeAttenuation
-            />
-        </points>
-    );
+   return (
+  <points ref={particlesRef}>
+    <bufferGeometry>
+      <bufferAttribute
+        attach="attributes-position"
+        count={count}
+        array={positions}
+        itemSize={3}
+        args={[positions, 3]}
+      />
+    </bufferGeometry>
+
+    <pointsMaterial
+      size={0.06}
+      color="#22c55e" // green
+      transparent
+      opacity={0.8}
+      sizeAttenuation
+      onBeforeCompile={(shader) => {
+        shader.fragmentShader = shader.fragmentShader.replace(
+          `#include <output_fragment>`,
+          `
+            float d = length(gl_PointCoord - vec2(0.5));
+            if (d > 0.5) discard;
+            #include <output_fragment>
+          `
+        );
+      }}
+    />
+  </points>
+);
+
 }
 
 // Earth with real texture
@@ -263,3 +276,4 @@ export default function EarthScene() {
         </div>
     );
 }
+

@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export function ImpactCTA() {
     return (
-        <section className="py-24 px-6 bg-[#0A2540] text-center">
+        <section className="py-24 px-6 bg-[#131313] text-center">
             <FadeIn direction="up">
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                     Join the <span className="text-green-400">Biological Revolution</span>
@@ -27,3 +27,4 @@ export function ImpactCTA() {
         </section>
     );
 }
+

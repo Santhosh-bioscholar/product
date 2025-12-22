@@ -6,7 +6,7 @@ import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin, Phone } from "luc
 
 export function Footer() {
     return (
-        <footer className="relative bg-[#0A2540] text-white pt-20 pb-10 overflow-hidden">
+        <footer className="relative bg-[#131313] text-white pt-20 pb-10 overflow-hidden">
             {/* Algae Wave Animation Background */}
             <div className="absolute bottom-0 left-0 w-full h-48 opacity-10 pointer-events-none">
                 <svg
@@ -103,3 +103,4 @@ export function Footer() {
         </footer>
     );
 }
+

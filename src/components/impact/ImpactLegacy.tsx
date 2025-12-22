@@ -4,7 +4,7 @@ import { FadeIn } from "../animations/FadeIn";
 
 export function ImpactLegacy() {
     return (
-        <section className="relative py-24 px-6 bg-[#0A2540] overflow-hidden">
+        <section className="relative py-24 px-6 overflow-hidden">
             <div className="max-w-4xl mx-auto text-center">
                 <FadeIn direction="up">
                     <h2 className="text-sm font-bold tracking-[0.2em] text-green-400 uppercase mb-4">Our Heritage</h2>
@@ -22,3 +22,4 @@ export function ImpactLegacy() {
         </section>
     );
 }
+
