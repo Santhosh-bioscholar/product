@@ -8,6 +8,10 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
     {
+      title:"HOME",
+      href:"/"
+    },
+    {
         title: "PRODUCT",
         href: "/products",
         dropdown: [

@@ -59,6 +59,7 @@ export const products: Record<string, ProductData> = {
         themeColor: '#3b82f6',
         cssVariable: '--bleubiotic',
         animationType: 'lightwave',
+        bannerImage: '/bleubiotic.png',
         benefitIcons: [
             { id: 'detox', icon: 'Droplets', label: 'Detox' },
             { id: 'antioxidant', icon: 'Sun', label: 'Antioxidant' },

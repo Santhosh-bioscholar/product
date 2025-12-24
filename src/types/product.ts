@@ -39,6 +39,7 @@ export interface ProductData {
     cssVariable: string;
     animationType: AnimationType;
     heroImage?: string;
+    bannerImage?: string;
     benefitIcons: BenefitIcon[];
     overview: {
         title: string;

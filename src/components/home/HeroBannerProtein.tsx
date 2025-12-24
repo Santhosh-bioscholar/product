@@ -22,14 +22,15 @@ export function HeroBannerProtein() {
     }, []);
 
     return (
-        <section className="relative h-screen w-full overflow-hidden flex items-center">
+        <section className="relative h-screen w-full overflow-hidden flex items-center bg-gradient-to-r from-black/90 via-black/60 to-black/10">
             {/* Protein Folding Animation (includes background) */}
-            <div className="absolute inset-0 z-10">
-                <ProteinFoldingAnimation />
+            <div className="absolute inset-0  ">
+                {/* <ProteinFoldingAnimation /> */}
+                <img src="image.webp" className="w-full"/>
             </div>
 
             {/* Content */}
-            <div className="relative z-30 max-w-7xl mx-auto px-12 pt-12 w-full">
+            <div className="relative z-30  mx-auto px-12 pt-[260px] h-full w-full bg-gradient-to-r from-[#131313]/95 via-[#131313]/70 to-transparent">
                 <div className="max-w-2xl">
 
                     {/* Title */}

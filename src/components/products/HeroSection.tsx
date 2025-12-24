@@ -18,13 +18,24 @@ export const HeroSection = ({ product }: HeroSectionProps) => {
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Background gradient */}
-            <div
-                className="absolute inset-0"
-                style={{
-                    background: `radial-gradient(ellipse 80% 60% at 50% 30%, hsl(var(--primary) / 0.12) 0%, transparent 60%)`,
-                }}
-            />
+            {/* Background */}
+            {product.bannerImage ? (
+                <div className="absolute inset- z-1">
+                    <img
+                        src={product.bannerImage}
+                        alt={`${product.name} Banner`}
+                        className="w-full h-full object-cover opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90" />
+                </div>
+            ) : (
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        background: `radial-gradient(ellipse 80% 60% at 50% 30%, hsl(var(--primary) / 0.12) 0%, transparent 60%)`,
+                    }}
+                />
+            )}
 
             {/* Floating particles */}
             <FloatingParticles type={product.animationType} count={15} />
@@ -114,7 +125,7 @@ export const HeroSection = ({ product }: HeroSectionProps) => {
                                 whileTap={{ scale: 0.98 }}
                                 style={{ boxShadow: '0 0 30px hsl(var(--primary) / 0.4)' }}
                             >
-                                <span className="relative z-10">Explore Now</span>
+                                <span className="relative z-10">Buy Now</span>
                                 <motion.div
                                     className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary"
                                     animate={{ x: ['-100%', '100%'] }}
@@ -122,90 +133,17 @@ export const HeroSection = ({ product }: HeroSectionProps) => {
                                     style={{ opacity: 0.3 }}
                                 />
                             </motion.button>
-                            <motion.button
+                            {/* <motion.button
                                 className="px-8 py-4 rounded-full border border-primary/30 text-foreground font-semibold text-lg backdrop-blur-sm hover:bg-primary/10 transition-colors"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
                                 Learn More
-                            </motion.button>
+                            </motion.button> */}
                         </motion.div>
                     </motion.div>
 
-                    {/* Product visualization */}
-                    <motion.div
-                        className="relative flex items-center justify-center"
-                        variants={scrollReveal}
-                        initial="hidden"
-                        animate="visible"
-                    >
-                        {/* Central product representation */}
-                        <motion.div
-                            className="relative w-64 h-64 md:w-80 md:h-80"
-                            variants={floatAnimation}
-                            initial="initial"
-                            animate="animate"
-                        >
-                            {/* Glow ring */}
-                            <motion.div
-                                className="absolute inset-0 rounded-full"
-                                style={{
-                                    background: `radial-gradient(circle, hsl(var(--primary) / 0.2), transparent 70%)`,
-                                    filter: 'blur(30px)',
-                                }}
-                                animate={{
-                                    scale: [1, 1.1, 1],
-                                    opacity: [0.5, 0.8, 0.5],
-                                }}
-                                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                            />
 
-                            {/* Main circle */}
-                            <div
-                                className="absolute inset-8 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-xl border border-primary/30"
-                                style={{ boxShadow: '0 0 60px hsl(var(--primary) / 0.3), inset 0 0 30px hsl(var(--primary) / 0.1)' }}
-                            >
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <span className="text-4xl md:text-5xl font-bold text-gradient-primary">
-                                        {product.name.charAt(0)}
-                                    </span>
-                                </div>
-                            </div>
-
-                            {/* Orbiting icons */}
-                            {product.benefitIcons.map((benefit, index) => {
-                                const Icon = getIcon(benefit.icon);
-                                return (
-                                    <motion.div
-                                        key={benefit.id}
-                                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                                        variants={orbitAnimation(index, product.benefitIcons.length)}
-                                        initial="initial"
-                                        animate="animate"
-                                        style={{ transformOrigin: 'center center' }}
-                                    >
-                                        <motion.div
-                                            className="w-12 h-12 rounded-full bg-secondary/80 border border-primary/30 flex items-center justify-center backdrop-blur-sm"
-                                            style={{
-                                                transform: 'translateX(100px)',
-                                                boxShadow: '0 0 20px hsl(var(--primary) / 0.3)',
-                                            }}
-                                            animate={{
-                                                boxShadow: [
-                                                    '0 0 20px hsl(var(--primary) / 0.3)',
-                                                    '0 0 30px hsl(var(--primary) / 0.5)',
-                                                    '0 0 20px hsl(var(--primary) / 0.3)',
-                                                ],
-                                            }}
-                                            transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
-                                        >
-                                            <Icon className="w-5 h-5 text-primary" />
-                                        </motion.div>
-                                    </motion.div>
-                                );
-                            })}
-                        </motion.div>
-                    </motion.div>
                 </div>
             </div>
 

@@ -23,12 +23,22 @@ export function Hero() {
     }, []);
 
     return (
-        <section className="relative h-screen w-full overflow-hidden flex items-center">
+        <section className="relative h-screen w-full overflow-hidden flex items-center bg-black">
+            {/* Background Image */}
+            <div className="absolute inset-0 w-full h-full z-0">
+                <img
+                    src="/banner-bg.png"
+                    alt="Hero Background"
+                    className="w-full h-full object-cover opacity-60"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
+            </div>
+
             {/* Background Particles */}
             <HeroParticles />
 
             {/* Overlay Gradient for readability */}
-            <div className="absolute inset-0 " />
+            <div className="absolute inset-0 z-10 pointer-events-none" />
 
             {/* Content */}
             <div className="relative z-20 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2">

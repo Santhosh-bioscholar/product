@@ -191,7 +191,7 @@ export const Overlay = () => {
     return (
         <div className="">
             {/* Title */}
-          
+
         </div>
     );
 };
@@ -327,21 +327,21 @@ const ParticleBand = ({
         }
     });
 
-    // return (
-    //     <instancedMesh
-    //         ref={meshRef}
-    //         args={[geometry, undefined, particleCount]}
-    //         frustumCulled={false}
-    //     >
-    //         <meshStandardMaterial
-    //             emissive={useArrows ? "#ff8c42" : "#cc3333"}
-    //             emissiveIntensity={useArrows ? 0.8 : 1.2}
-    //             roughness={0.2}
-    //             metalness={0.7}
-    //             vertexColors
-    //         />
-    //     </instancedMesh>
-    // );
+    return (
+        <instancedMesh
+            ref={meshRef}
+            args={[geometry, undefined, particleCount]}
+            frustumCulled={false}
+        >
+            <meshStandardMaterial
+                emissive={useArrows ? "#ff8c42" : "#cc3333"}
+                emissiveIntensity={useArrows ? 0.8 : 1.2}
+                roughness={0.2}
+                metalness={0.7}
+                vertexColors
+            />
+        </instancedMesh>
+    );
 };
 
 export const ParticleBands = () => {
@@ -573,18 +573,18 @@ export const Trees = () => {
         }
     });
 
-    // return (
-    //     <group ref={treesRef}>
-    //         {treeData.map((tree, i) => (
-    //             <Tree
-    //                 key={i}
-    //                 position={tree.position}
-    //                 scale={tree.scale}
-    //                 color={tree.color}
-    //             />
-    //         ))}
-    //     </group>
-    // );
+    return (
+        <group ref={treesRef}>
+            {treeData.map((tree, i) => (
+                <Tree
+                    key={i}
+                    position={tree.position}
+                    scale={tree.scale}
+                    color={tree.color}
+                />
+            ))}
+        </group>
+    );
 };
 
 const SceneContent = () => {
