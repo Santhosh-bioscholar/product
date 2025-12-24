@@ -1,0 +1,22 @@
+
+> product-site-1@0.1.0 build
+> next build
+
+   ▲ Next.js 16.0.10 (Turbopack)
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 5.1s
+   Running TypeScript ...
+Failed to compile.
+
+./src/components/products/EnhancedProductWrapper.tsx:19:13
+Type error: Type '{}' is missing the following properties from type 'ProductSelectorProps': currentProduct, onSelectProduct
+
+[0m [90m 17 |[39m   [90m// If no initialProductId provided, show product selector or default to first product[39m
+ [90m 18 |[39m   [36mif[39m ([33m![39minitialProductId) {
+[31m[1m>[22m[39m[90m 19 |[39m     [36mreturn[39m [33m<[39m[33mProductSelector[39m [33m/[39m[33m>[39m[33m;[39m
+ [90m    |[39m             [31m[1m^[22m[39m
+ [90m 20 |[39m   }
+ [90m 21 |[39m   
+ [90m 22 |[39m   [36mconst[39m product [33m=[39m getProduct(initialProductId)[33m;[39m[0m
+Next.js build worker exited with code: 1 and signal: null

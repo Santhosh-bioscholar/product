@@ -57,7 +57,51 @@ const AlgaeClusterIcon = ({ isActive }: { isActive: boolean }) => {
 const EnzymeLoopIcon = ({ isActive }: { isActive: boolean }) => {
     const shouldReduceMotion = useReducedMotion();
 
-   
+    return (
+        <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10 md:w-12 md:h-12">
+            {/* Outer rotating ring */}
+            <motion.path
+                d="M24 8 C32.8 8 40 15.2 40 24 C40 32.8 32.8 40 24 40 C15.2 40 8 32.8 8 24 C8 15.2 15.2 8 24 8"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeDasharray="4 6"
+                fill="none"
+                initial={{ rotate: 0, opacity: 0 }}
+                animate={isActive && !shouldReduceMotion ? { rotate: 360, opacity: 1 } : { rotate: 0, opacity: isActive ? 1 : 0 }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            />
+            {/* Inner transformation arrows */}
+            <motion.path
+                d="M20 18 A 6 6 0 0 1 28 18 M28 30 A 6 6 0 0 1 20 30"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                fill="none"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={isActive ? { pathLength: 1, opacity: 1 } : {}}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+            />
+            <motion.path
+                d="M28 18 L26 15 M28 18 L31 15 M20 30 L17 33 M20 30 L23 33"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{ opacity: 0 }}
+                animate={isActive ? { opacity: 1 } : {}}
+                transition={{ duration: 0.3, delay: 0.8 }}
+            />
+            {/* Center active element */}
+            <motion.circle
+                cx="24" cy="24" r="2"
+                fill="currentColor"
+                initial={{ scale: 0 }}
+                animate={isActive ? { scale: [1, 1.5, 1] } : {}}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+        </svg>
+    );
 };
 
 const CellularShieldIcon = ({ isActive }: { isActive: boolean }) => {

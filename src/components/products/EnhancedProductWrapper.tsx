@@ -13,12 +13,12 @@ export const EnhancedProductWrapper = ({
   initialProductId,
 }: EnhancedProductWrapperProps) => {
   const router = useRouter();
-  
+
   // If no initialProductId provided, show product selector or default to first product
   if (!initialProductId) {
-    return <ProductSelector />;
+    return <ProductSelector onSelectProduct={(id) => router.push(`/products/${id}`)} />;
   }
-  
+
   const product = getProduct(initialProductId);
 
   if (!product) {
@@ -31,7 +31,7 @@ export const EnhancedProductWrapper = ({
 
   return (
     <>
-   
+
       <ProductPage product={product} />
     </>
   );

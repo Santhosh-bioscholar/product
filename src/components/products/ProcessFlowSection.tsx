@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { motion, useInView, useAnimation, Variants } from 'framer-motion';
 import { Recycle, Sprout } from 'lucide-react';
 
 interface ProcessStep {
@@ -45,7 +45,7 @@ const ProcessFlowSection = () => {
     }
   }, [isInView, controls]);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -56,9 +56,9 @@ const ProcessFlowSection = () => {
     },
   };
 
-  const stepVariants = {
-    hidden: { 
-      opacity: 0, 
+  const stepVariants: Variants = {
+    hidden: {
+      opacity: 0,
       y: 50,
       scale: 0.9,
     },
@@ -68,14 +68,14 @@ const ProcessFlowSection = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: [0.25, 0.46, 0.45, 0.94] as const,
       },
     },
   };
 
-  const arrowVariants = {
-    hidden: { 
-      opacity: 0, 
+  const arrowVariants: Variants = {
+    hidden: {
+      opacity: 0,
       x: -20,
       scale: 0.8,
     },
@@ -91,7 +91,7 @@ const ProcessFlowSection = () => {
     },
   };
 
-  const arrowFlowVariants = {
+  const arrowFlowVariants: Variants = {
     animate: {
       x: [0, 10, 0],
       opacity: [0.6, 1, 0.6],
@@ -103,7 +103,7 @@ const ProcessFlowSection = () => {
     },
   };
 
-  const arrowLineVariants = {
+  const arrowLineVariants: Variants = {
     animate: {
       scaleX: [0.8, 1.2, 0.8],
       opacity: [0.4, 0.8, 0.4],
@@ -116,8 +116,8 @@ const ProcessFlowSection = () => {
     },
   };
 
-  const numberVariants = {
-    hidden: { 
+  const numberVariants: Variants = {
+    hidden: {
       scale: 0,
       rotate: -180,
     },
@@ -164,15 +164,15 @@ const ProcessFlowSection = () => {
           </h2>
           <p className="text-gray-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-4 sm:px-0">
             Our manufacturing process is designed to be regenerative. We capture industrial CO₂ emissions and utilize them to food our algae cultures, effectively turning a pollutant into high-value protein and nutrients.
-   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-4">
-                        <div className="flex items-center gap-2 text-[#0FA57D] font-bold text-sm sm:text-base">
-                            <Recycle className="w-4 h-4 sm:w-5 sm:h-5" /> Zero Waste
-                        </div>
-                        <div className="flex items-center gap-2 text-[#0FA57D] font-bold text-sm sm:text-base">
-                            <Sprout className="w-4 h-4 sm:w-5 sm:h-5" /> Carbon Negative Potential
-                        </div>
-                    </div>
-                       </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-4">
+              <div className="flex items-center gap-2 text-[#0FA57D] font-bold text-sm sm:text-base">
+                <Recycle className="w-4 h-4 sm:w-5 sm:h-5" /> Zero Waste
+              </div>
+              <div className="flex items-center gap-2 text-[#0FA57D] font-bold text-sm sm:text-base">
+                <Sprout className="w-4 h-4 sm:w-5 sm:h-5" /> Carbon Negative Potential
+              </div>
+            </div>
+          </p>
         </motion.div>
         {/* Process Flow */}
         <motion.div
@@ -193,7 +193,7 @@ const ProcessFlowSection = () => {
                 >
                   {/* Glow Effect */}
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+
                   {/* Card */}
                   <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 w-[230px] h-[220px] flex flex-col justify-between hover:border-primary/50 transition-all duration-500 group-hover:transform group-hover:scale-105">
                     {/* Step Number */}
@@ -246,7 +246,7 @@ const ProcessFlowSection = () => {
                         className="absolute inset-0 w-6 h-full bg-gradient-to-r from-transparent via-primary to-transparent"
                       />
                     </motion.div>
-                    
+
                     {/* Animated Arrow Icon */}
                     <motion.div
                       variants={arrowFlowVariants}
@@ -282,7 +282,7 @@ const ProcessFlowSection = () => {
                           }}
                         />
                       </motion.svg>
-                      
+
                       {/* Enhanced Glow Effect */}
                       <motion.div
                         animate={{
@@ -297,7 +297,7 @@ const ProcessFlowSection = () => {
                         }}
                         className="absolute inset-0 w-6 h-6 bg-primary/30 rounded-full blur-sm"
                       />
-                      
+
                       {/* Hover Ripple Effect */}
                       <motion.div
                         initial={{ scale: 0, opacity: 0 }}
@@ -351,7 +351,7 @@ const ProcessFlowSection = () => {
               >
                 {/* Glow Effect */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Card */}
                 <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-4 lg:p-6 h-40 lg:h-48 flex flex-col justify-between hover:border-primary/50 transition-all duration-500 group-hover:transform group-hover:scale-105">
                   <div className="flex items-start justify-between">
@@ -362,7 +362,7 @@ const ProcessFlowSection = () => {
                     >
                       {step.number}
                     </motion.div>
-                    
+
                     {/* Grid Position Indicator */}
                     {index < 2 && (
                       <motion.div
@@ -383,7 +383,7 @@ const ProcessFlowSection = () => {
                         </svg>
                       </motion.div>
                     )}
-                    
+
                     {index >= 2 && index === 2 && (
                       <motion.div
                         animate={{
@@ -432,7 +432,7 @@ const ProcessFlowSection = () => {
               >
                 {/* Glow Effect */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Card */}
                 <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-primary/50 transition-all duration-500">
                   <div className="flex items-start space-x-6">
@@ -535,7 +535,7 @@ const ProcessFlowSection = () => {
                           }}
                         />
                       </motion.svg>
-                      
+
                       {/* Enhanced Glow Effect */}
                       <motion.div
                         animate={{
@@ -567,7 +567,7 @@ const ProcessFlowSection = () => {
               >
                 {/* Glow Effect */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Card */}
                 <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-primary/50 transition-all duration-500">
                   <div className="flex items-start space-x-3 sm:space-x-4">
@@ -670,7 +670,7 @@ const ProcessFlowSection = () => {
                           }}
                         />
                       </motion.svg>
-                      
+
                       {/* Enhanced Mobile Glow Effect */}
                       <motion.div
                         animate={{
@@ -685,7 +685,7 @@ const ProcessFlowSection = () => {
                         }}
                         className="absolute inset-0 w-5 h-5 sm:w-6 sm:h-6 bg-primary/20 rounded-full blur-sm"
                       />
-                      
+
                       {/* Mobile Hover Ripple Effect */}
                       <motion.div
                         initial={{ scale: 0, opacity: 0 }}

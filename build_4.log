@@ -1,0 +1,36 @@
+
+> product-site-1@0.1.0 build
+> next build
+
+   ▲ Next.js 16.0.10 (Turbopack)
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 5.4s
+   Running TypeScript ...
+   Collecting page data using 11 workers ...
+   Generating static pages using 11 workers (0/15) ...
+   Generating static pages using 11 workers (3/15) 
+   Generating static pages using 11 workers (7/15) 
+   Generating static pages using 11 workers (11/15) 
+ ✓ Generating static pages using 11 workers (15/15) in 1006.7ms
+   Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /contact
+├ ○ /global-impact
+├ ○ /innovation
+├ ○ /products
+├ ● /products/[id]
+│ ├ /products/fermbiotic
+│ ├ /products/bleubiotic
+│ ├ /products/spirotic
+│ └ [+2 more paths]
+└ ○ /products/enhanced
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+

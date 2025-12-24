@@ -3,7 +3,7 @@ import { products, getAllProducts } from '@/data/products';
 import { ProductData } from '@/types/product';
 
 interface ProductSelectorProps {
-    currentProduct: ProductData;
+    currentProduct?: ProductData;
     onSelectProduct: (productId: string) => void;
 }
 
@@ -27,7 +27,7 @@ export const ProductSelector = ({ currentProduct, onSelectProduct }: ProductSele
         >
             <div className="flex items-center gap-2 p-2 rounded-full bg-secondary/80 backdrop-blur-xl border border-border/50">
                 {allProducts.map((product) => {
-                    const isActive = product.id === currentProduct.id;
+                    const isActive = currentProduct?.id === product.id;
 
                     return (
                         <motion.button
