@@ -13,8 +13,8 @@ const createHeartTexture = () => {
     canvas.height = 32;
     const ctx = canvas.getContext('2d')!;
 
-    // Draw heart - refined shape
-    ctx.fillStyle = '#ffffff';
+    // Draw heart - refined shape (Upright: Tip Down)
+    ctx.fillStyle = '#60a5fa';
     ctx.beginPath();
     ctx.moveTo(16, 27);
     ctx.bezierCurveTo(16, 24, 4, 17, 4, 10);
@@ -37,8 +37,8 @@ const createBubbleTexture = () => {
 
     // Draw bubble with gradient
     const gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
-    gradient.addColorStop(0, 'rgba(255, 255, 255, 0.9)');
-    gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.5)');
+    gradient.addColorStop(0, '#60a5fa');
+    gradient.addColorStop(0.5, '#60a5fa');
     gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
     ctx.fillStyle = gradient;
@@ -47,7 +47,7 @@ const createBubbleTexture = () => {
     ctx.fill();
 
     // Shine highlight
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+    ctx.fillStyle = '#60a5fa';
     ctx.beginPath();
     ctx.arc(10, 10, 3, 0, Math.PI * 2);
     ctx.fill();
@@ -148,10 +148,12 @@ function CO2Particles() {
 
 // O2 Particles flowing outward from Earth
 function O2Particles() {
+    // ... (Setup code same as before until fragmentShader)
     const particlesRef = useRef<THREE.Points>(null);
     const count = 150;
 
     const heartTexture = useMemo(() => createHeartTexture(), []);
+    const bubbleTexture = useMemo(() => createBubbleTexture(), []);
 
     const [positions, velocities, opacities] = useMemo(() => {
         const pos = new Float32Array(count * 3);
@@ -169,9 +171,10 @@ function O2Particles() {
             pos[i * 3 + 2] = radius * Math.cos(phi);
 
             // Velocity outward
-            vel[i * 3] = pos[i * 3] * 0.006;
-            vel[i * 3 + 1] = pos[i * 3 + 1] * 0.006;
-            vel[i * 3 + 2] = pos[i * 3 + 2] * 0.006;
+            const speed = 0.006 + Math.random() * 0.002;
+            vel[i * 3] = pos[i * 3] * speed;
+            vel[i * 3 + 1] = pos[i * 3 + 1] * speed;
+            vel[i * 3 + 2] = pos[i * 3 + 2] * speed;
 
             ops[i] = Math.random();
         }
@@ -179,9 +182,17 @@ function O2Particles() {
         return [pos, vel, ops];
     }, []);
 
-    useFrame(() => {
+    const uniforms = useMemo(() => ({
+        uBubbleTex: { value: bubbleTexture },
+        uHeartTex: { value: heartTexture },
+        uSize: { value: 5.0 }, // Adjusted size for shader
+        uTime: { value: 0 }
+    }), [bubbleTexture, heartTexture]);
+
+    useFrame((state) => {
         if (!particlesRef.current) return;
         const positions = particlesRef.current.geometry.attributes.position.array as Float32Array;
+        uniforms.uTime.value = state.clock.elapsedTime;
 
         for (let i = 0; i < count; i++) {
             positions[i * 3] += velocities[i * 3];
@@ -198,20 +209,67 @@ function O2Particles() {
             if (dist > 5) {
                 const theta = Math.random() * Math.PI * 2;
                 const phi = Math.acos(2 * Math.random() - 1);
-                const radius = 1.5 + Math.random() * 0.3;
+                const radius = 1.6 + Math.random() * 0.2; // Start slightly above surface
 
                 positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
                 positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
                 positions[i * 3 + 2] = radius * Math.cos(phi);
 
-                velocities[i * 3] = positions[i * 3] * 0.006;
-                velocities[i * 3 + 1] = positions[i * 3 + 1] * 0.006;
-                velocities[i * 3 + 2] = positions[i * 3 + 2] * 0.006;
+                // Recalculate velocity based on new position
+                const speed = 0.006 + Math.random() * 0.002;
+                velocities[i * 3] = positions[i * 3] * speed;
+                velocities[i * 3 + 1] = positions[i * 3 + 1] * speed;
+                velocities[i * 3 + 2] = positions[i * 3 + 2] * speed;
             }
         }
 
         particlesRef.current.geometry.attributes.position.needsUpdate = true;
     });
+
+    const vertexShader = `
+        uniform float uSize;
+        varying float vDistance;
+        varying float vAlpha;
+        
+        void main() {
+            vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+            vDistance = length(position);
+            
+            // Fade out as they get very far
+            vAlpha = 1.0 - smoothstep(4.0, 5.0, vDistance);
+            
+            gl_PointSize = uSize * (20.0 / -mvPosition.z);
+            gl_Position = projectionMatrix * mvPosition;
+        }
+    `;
+
+    const fragmentShader = `
+        uniform sampler2D uBubbleTex;
+        uniform sampler2D uHeartTex;
+        varying float vDistance;
+        varying float vAlpha;
+
+        void main() {
+            // Transition from bubble to heart
+            // Bubble at surface (1.6) -> start mixing at 2.2 -> full heart at 3.0
+            float t = smoothstep(2.0, 3.2, vDistance);
+            
+            vec4 bubbleColor = texture2D(uBubbleTex, gl_PointCoord);
+            
+            // Flip Y for heart texture to make it upside down
+            vec4 heartColor = texture2D(uHeartTex, vec2(gl_PointCoord.x, 1.0 - gl_PointCoord.y));
+            
+            // Colorize heart to green
+            vec4 greenHeart = heartColor * vec4(0.2, 1.0, 0.4, 1.0);
+            
+            vec4 finalColor = mix(bubbleColor, greenHeart, t);
+            finalColor.a *= vAlpha;
+
+            if (finalColor.a < 0.01) discard;
+            
+            gl_FragColor = finalColor;
+        }
+    `;
 
     return (
         <points ref={particlesRef}>
@@ -225,18 +283,14 @@ function O2Particles() {
                 />
             </bufferGeometry>
 
-            <pointsMaterial
-                size={0.15}
-                color="#11d81bff"
-                map={heartTexture}
+            <shaderMaterial
+                uniforms={uniforms}
+                vertexShader={vertexShader}
+                fragmentShader={fragmentShader}
                 transparent
-                opacity={0.8}
-                alphaTest={0.01}
-                sizeAttenuation
                 depthWrite={false}
+                blending={THREE.AdditiveBlending}
             />
-
-
         </points>
     );
 
