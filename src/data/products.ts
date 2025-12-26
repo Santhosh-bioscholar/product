@@ -9,6 +9,7 @@ export const products: Record<string, ProductData> = {
         themeColor: '#22c55e',
         cssVariable: '--fermbiotic',
         animationType: 'microbiome',
+        bannerImage: '/bleubiotic.png',
         benefitIcons: [
             { id: 'gut', icon: 'Heart', label: 'Gut Health' },
             { id: 'shield', icon: 'Shield', label: 'Immunity' },
@@ -40,7 +41,7 @@ export const products: Record<string, ProductData> = {
             ],
         },
         usage: {
-            title: 'Applications',
+            title: 'Intended Uses',
             subtitle: 'Versatile Gut Support',
             applications: [
                 { id: 'u1', icon: 'Sun', title: 'Daily Wellness', description: 'One capsule daily with food for ongoing gut support.' },
@@ -91,7 +92,7 @@ export const products: Record<string, ProductData> = {
             ],
         },
         usage: {
-            title: 'Applications',
+            title: 'Intended Uses',
             subtitle: 'Purification Protocols',
             applications: [
                 { id: 'u1', icon: 'RefreshCw', title: 'Daily Detox', description: 'Morning ritual for ongoing cellular cleansing.' },
@@ -110,6 +111,7 @@ export const products: Record<string, ProductData> = {
         themeColor: '#14b8a6',
         cssVariable: '--spirotic',
         animationType: 'spiral',
+          bannerImage: '/bleubiotic.png',
         benefitIcons: [
             { id: 'nutrition', icon: 'Apple', label: 'Nutrition' },
             { id: 'protein', icon: 'Dumbbell', label: 'Protein' },
@@ -141,7 +143,7 @@ export const products: Record<string, ProductData> = {
             ],
         },
         usage: {
-            title: 'Applications',
+            title: 'Intended Uses',
             subtitle: 'Versatile Superfood',
             applications: [
                 { id: 'u1', icon: 'Coffee', title: 'Morning Boost', description: 'Add to smoothies for sustained morning energy.' },
@@ -160,6 +162,7 @@ export const products: Record<string, ProductData> = {
         themeColor: '#0ea5e9',
         cssVariable: '--algabiotic',
         animationType: 'ripple',
+          bannerImage: '/bleubiotic.png',
         benefitIcons: [
             { id: 'growth', icon: 'TrendingUp', label: 'Growth' },
             { id: 'yield', icon: 'BarChart3', label: 'Yield' },
@@ -191,7 +194,7 @@ export const products: Record<string, ProductData> = {
             ],
         },
         usage: {
-            title: 'Applications',
+            title: 'Intended Uses',
             subtitle: 'Industry Solutions',
             applications: [
                 { id: 'u1', icon: 'Fish', title: 'Fish Farming', description: 'Accelerate fish growth and improve feed conversion.' },
@@ -210,6 +213,7 @@ export const products: Record<string, ProductData> = {
         themeColor: '#ec4899',
         cssVariable: '--glowbiotic',
         animationType: 'bioluminescence',
+          bannerImage: '/bleubiotic.png',
         benefitIcons: [
             { id: 'glow', icon: 'Sparkles', label: 'Radiance' },
             { id: 'color', icon: 'Palette', label: 'Vitality' },
@@ -241,7 +245,7 @@ export const products: Record<string, ProductData> = {
             ],
         },
         usage: {
-            title: 'Applications',
+            title: 'Intended Uses',
             subtitle: 'Beauty Protocols',
             applications: [
                 { id: 'u1', icon: 'Sun', title: 'Daily Radiance', description: 'Morning capsule for all-day glow.' },

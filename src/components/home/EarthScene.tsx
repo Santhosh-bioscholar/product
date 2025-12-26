@@ -225,16 +225,16 @@ function O2Particles() {
                 />
             </bufferGeometry>
 
-           <pointsMaterial
-  size={0.15}
-  color="#d81111"
-  map={heartTexture}
-  transparent
-  opacity={0.8}
-  alphaTest={0.01}
-  sizeAttenuation
-  depthWrite={false}
-/>
+            <pointsMaterial
+                size={0.15}
+                color="#11d81bff"
+                map={heartTexture}
+                transparent
+                opacity={0.8}
+                alphaTest={0.01}
+                sizeAttenuation
+                depthWrite={false}
+            />
 
 
         </points>

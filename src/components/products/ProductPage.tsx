@@ -44,7 +44,7 @@ export const ProductPage = ({ product }: ProductPageProps) => {
     }, [product]);
 
     return (
-        <div className="min-h-screen bg-background relative">
+        <div className="min-h-screen bg-background relative ">
             {/* Noise overlay */}
             <div className="noise-overlay" />
 
@@ -76,7 +76,7 @@ export const ProductPage = ({ product }: ProductPageProps) => {
             {/* <ProcessFlowSection /> */}
 
             {/* Divider 4 */}
-            <SectionDivider type={product.dividers[3]} />
+            {/* <SectionDivider type={product.dividers[3]} /> */}
 
             {/* Usage & Applications Section */}
             <UsageSection product={product} />
