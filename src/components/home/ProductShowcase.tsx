@@ -5,17 +5,18 @@ import { productsRaw } from '@/data/products';
 import Link from 'next/link';
 import { ArrowRight, Zap } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import { Navigation, Pagination, Mousewheel, Keyboard, EffectFade, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 export function ProductShowcase() {
     return (
         <div className="relative bg-[#131313] py-20">
             <Swiper
-                cssMode={true}
+                effect={'fade'}
                 navigation={true}
                 pagination={true}
                 mousewheel={{
@@ -23,12 +24,16 @@ export function ProductShowcase() {
                     forceToAxis: true,
                 }}
                 keyboard={true}
-                modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
+                modules={[Navigation, Pagination, Mousewheel, Keyboard, EffectFade, Autoplay]}
                 className="mySwiper w-full h-full"
             >
                 {productsRaw.map((product) => (
-                    <SwiperSlide key={product.id}>
-                        <div className="w-full h-full flex items-center justify-center px-8 md:px-32 py-10">
+                    <SwiperSlide key={product.id} className='bg-[#131313] '>
+                        <div className="w-full h-full flex items-center justify-center px-8 md:px-32 py-32">
                             <div className="container mx-auto max-w-7xl">
                                 {/* Layout Grid */}
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center w-full">

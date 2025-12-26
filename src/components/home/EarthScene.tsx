@@ -6,10 +6,62 @@ import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 import { TextureLoader } from 'three';
 
+// Helper to create heart texture
+const createHeartTexture = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 32;
+    canvas.height = 32;
+    const ctx = canvas.getContext('2d')!;
+
+    // Draw heart - refined shape
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.moveTo(16, 27);
+    ctx.bezierCurveTo(16, 24, 4, 17, 4, 10);
+    ctx.bezierCurveTo(4, 4, 11, 4, 16, 9);
+    ctx.bezierCurveTo(21, 4, 28, 4, 28, 10);
+    ctx.bezierCurveTo(28, 17, 16, 24, 16, 27);
+    ctx.fill();
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.premultiplyAlpha = true;
+    return texture;
+};
+
+// Helper to create bubble texture
+const createBubbleTexture = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 32;
+    canvas.height = 32;
+    const ctx = canvas.getContext('2d')!;
+
+    // Draw bubble with gradient
+    const gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+    gradient.addColorStop(0, 'rgba(255, 255, 255, 0.9)');
+    gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.5)');
+    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(16, 16, 16, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Shine highlight
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+    ctx.beginPath();
+    ctx.arc(10, 10, 3, 0, Math.PI * 2);
+    ctx.fill();
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.premultiplyAlpha = true;
+    return texture;
+};
+
 // CO2 Particles flowing toward Earth
 function CO2Particles() {
     const particlesRef = useRef<THREE.Points>(null);
     const count = 200;
+    const bubbleTexture = useMemo(() => createBubbleTexture(), []);
 
     const [positions, velocities] = useMemo(() => {
         const pos = new Float32Array(count * 3);
@@ -68,26 +120,29 @@ function CO2Particles() {
         particlesRef.current.geometry.attributes.position.needsUpdate = true;
     });
 
- return (
-  <points ref={particlesRef}>
-    <bufferGeometry>
-      <bufferAttribute
-        attach="attributes-position"
-        count={count}
-        array={positions}
-        itemSize={3}
-        args={[positions, 3]}
-      />
-    </bufferGeometry>
-    <pointsMaterial
-      size={0.04}
-      color="#ef4444"   // red
-      transparent
-      opacity={0.6}
-      sizeAttenuation
-    />
-  </points>
-);
+    return (
+        <points ref={particlesRef}>
+            <bufferGeometry>
+                <bufferAttribute
+                    attach="attributes-position"
+                    count={count}
+                    array={positions}
+                    itemSize={3}
+                    args={[positions, 3]}
+                />
+            </bufferGeometry>
+            <pointsMaterial
+                size={0.08}
+                color="#60a5fa"   // bubble blue
+                transparent
+                opacity={0.6}
+                map={bubbleTexture}
+                alphaTest={0.01}
+                sizeAttenuation
+                depthWrite={false}
+            />
+        </points>
+    );
 
 }
 
@@ -95,6 +150,8 @@ function CO2Particles() {
 function O2Particles() {
     const particlesRef = useRef<THREE.Points>(null);
     const count = 150;
+
+    const heartTexture = useMemo(() => createHeartTexture(), []);
 
     const [positions, velocities, opacities] = useMemo(() => {
         const pos = new Float32Array(count * 3);
@@ -156,37 +213,32 @@ function O2Particles() {
         particlesRef.current.geometry.attributes.position.needsUpdate = true;
     });
 
-   return (
-  <points ref={particlesRef}>
-    <bufferGeometry>
-      <bufferAttribute
-        attach="attributes-position"
-        count={count}
-        array={positions}
-        itemSize={3}
-        args={[positions, 3]}
-      />
-    </bufferGeometry>
+    return (
+        <points ref={particlesRef}>
+            <bufferGeometry>
+                <bufferAttribute
+                    attach="attributes-position"
+                    count={count}
+                    array={positions}
+                    itemSize={3}
+                    args={[positions, 3]}
+                />
+            </bufferGeometry>
 
-    <pointsMaterial
-      size={0.06}
-      color="#22c55e" // green
-      transparent
-      opacity={0.8}
-      sizeAttenuation
-      onBeforeCompile={(shader) => {
-        shader.fragmentShader = shader.fragmentShader.replace(
-          `#include <output_fragment>`,
-          `
-            float d = length(gl_PointCoord - vec2(0.5));
-            if (d > 0.5) discard;
-            #include <output_fragment>
-          `
-        );
-      }}
-    />
-  </points>
-);
+           <pointsMaterial
+  size={0.15}
+  color="#d81111"
+  map={heartTexture}
+  transparent
+  opacity={0.8}
+  alphaTest={0.01}
+  sizeAttenuation
+  depthWrite={false}
+/>
+
+
+        </points>
+    );
 
 }
 
@@ -213,13 +265,13 @@ function Earth() {
         <group>
             {/* Earth */}
             <mesh ref={earthRef}>
-                <sphereGeometry args={[1.5, 64, 64]} />
+                <sphereGeometry args={[1.2, 64, 64]} />
                 <meshPhongMaterial map={earthTexture} />
             </mesh>
 
             {/* Atmosphere */}
             <mesh ref={atmosphereRef} scale={1.05}>
-                <sphereGeometry args={[1.5, 64, 64]} />
+                <sphereGeometry args={[1.0, 64, 64]} />
                 <meshPhongMaterial
                     color="#00aaff"
                     transparent

@@ -59,7 +59,7 @@ export default function ProductsPage() {
                 products={animalfoodProducts}
                 align="right"
             />
-            <ProductSustainability />
+            {/* <ProductSustainability /> */}
         </div>
     );
 }

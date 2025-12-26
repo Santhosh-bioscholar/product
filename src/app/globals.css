@@ -890,3 +890,16 @@
 .process-arrow-glow:hover {
   filter: drop-shadow(0 0 16px hsl(var(--primary) / 0.8));
 }
+/* Hide arrows by default (mobile) */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+/* Show arrows on desktop */
+@media (min-width: 800px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex !important;
+  }
+}

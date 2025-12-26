@@ -413,7 +413,7 @@ const FlowArrow = ({ isActive, delay = 0 }: { isActive: boolean; delay?: number 
                         cx: [0, 30, 55],
                     } : { opacity: 0 }}
                     transition={{
-                        duration: 1.5,
+                        duration: 2.5,
                         repeat: Infinity,
                         delay: delay + 0.5,
                         repeatDelay: 2
@@ -526,6 +526,9 @@ export const EvolutionHealthyFuture = () => {
 
         const animateSequence = () => {
             let step = 0;
+            // Execute first step immediately
+            setActiveStep(step);
+            step++;
 
             animationRef.current.interval = setInterval(() => {
                 setActiveStep(step);
@@ -545,13 +548,14 @@ export const EvolutionHealthyFuture = () => {
                         animationRef.current.resetTimeout = setTimeout(() => {
                             setIsLooping(false);
                             animateSequence();
-                        }, 800);
-                    }, 3000);
+                        }, 0);
+                    }, 9000);
                 }
-            }, shouldReduceMotion ? 100 : 1200);
+            }, shouldReduceMotion ? 0 : 1200);
         };
 
-        animationRef.current.initialTimeout = setTimeout(animateSequence, 500);
+        // Start immediately
+        animateSequence();
 
         return () => {
             clearAllTimeouts();
@@ -616,7 +620,7 @@ export const EvolutionHealthyFuture = () => {
                 className="relative flex items-center justify-center gap-2 md:gap-4 px-6 max-w-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isLooping ? 0.3 : 1 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.1 }}
             >
                 {evolutionSteps.map((step, index) => (
                     <div key={step.id} className="flex items-center">
@@ -628,7 +632,7 @@ export const EvolutionHealthyFuture = () => {
                         {index < evolutionSteps.length - 1 && (
                             <FlowArrow
                                 isActive={activeStep >= index}
-                                delay={index * 0.15}
+                                delay={index * 0.10}
                             />
                         )}
                     </div>

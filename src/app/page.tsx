@@ -3,6 +3,7 @@ import { CompanyOverview } from "@/components/home/CompanyOverview";
 import { ProductShowcase } from "@/components/home/ProductShowcase";
 import { Sustainability } from "@/components/home/Sustainability";
 import { Oxygenation } from "@/components/home/Oxygenation";
+import { ConversationStarter } from "@/components/home/ConversationStarter";
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       {/* <CompanyOverview /> */}
       <ProductShowcase />
       <Sustainability />
+      <ConversationStarter />
     </div>
   );
 }

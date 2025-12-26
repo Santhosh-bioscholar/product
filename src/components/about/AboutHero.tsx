@@ -25,7 +25,7 @@ export function AboutHero() {
             />
             <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 {/* Left Content */}
-                <div className="relative h-[600px] w-full flex items-center justify-center -mr-0 md:-mr-20 lg:-mr-32 order-1 lg:order-1">
+                <div className="relative h-full w-full ">
                     {/* <EarthAnimation /> */}
                     <EarthScene />
                 </div>

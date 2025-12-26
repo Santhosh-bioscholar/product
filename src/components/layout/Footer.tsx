@@ -25,17 +25,26 @@ export function Footer() {
                 </svg>
             </div>
 
-            <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-12">
                 {/* Brand Column */}
                 <div className="flex flex-col gap-4">
-                    <Link href="/" className="text-2xl font-bold tracking-widest flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0FA57D] to-[#0AB3A3]" />
-                        AROORA
+                    <Link href="/" className="text-2xl px-[60px] font-bold tracking-widest flex items-center ">
+                        {/* <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0FA57D] to-[#0AB3A3]" /> */}
+                <img src='../images (3).png' className="w-[80px] " />
+                        
                     </Link>
                     <p className="text-sm text-gray-400 leading-relaxed">
                         Pioneering sustainable biotech solutions for a cleaner, healthier future.
                         Harnessing the power of algae and nature's intelligence.
                     </p>
+                     <div className="flex items-center gap-3">
+                            <Phone className="w-5 h-5 text-[#0FA57D] shrink-0" />
+                            <span>+91 98765 43210</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <Mail className="w-5 h-5 text-[#0FA57D] shrink-0" />
+                            <span>info@aroorabiotech.com</span>
+                        </div>
                 </div>
 
                 {/* Quick Links */}
@@ -54,8 +63,50 @@ export function Footer() {
                     </nav>
                 </div>
 
+                   <div className="flex flex-col gap-4">
+                    <h3 className="text-lg font-bold text-[#0FA57D]">Support</h3>
+                    <nav className="flex flex-col gap-2">
+                        {["Documentation", "Help center", "privacy", "terms"].map((item) => (
+                            <Link
+                                key={item}
+                                href={`/${item.toLowerCase()}`}
+                                className="text-sm text-gray-300 hover:text-white transition-colors w-fit"
+                            >
+                                {item}
+                            </Link>
+                        ))}
+                    </nav>
+                </div>
+                 <div className="flex flex-col gap-4">
+                    <h3 className="text-lg font-bold text-[#0FA57D]">Our Products</h3>
+                    <nav className="flex flex-col gap-2">
+                        {["fermbiotic", "bleubiotic", "spirotic", "algabiotic","glowbiotic"].map((item) => (
+                            <Link
+                                key={item}
+                                href={`/${item.toLowerCase()}`}
+                                className="text-sm text-gray-300 hover:text-white transition-colors w-fit"
+                            >
+                                {item}
+                            </Link>
+                        ))}
+                    </nav>
+                </div>
+                 <div className="flex flex-col gap-4">
+                    <h3 className="text-lg font-bold text-[#0FA57D]">Our Products</h3>
+                    <nav className="flex flex-col gap-2">
+                        {["fermbiotic", "bleubiotic", "spirotic", "algabiotic","glowbiotic"].map((item) => (
+                            <Link
+                                key={item}
+                                href={`/${item.toLowerCase()}`}
+                                className="text-sm text-gray-300 hover:text-white transition-colors w-fit"
+                            >
+                                {item}
+                            </Link>
+                        ))}
+                    </nav>
+                </div>
                 {/* Contact Info */}
-                <div className="flex flex-col gap-4">
+                {/* <div className="flex flex-col gap-4">
                     <h3 className="text-lg font-bold text-[#0FA57D]">Contact Us</h3>
                     <div className="flex flex-col gap-3 text-sm text-gray-300">
                         <div className="flex items-start gap-3">
@@ -71,10 +122,10 @@ export function Footer() {
                             <span>info@aroorabiotech.com</span>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Newsletter / Social */}
-                <div className="flex flex-col gap-4">
+                 {/* <div className="flex flex-col gap-4">
                     <h3 className="text-lg font-bold text-[#0FA57D]">Stay Updated</h3>
                     <div className="flex gap-4">
                         <a href="#" className="bg-white/10 p-2 rounded-full hover:bg-[#0FA57D] transition-colors">
@@ -90,8 +141,8 @@ export function Footer() {
                             <Instagram className="w-5 h-5" />
                         </a>
                     </div>
-                </div>
-            </div>
+                </div> */}
+            </div> 
 
             <div className="relative max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
                 <p>© {new Date().getFullYear()} Aroora Biotech Pvt. Ltd. All rights reserved.</p>

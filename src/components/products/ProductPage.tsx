@@ -7,6 +7,7 @@ import BenefitsSection from './BenefitsSection';
 import HowItWorksSection from './HowItWorksSection';
 import UsageSection from './UsageSection';
 import SectionDivider from './SectionDivider';
+import ProcessFlowSection from './ProcessFlowSection';
 // import ProcessFlowSection from './ProcessFlowSection';
 
 interface ProductPageProps {
@@ -54,19 +55,19 @@ export const ProductPage = ({ product }: ProductPageProps) => {
             <HeroSection product={product} />
 
             {/* Divider 1 */}
-            <SectionDivider type={product.dividers[0]} />
+            {/* <SectionDivider type={product.dividers[0]} /> */}
 
             {/* Overview Section */}
             <OverviewSection product={product} />
 
             {/* Divider 2 */}
-            <SectionDivider type={product.dividers[1]} />
+            {/* <SectionDivider type={product.dividers[1]} /> */}
 
             {/* Benefits Section */}
-            <BenefitsSection product={product} />
+            {/* <BenefitsSection product={product} /> */}
 
             {/* Divider 3 */}
-            <SectionDivider type={product.dividers[2]} />
+            {/* <SectionDivider type={product.dividers[2]} /> */}
 
             {/* How It Works Section */}
             <HowItWorksSection product={product} />
