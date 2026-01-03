@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { ProductData } from '@/types/product';
-import { scrollReveal, staggerContainer, staggerItem } from '@/lib/animations';
-import GlassmorphismCard from './GlassmorphismCard';
+import { staggerContainer, staggerItem } from '@/lib/animations';
+import OverviewBenefitsDiagram from './OverviewBenefitsDiagram';
 
 interface OverviewSectionProps {
     product: ProductData;
@@ -10,7 +10,7 @@ interface OverviewSectionProps {
 
 export const OverviewSection = ({ product }: OverviewSectionProps) => {
     return (
-        <section className="relative py-32 overflow-hidden">
+        <section className="relative py-20 overflow-hidden">
             {/* Background */}
             <div
                 className="absolute inset-0"
@@ -25,7 +25,7 @@ export const OverviewSection = ({ product }: OverviewSectionProps) => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: '-100px' }}
-                    className="grid lg:grid-cols-2 gap-16 items-center"
+                    className="grid lg:grid-cols-2 gap-8 items-center"
                 >
                     {/* Left content */}
                     <div className="space-y-8">
@@ -73,61 +73,9 @@ export const OverviewSection = ({ product }: OverviewSectionProps) => {
                     </div>
 
                     {/* Right visual */}
-                    <motion.div
-                        variants={scrollReveal}
-                        className="relative"
-                    >
-                        <GlassmorphismCard className="p-8" glow>
-                            {/* Stats grid */}
-                            <div className="grid grid-cols-2 gap-6">
-                                {product.overview.highlights.map((highlight, index) => (
-                                    <motion.div
-                                        key={index}
-                                        className="text-center p-4"
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.2 + index * 0.1 }}
-                                    >
-                                        <motion.div
-                                            className="text-3xl font-bold text-gradient-primary mb-2"
-                                            animate={{
-                                                textShadow: [
-                                                    '0 0 20px hsl(var(--primary) / 0.5)',
-                                                    '0 0 40px hsl(var(--primary) / 0.8)',
-                                                    '0 0 20px hsl(var(--primary) / 0.5)',
-                                                ],
-                                            }}
-                                            transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
-                                        >
-                                            {highlight.match(/^\d+/) || '✓'}
-                                        </motion.div>
-                                        <div className="text-sm text-muted-foreground">
-                                            {highlight.replace(/^\d+\s*/, '')}
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-
-                            {/* Decorative elements */}
-                            <motion.div
-                                className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-primary/10 blur-2xl"
-                                animate={{
-                                    scale: [1, 1.2, 1],
-                                    opacity: [0.3, 0.5, 0.3],
-                                }}
-                                transition={{ duration: 4, repeat: Infinity }}
-                            />
-                            <motion.div
-                                className="absolute -bottom-4 -left-4 w-32 h-32 rounded-full bg-primary/10 blur-3xl"
-                                animate={{
-                                    scale: [1, 1.3, 1],
-                                    opacity: [0.2, 0.4, 0.2],
-                                }}
-                                transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-                            />
-                        </GlassmorphismCard>
-                    </motion.div>
+                    <div className="relative flex justify-center lg:justify-center">
+                        <OverviewBenefitsDiagram benefits={product.benefits} productName={product.name} />
+                    </div>
                 </motion.div>
             </div>
         </section>

@@ -29,8 +29,6 @@ const navItems = [
         dropdown: [
             { title: "ABOUT US", href: "/about" },
             { title: "GLOBAL IMPACT", href: "/global-impact" },
-            { title: "NEWS & UPDATE", href: "/news" },
-            { title: "PUBLICATIONS", href: "/publications" },
         ],
     },
      {

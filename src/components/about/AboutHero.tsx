@@ -28,6 +28,8 @@ export function AboutHero() {
                 <div className="relative h-full w-full ">
                     {/* <EarthAnimation /> */}
                     <EarthScene />
+                    {/* <img src='./earth.png'/> */}
+                    {/* <img src='./123.png'/> */}
                 </div>
 
 

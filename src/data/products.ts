@@ -37,7 +37,7 @@ export const products: Record<string, ProductData> = {
                 { id: 's1', step: 1, icon: 'Pill', title: 'Targeted Delivery', description: 'pH-resistant capsules ensure probiotics reach your intestines intact.' },
                 { id: 's2', step: 2, icon: 'Microscope', title: 'Colony Formation', description: 'Beneficial bacteria establish colonies along your intestinal wall.' },
                 { id: 's3', step: 3, icon: 'Workflow', title: 'Ecosystem Balance', description: 'Harmful bacteria are displaced as your microbiome rebalances.' },
-                { id: 's4', step: 4, icon: 'Sparkles', title: 'Systemic Benefits', description: 'Experience improved digestion, immunity, and overall wellness.' },
+             { id: 's4', step: 4, icon: 'Sparkles', title: 'Systemic Benefits', description: 'Experience improved digestion, immunity, and overall wellness.' },
             ],
         },
         usage: {

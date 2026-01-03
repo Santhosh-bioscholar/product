@@ -82,44 +82,11 @@ export function Sustainability() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-gray-400 text-lg md:text-xl font-light leading-relaxed"
                     >
-                        From environmental challenge to lasting solution — our algae-based biotechnology transforms pollution into clean energy for future generations.
-                    </motion.p>
+                  We are committed to producing and marketing safe, high-quality products, with truthful, transparent, and non-misleading labeling and advertising.  </motion.p>
                 </div>
 
                 {/* Main Steps Row */}
-                <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-0 relative">
-
-                    {steps.map((step, index) => (
-                        <React.Fragment key={step.id}>
-                            <StepCard step={step} index={index} />
-
-                            {/* Desktop Spacer / Arrow */}
-                            {index < steps.length - 1 && (
-                                <div className="hidden lg:flex flex-1 items-center justify-center -mt-10 px-4">
-                                    <AnimatedArrow
-                                        fromColor={step.hexColor}
-                                        toColor={steps[index + 1].hexColor}
-                                        delay={index * 0.5}
-                                    />
-                                </div>
-                            )}
-
-                            {/* Mobile Spacer / Arrow */}
-                            {index < steps.length - 1 && (
-                                <div className="lg:hidden w-full flex justify-center py-4 opacity-80">
-                                    <div className="rotate-90">
-                                        <AnimatedArrow
-                                            fromColor={step.hexColor}
-                                            toColor={steps[index + 1].hexColor}
-                                            delay={index * 0.5}
-                                        />
-                                    </div>
-                                </div>
-                            )}
-                        </React.Fragment>
-                    ))}
-
-                </div>
+               <img src="./1.jpeg" />
             </div>
         </section>
     );

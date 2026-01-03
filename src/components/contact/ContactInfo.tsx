@@ -1,7 +1,8 @@
 "use client";
 
 import { FadeIn } from "../animations/FadeIn";
-import { MapPin, Mail, Phone, Clock } from "lucide-react";
+import { MapPin, Mail, Phone } from "lucide-react";
+import { ContactImpactGraph } from "./ContactImpactGraph";
 
 export function ContactInfo() {
     return (
@@ -47,13 +48,6 @@ export function ContactInfo() {
                 </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="w-full h-64 bg-white/5 rounded-2xl border border-white/10 overflow-hidden relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0A2540] to-[#0A2540]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-white/30 font-bold group-hover:text-white/50 transition-colors">Interactive Map Integration</p>
-                </div>
-            </div>
         </FadeIn>
     );
 }

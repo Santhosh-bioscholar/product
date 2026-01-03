@@ -17,28 +17,28 @@ export const TimelineConnector = ({ progress, fromColor, toColor }: TimelineConn
     const to = colorMap[toColor];
 
     return (
-        <div className="relative h-20 md:h-28 flex items-center justify-center">
-            {/* Vertical line */}
-            <div className="relative w-0.5 h-full bg-white/10 rounded-full overflow-hidden">
+        <div className="relative w-24 md:w-32 flex items-center justify-center">
+            {/* Horizontal line */}
+            <div className="relative h-0.5 w-full bg-white/10 rounded-full overflow-hidden">
                 {/* Progress fill */}
                 <motion.div
-                    className="absolute top-0 left-0 w-full rounded-full"
+                    className="absolute top-0 left-0 h-full rounded-full"
                     style={{
-                        background: `linear-gradient(to bottom, ${from}, ${to})`,
+                        background: `linear-gradient(to right, ${from}, ${to})`,
                     }}
-                    initial={{ height: "0%" }}
-                    animate={{ height: `${progress * 100}%` }}
+                    initial={{ width: "0%" }}
+                    animate={{ width: `${progress * 100}%` }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                 />
 
                 {/* Glow effect */}
                 {progress > 0 && (
                     <motion.div
-                        className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full"
+                        className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full"
                         style={{
                             background: to,
                             boxShadow: `0 0 12px ${to}, 0 0 24px ${to}`,
-                            top: `${progress * 100}%`,
+                            left: `${progress * 100}%`,
                         }}
                         animate={{
                             opacity: [0.6, 1, 0.6],
@@ -58,12 +58,12 @@ export const TimelineConnector = ({ progress, fromColor, toColor }: TimelineConn
                             className="absolute w-1.5 h-1.5 rounded-full"
                             style={{
                                 background: to,
-                                left: "50%",
-                                marginLeft: -3,
+                                top: "50%",
+                                marginTop: -3,
                             }}
-                            initial={{ top: "0%", opacity: 0 }}
+                            initial={{ left: "0%", opacity: 0 }}
                             animate={{
-                                top: ["0%", "100%"],
+                                left: ["0%", "100%"],
                                 opacity: [0, 0.8, 0],
                             }}
                             transition={{
@@ -79,8 +79,9 @@ export const TimelineConnector = ({ progress, fromColor, toColor }: TimelineConn
 
             {/* Arrow indicator */}
             <motion.svg
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1 w-4 h-4"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-4 h-4"
                 viewBox="0 0 16 16"
+                style={{ rotate: -90 }}
                 initial={{ opacity: 0.3 }}
                 animate={{ opacity: progress > 0.5 ? 1 : 0.3 }}
             >

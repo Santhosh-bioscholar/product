@@ -6,7 +6,7 @@ import { ContentBlock } from "./oxygenation/ContentBlock";
 
 export function Oxygenation() {
     return (
-        <section className="relative pb-12 min-h-[80vh] w-full overflow-hidden bg-[#131313]">
+        <section className="relative pb-12 mt-12 min-h-[80vh] w-full overflow-hidden bg-[#131313]">
 
             {/* Content container */}
             <div className="relative z-10 container mx-auto px-5 py-16 md:py-2">
@@ -19,7 +19,8 @@ export function Oxygenation() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <TimelineAnimation />
+                        <img src="./43.png" className="h-[720px]"/>
+                        
                     </motion.div>
 
                     {/* Right: Content Block */}
@@ -31,12 +32,13 @@ export function Oxygenation() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         <ContentBlock />
+                        <TimelineAnimation />
                     </motion.div>
                 </div>
             </div>
 
             {/* Bottom decorative line */}
-            <motion.div
+            {/* <motion.div
                 className="absolute bottom-0 left-0 right-0 h-px"
                 style={{
                     background: "linear-gradient(90deg, transparent 0%, hsl(175 70% 50% / 0.3) 50%, transparent 100%)",
@@ -45,7 +47,7 @@ export function Oxygenation() {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, delay: 0.5 }}
-            />
+            /> */}
         </section>
     );
 }

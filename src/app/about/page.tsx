@@ -3,6 +3,7 @@ import { OurPurpose } from "@/components/about/OurPurpose";
 import { SustainabilityValues } from "@/components/about/SustainabilityValues";
 import { GlobalPresence } from "@/components/about/GlobalPresence";
 import { EvolutionHealthyFuture } from "@/components/about/EvolutionHealthyFuture";
+import { QuoteSection } from "@/components/about/QuoteSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,8 +17,9 @@ export default function AboutPage() {
             <AboutHero />
             <OurPurpose />
             <SustainabilityValues />
-            <EvolutionHealthyFuture />
-            <GlobalPresence />
+            {/* <EvolutionHealthyFuture /> */}
+            {/* <GlobalPresence /> */}
+            <QuoteSection />
         </div>
     );
 }

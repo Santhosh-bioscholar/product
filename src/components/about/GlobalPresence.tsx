@@ -56,7 +56,7 @@ export const ImpactWithoutBordersSection = () => {
     return (
         <section
             ref={sectionRef}
-            className="min-h-screen gradient-biotech  overflow-hidden"
+            className="min-h-screen gradient-biotech  overflow-hidden "
         >
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="">
@@ -73,7 +73,7 @@ export const ImpactWithoutBordersSection = () => {
                 animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
                 transition={{ duration: 0.8 }}
             > <motion.p
-          className="text-primary text-sm tracking-[0.3em] uppercase font-display mb-6 "
+          className="text-primary text-sm tracking-[0.3em] uppercase font-display mb-6 pt-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

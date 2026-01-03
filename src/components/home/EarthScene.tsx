@@ -7,21 +7,101 @@ import * as THREE from 'three';
 import { TextureLoader } from 'three';
 
 // Helper to create heart texture
+// Helper to create heart texture
 const createHeartTexture = () => {
     const canvas = document.createElement('canvas');
-    canvas.width = 32;
-    canvas.height = 32;
+    canvas.width = 64;
+    canvas.height = 64;
     const ctx = canvas.getContext('2d')!;
 
     // Draw heart - refined shape (Upright: Tip Down)
-    ctx.fillStyle = '#60a5fa';
+    ctx.fillStyle = '#00ff00';
     ctx.beginPath();
-    ctx.moveTo(16, 27);
-    ctx.bezierCurveTo(16, 24, 4, 17, 4, 10);
-    ctx.bezierCurveTo(4, 4, 11, 4, 16, 9);
-    ctx.bezierCurveTo(21, 4, 28, 4, 28, 10);
-    ctx.bezierCurveTo(28, 17, 16, 24, 16, 27);
+    ctx.moveTo(32, 54);
+    ctx.bezierCurveTo(32, 48, 8, 34, 8, 20);
+    ctx.bezierCurveTo(8, 8, 22, 8, 32, 18);
+    ctx.bezierCurveTo(42, 8, 56, 8, 56, 20);
+    ctx.bezierCurveTo(56, 34, 32, 48, 32, 54);
     ctx.fill();
+
+    // Draw Text
+    ctx.fillStyle = '#130101ff';
+    ctx.font = 'bold 24px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('O₂', 32, 30); // Centered slightly higher for heart shape
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.premultiplyAlpha = true;
+    return texture;
+};
+
+// Helper to create CO2 bubble texture
+const createCO2BubbleTexture = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 64;
+    canvas.height = 64;
+    const ctx = canvas.getContext('2d')!;
+
+    // Draw bubble with gradient
+    const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    gradient.addColorStop(0, '#ff0000');
+    gradient.addColorStop(0.5, '#ff0000');
+    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(32, 32, 32, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Shine highlight
+    ctx.fillStyle = '#ff0000';
+    ctx.beginPath();
+    ctx.arc(20, 20, 6, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Draw Text
+    ctx.fillStyle = '#130101ff';
+    ctx.font = 'bold 24px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('CO₂', 32, 32);
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.premultiplyAlpha = true;
+    return texture;
+};
+
+// Helper to create O2 bubble texture
+const createO2BubbleTexture = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 64;
+    canvas.height = 64;
+    const ctx = canvas.getContext('2d')!;
+
+    // Draw bubble with gradient
+    const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    gradient.addColorStop(0, '#00ff00');
+    gradient.addColorStop(0.5, '#00ff00');
+    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(32, 32, 32, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Shine highlight
+    ctx.fillStyle = '#00ff00';
+    ctx.beginPath();
+    ctx.arc(20, 20, 6, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Draw Text
+    ctx.fillStyle = '#130101ff';
+    ctx.font = 'bold 24px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('O₂', 32, 32);
 
     const texture = new THREE.CanvasTexture(canvas);
     texture.premultiplyAlpha = true;
@@ -37,8 +117,8 @@ const createBubbleTexture = () => {
 
     // Draw bubble with gradient
     const gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
-    gradient.addColorStop(0, '#60a5fa');
-    gradient.addColorStop(0.5, '#60a5fa');
+    gradient.addColorStop(0, '#ff0000');
+    gradient.addColorStop(0.5, '#ff0000');
     gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
     ctx.fillStyle = gradient;
@@ -47,7 +127,7 @@ const createBubbleTexture = () => {
     ctx.fill();
 
     // Shine highlight
-    ctx.fillStyle = '#60a5fa';
+    ctx.fillStyle = '#ff0000';
     ctx.beginPath();
     ctx.arc(10, 10, 3, 0, Math.PI * 2);
     ctx.fill();
@@ -61,7 +141,8 @@ const createBubbleTexture = () => {
 function CO2Particles() {
     const particlesRef = useRef<THREE.Points>(null);
     const count = 200;
-    const bubbleTexture = useMemo(() => createBubbleTexture(), []);
+    const bubbleTexture = useMemo(() => createCO2BubbleTexture(), []);
+
 
     const [positions, velocities] = useMemo(() => {
         const pos = new Float32Array(count * 3);
@@ -133,7 +214,7 @@ function CO2Particles() {
             </bufferGeometry>
             <pointsMaterial
                 size={0.08}
-                color="#60a5fa"   // bubble blue
+                color="#ff0000"   // bubble blue
                 transparent
                 opacity={0.6}
                 map={bubbleTexture}
@@ -153,7 +234,7 @@ function O2Particles() {
     const count = 150;
 
     const heartTexture = useMemo(() => createHeartTexture(), []);
-    const bubbleTexture = useMemo(() => createBubbleTexture(), []);
+    const bubbleTexture = useMemo(() => createO2BubbleTexture(), []);
 
     const [positions, velocities, opacities] = useMemo(() => {
         const pos = new Float32Array(count * 3);
@@ -259,8 +340,9 @@ function O2Particles() {
             // Flip Y for heart texture to make it upside down
             vec4 heartColor = texture2D(uHeartTex, vec2(gl_PointCoord.x, 1.0 - gl_PointCoord.y));
             
+            
             // Colorize heart to green
-            vec4 greenHeart = heartColor * vec4(0.2, 1.0, 0.4, 1.0);
+            vec4 greenHeart = heartColor;
             
             vec4 finalColor = mix(bubbleColor, greenHeart, t);
             finalColor.a *= vAlpha;
@@ -342,7 +424,7 @@ function Scene() {
         <>
             <ambientLight intensity={0.2} />
             <directionalLight position={[5, 3, 5]} intensity={1} />
-            <pointLight position={[-10, -10, -10]} intensity={0.3} color="#60a5fa" />
+            <pointLight position={[-10, -10, -10]} intensity={0.3} color="#ff0000" />
 
             <Stars
                 radius={100}

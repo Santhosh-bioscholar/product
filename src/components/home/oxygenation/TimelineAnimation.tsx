@@ -33,9 +33,9 @@ export const TimelineAnimation = () => {
     };
 
     return (
-        <div ref={containerRef} className="relative flex flex-col items-center py-8">
+        <div ref={containerRef} className="relative inline-flex flex-col items-center py-20 mx-auto">
             {/* Stage indicators */}
-            <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between py-12 md:py-16">
+            <div className="absolute top-0 left-0 right-0 flex flex-row justify-between pt-8 px-2">
                 {["01", "02", "03"].map((num, i) => (
                     <motion.span
                         key={num}
@@ -58,9 +58,9 @@ export const TimelineAnimation = () => {
 
             {/* Timeline */}
             <motion.div
-                className="flex flex-col items-center gap-0"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                className="flex flex-row items-center gap-0"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.8 }}
             >
                 {/* Stage 1: Ancient Earth */}
@@ -107,14 +107,14 @@ export const TimelineAnimation = () => {
 
             {/* Era labels */}
             <motion.div
-                className="absolute right-0 top-0 bottom-0 flex flex-col justify-between py-12 md:py-16 text-right"
+                className="absolute bottom-0 left-0 right-0 flex flex-row justify-between pb-8 text-xs px-2"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: 1 }}
             >
-                <span className="text-[10px] text-gray-500">~4.5 Billion Years Ago</span>
-                <span className="text-[10px] text-gray-500">~2.4 Billion Years Ago</span>
-                <span className="text-[10px] text-gray-500">Present Day</span>
+                <span className="text-[10px] text-gray-500 text-left w-20">~4.5 BYA</span>
+                <span className="text-[10px] text-gray-500 text-center w-20">~2.4 BYA</span>
+                <span className="text-[10px] text-gray-500 text-right w-20">Present Day</span>
             </motion.div>
         </div>
     );
