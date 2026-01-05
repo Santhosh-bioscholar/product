@@ -229,7 +229,7 @@ const TiltCard = ({ children, className }: { children: React.ReactNode; classNam
 export const FeaturesSection = () => {
     
     return (
-        <section className="relative min-h-screen w-full bg-features-bg py-20 px-6 overflow-hidden flex items-center">
+        <section className="relative min-h-screen w-full  py-20 px-6 overflow-hidden flex items-center">
             <div className="max-w-6xl mx-auto w-full relative">
                 <div className="flex flex-col lg:flex-row items-center justify-between relative z-10 gap-8 lg:gap-0">
                     {/* Left side - Logo in white card */}
@@ -239,20 +239,14 @@ export const FeaturesSection = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="bg-white rounded-xl p-6 shadow-2xl w-64 h-48 flex items-center justify-center relative"
+                            className=" p-6 shadow-2xl w-64 h-48 flex items-center justify-center relative"
                         >
                             {/* Logo Placeholder / Image */}
                             <div className="w-full h-full flex items-center justify-center">
                                 <img
-                                    src="./logo.png"
-                                    alt="Logo"
+                                    src="./gradiend-color-logo.svg"
+                                   
                                     className="w-full h-full object-contain"
-                                    onError={(e) => {
-                                        // Fallback if image fails
-                                        e.currentTarget.style.display = 'none';
-                                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                                        e.currentTarget.nextElementSibling!.classList.add('flex');
-                                    }}
                                 />
                                 <div className="hidden flex-col items-center">
                                     <span className="text-3xl font-bold text-black tracking-tighter">LOGO</span>

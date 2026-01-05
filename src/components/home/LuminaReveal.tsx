@@ -385,7 +385,7 @@ export function LuminaReveal() {
                                         <img
                                             src={product.image}
                                             alt={product.name}
-                                            className={`w-full h-full object-cover transition-opacity duration-300 ${selectedProductId === product.id ? 'opacity-100' : 'opacity-60 group-hover:opacity-80'
+                                            className={`w-full  h-full object-cover transition-opacity duration-300 ${selectedProductId === product.id ? 'opacity-100' : 'opacity-60 group-hover:opacity-80'
                                                 }`}
                                         />
                                     </div>

@@ -16,18 +16,18 @@ export function AboutHero() {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full py-24 px-6 overflow-hidden "
+            className="relative     h-screen w-full overflow-hidden flex items-center bg-gradient-to-r from-black/90 via-black/60 to-black/10 py-24 px-6 overflow-hidden "
             aria-labelledby="company-overview-title"
         >
-            <div
-                className="absolute inset-0 pointer-events-none z-0"
-              
-            />
+             <div className="absolute inset-0  ">
+                {/* <ProteinFoldingAnimation /> */}
+                <img src="about.png" className="w-full"/>
+            </div>
             <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 {/* Left Content */}
                 <div className="relative h-full w-full ">
                     {/* <EarthAnimation /> */}
-                    <EarthScene />
+                    {/* <EarthScene /> */}
                     {/* <img src='./earth.png'/> */}
                     {/* <img src='./123.png'/> */}
                 </div>

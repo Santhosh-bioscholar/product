@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Factory, Leaf, Zap, Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { FeaturesSection } from "./FeaturesSection";
 
 // --- Types ---
 interface StepProps {
@@ -86,7 +87,8 @@ export function Sustainability() {
                 </div>
 
                 {/* Main Steps Row */}
-               <img src="./1.jpeg" />
+               {/* <img src="./1.jpeg" /> */}
+                <FeaturesSection />
             </div>
         </section>
     );

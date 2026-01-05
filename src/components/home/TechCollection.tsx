@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import "material-symbols";
 import { User, ShoppingBag, Search, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { FadeIn } from '../animations/FadeIn';
 
 interface ProductView {
     id: string;
@@ -32,8 +33,8 @@ const products: Product[] = [
         label: 'Main View',
         category: 'FERMBIÔTIC',
         price: 299,
-        image: '',
-        thumbnail: '',
+        image: './e.png',
+        thumbnail: './e.png',
         description: 'Advanced fermentation technology ensuring maximum nutrient absorption and gut health support.',
         rating: 4.5,
         badge: 'New Arrival',
@@ -208,7 +209,7 @@ export function TechCollection() {
     return (
         <div className="relative right-[70px] flex h-screen w-full flex-col overflow-hidden ">
             {/* Top Navigation (Absolute Overlay) */}
-
+     
             <div className="hidden md:flex absolute right-[100px] top-1/2 -translate-y-1/2 flex-col items-center gap-8 z-20">
                 <div className="flex flex-col gap-4 items-center">
                     {products.map((product) => (
@@ -347,7 +348,7 @@ export function TechCollection() {
                                                                               initial={{ opacity: 0, x: -20 }}
                                                                               animate={{ opacity: 1, x: 0 }}
                                                                               transition={{ delay: 0.5 + (index * 0.1), duration: 0.3 }}
-                                                                          >
+                                                                          >  
                                                                               <motion.div
                                                                                   className="flex-shrink-0 w-5 h-5 rounded-full bg-[#2b8cee]/20 flex items-center justify-center"
                                                                                   initial={{ scale: 0 }}
