@@ -34,12 +34,7 @@ export const HowItWorksSection = ({ product }: HowItWorksSectionProps) => {
     return (
         <section className="relative py-32 overflow-hidden" ref={containerRef}>
             {/* Background */}
-            <div
-                className="absolute inset-0"
-                style={{
-                    background: `radial-gradient(ellipse 80% 50% at 50% 50%, hsl(var(--primary) / 0.06) 0%, transparent 50%)`,
-                }}
-            />
+           
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Header */}
@@ -70,7 +65,7 @@ export const HowItWorksSection = ({ product }: HowItWorksSectionProps) => {
                         {/* Connecting line - Horizontal on md, Vertical on mobile */}
                         <div className="absolute left-8 md:left-0 md:top-8 top-0 bottom-0 md:bottom-auto md:w-full md:h-px w-px bg-transparent -z-0">
                             {/* Desktop Horizontal Line Container - constrained to step centers */}
-                            <div className="hidden md:block absolute top-0 h-px bg-border z-0" style={{ left: '12.5%', right: '12.5%' }}>
+                            <div className="hidden md:block absolute top-0 h-px bg-border z-100" style={{ left: '12.5%', right: '12.5%' }}>
                                 <motion.div
                                     className="absolute top-0 left-0 bg-gradient-to-r from-primary via-primary to-transparent h-full"
                                     style={{

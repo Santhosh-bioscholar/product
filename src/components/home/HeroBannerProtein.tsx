@@ -26,7 +26,7 @@ export function HeroBannerProtein() {
             {/* Protein Folding Animation (includes background) */}
             <div className="absolute inset-0  ">
                 {/* <ProteinFoldingAnimation /> */}
-                <img src="image.webp" className="w-full"/>
+                <img src="991ea3c2-f37b-44e3-9d57-626f40586016.jpg" className="w-full h-full"/>
             </div>
 
             {/* Content */}

@@ -317,7 +317,7 @@ export function LuminaReveal() {
                                         onMouseLeave={() => setIsPaused(false)}
                                     >
                                         {/* {selectedProduct.name} <br /> */}
-                                        <span className="premium-text-gradient">
+                                        <span className=" text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">
                                             {selectedProduct.category}
                                         </span>
                                     </h1>

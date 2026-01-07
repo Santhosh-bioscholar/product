@@ -79,7 +79,7 @@ const PipelineSection = () => {
                             }`}
                     >
                         Innovation
-                        <span className="block bg-clip-text text-transparent bg-gradient-to-r from-[hsl(152_55%_42%)] to-[hsl(173_80%_35%)]">Pipeline</span>
+                        {/* <span className="block bg-clip-text text-transparent bg-gradient-to-r from-[hsl(152_55%_42%)] to-[hsl(173_80%_35%)]">Pipeline</span> */}
                     </h2>
                     <p
                         className={`text-lg text-muted-foreground leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'

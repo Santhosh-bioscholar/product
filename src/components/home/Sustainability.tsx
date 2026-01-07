@@ -1,215 +1,207 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { Factory, Leaf, Zap, Heart } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { FeaturesSection } from "./FeaturesSection";
-
-// --- Types ---
-interface StepProps {
-    id: number;
-    title: string;
-    description: string;
-    icon: React.ReactNode;
-    color: string;
-    badgeColor: string;
-    glowColor: string;
-    hexColor: string;
-}
-
-const steps: StepProps[] = [
-    {
-        id: 1,
-        title: "Pollution",
-        description: "CO₂ emissions and environmental stress from industrial processes",
-        icon: <Factory className="w-10 h-10 text-white opacity-80" />, // Simple white icon on dark bg
-        color: "text-red-400",
-        badgeColor: "bg-red-400 text-red-950",
-        glowColor: "group-hover:shadow-[0_0_40px_-10px_rgba(248,113,113,0.3)]",
-        hexColor: "#F87171"
-    },
-    {
-        id: 2,
-        title: "Algae Bio-System",
-        description: "Natural algae absorbs CO₂ and converts it through photosynthesis",
-        icon: <Leaf className="w-10 h-10 text-green-400" />,
-        color: "text-green-400",
-        badgeColor: "bg-green-500 text-green-950",
-        glowColor: "group-hover:shadow-[0_0_40px_-10px_rgba(74,222,128,0.3)]",
-        hexColor: "#4ADE80"
-    },
-    {
-        id: 3,
-        title: "Clean Energy",
-        description: "Oxygen release and bio-energy generation from the process",
-        icon: <Zap className="w-10 h-10 text-cyan-400" />,
-        color: "text-cyan-400",
-        badgeColor: "bg-cyan-500 text-cyan-950",
-        glowColor: "group-hover:shadow-[0_0_40px_-10px_rgba(34,211,238,0.3)]",
-        hexColor: "#22D3EE"
-    },
-    {
-        id: 4,
-        title: "Health & Future",
-        description: "Sustainable balance for healthier generations to come",
-        icon: <Heart className="w-10 h-10 text-emerald-400" />,
-        color: "text-emerald-400",
-        badgeColor: "bg-emerald-500 text-emerald-950",
-        glowColor: "group-hover:shadow-[0_0_40px_-10px_rgba(52,211,153,0.3)]",
-        hexColor: "#34D399"
-    },
-];
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { CheckCircle, Leaf, FileCheck, Award } from "lucide-react";
 
 export function Sustainability() {
+  const controls = useAnimation();
+  const [showText, setShowText] = useState(false);
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.4 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("animate");
+    }
+  }, [inView, controls]);
+
+
     return (
-        <section className="relative w-full py-24 px-12 bg-[#131313] overflow-hidden min-h-[600px] flex items-center justify-center">
+      <div>
+        <section className="relative w-full py-1 px-1 bg-[#131313] overflow-hidden min-h-[600px] flex items-center justify-center">
 
             <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-center">
 
                 {/* Header */}
-                <div className="text-center mb-20 max-w-3xl mx-auto space-y-4">
-                    <motion.h2
-                        initial={{ opacity: 0, y: -20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl font-bold text-white tracking-tight"
-                    >
-                        Sustainable Lifecycle
-                    </motion.h2>
-                    <motion.p
+                <div className="text-center mb-2 max-w-3xl mx-auto space-y-4">
+                   
+                    {/* <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-gray-400 text-lg md:text-xl font-light leading-relaxed"
                     >
-                  We are committed to producing and marketing safe, high-quality products, with truthful, transparent, and non-misleading labeling and advertising.  </motion.p>
+                  We are committed to producing and marketing safe, high-quality products, with truthful, transparent, and non-misleading labeling and advertising. 
+                   </motion.p> */}
+        
                 </div>
+                 <section className="relative pb-1 mt-1 min-h-[80vh] w-full overflow-hidden bg-[#131313]">
+                
+                            {/* Content container */}
+                            <div className="relative z-10 container mx-auto  py-16 md:py-1">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-1 items-center min-h-[80vh]">
+                                    {/* Left: Timeline Animation */}
+                  <motion.div
+      ref={ref}
+      className="order-2 md:pr-20 lg:order-1 flex justify-center " 
+      initial={{ opacity: 0, x: -30 }}
+      animate={controls}
+      variants={{
+        animate: { opacity: 1, x: 0 },
+      }}
+      transition={{ duration: 0.8 }}
+    >
+      <div className="relative "  >
 
+        {/* SVG ZOOM-IN + ROTATE (ON VIEW) */}
+        <motion.img
+          src="/gradiend-color-logo.svg"
+          className="h-80"
+          alt="Logo"
+          style={{ originX: 0.5, originY: 0.5 }}
+          initial={{ scale: 0.6, rotate: 0 }}
+          animate={controls}
+          variants={{
+            animate: { scale: 1, rotate: 360 },
+          }}
+          transition={{
+            duration: 1.6,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          onAnimationComplete={() => setShowText(true)}
+        />
+         <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-[#D44861]/20 via-[#B24D78]/20 to-[#8DC330]/20 rounded-full blur-[60px]"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={controls}
+                    variants={{
+                      animate: { opacity: 1, scale: 1.2 },
+                    }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+                  />
+          {showText && (
+                    <motion.div
+                      className="absolute inset-[-20px] border border-[#B24D78]/30 rounded-full"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{
+                        opacity: [0, 0.5, 0],
+                        scale: [0.8, 1.5, 1.8],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeOut",
+                      }}
+                    />
+                  )}
+        {/* Text animation AFTER rotation */}
+        {showText && (
+          <>
+            <motion.p
+              className="absolute left-[230px] w-64 bottom-75  text-lg text-[#D44861]"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Best Regulatory Practices
+            </motion.p>
+
+            <motion.p
+              className="absolute left-[-120px]  w-6 bottom-[32px] text-[#96A741] text-lg"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Clinically Evaluated Solutions
+            </motion.p>
+
+            <motion.p
+              className="absolute left-[319px]  w-64 bottom-[-1px] text-[#B24D78] text-lg"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              Green & White Technology
+            </motion.p>
+          </>
+        )}
+      </div>
+    </motion.div>
+                                    {/* Right: Content Block */}
+                                    <motion.div         
+                                        className="order-1 lg:order-2"
+                                        initial={{ opacity: 0, x: 30 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.8, delay: 0.2 }}
+                                    >
+                                       <motion.h2
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="text-4xl text-center md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400tracking-tight pb-12 "
+                    >
+                        Sustainable Lifecycle
+                    </motion.h2>
+                                       <div className="flex text-center flex-col gap-8 order-2 ">
+<p>We are committed to producing and marketing safe, high-quality products, with truthful, transparent, and non-misleading labeling and advertising.</p>
+  <div className="grid grid-cols-2">
+  <div className="flex flex-col pb-7  items-center justify-center">
+  <img src="./roundcircle.png" className="w-40" />
+    <p className="pl-4">Tested Raw MEterials</p>
+  </div>
+ <div className="flex flex-col pb-7 items-center justify-center">
+   <img src="./leaf.png" className="w-40" />
+
+    <p  className="pl-4">Pure Natural Products</p>
+  </div>
+   <div className="flex  flex-col items-center justify-center">
+    <img src="./checklist.png" className="w-40" />
+    <p  className="pl-4">Certificated Production</p>
+  </div>
+   <div className="flex pb-7 flex-col items-center justify-center">
+   <img src="./cer.png" className="w-40" />
+    <p  className="pl-4">A 35 Years Tradition</p>
+  </div>
+
+</div>
+  
+  </div>
+                                    </motion.div>
+                                </div>
+                            </div>
+                
+                            {/* Bottom decorative line */}
+                            {/* <motion.div
+                                className="absolute bottom-0 left-0 right-0 h-px"
+                                style={{
+                                    background: "linear-gradient(90deg, transparent 0%, hsl(175 70% 50% / 0.3) 50%, transparent 100%)",
+                                }}
+                                initial={{ scaleX: 0 }}
+                                whileInView={{ scaleX: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1.5, delay: 0.5 }}
+                            /> */}
+                        </section>
+                <div className="flex order-1 gap-12 ">
+<div >
+    
+</div>
+ 
+                </div>
                 {/* Main Steps Row */}
                {/* <img src="./1.jpeg" /> */}
-                <FeaturesSection />
+                {/* <FeaturesSection /> */}
             </div>
+            
+            
+         
+       
+    
         </section>
-    );
-}
-
-function StepCard({ step, index }: { step: StepProps; index: number }) {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.15 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center text-center relative group w-full lg:w-64"
-        >
-            {/* Number Badge (Absolute Positioned) */}
-            <div className={cn(
-                "absolute -top-2 left-1/2 -translate-x-[40px] lg:-translate-x-[50px] z-20 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shadow-lg",
-                step.badgeColor
-            )}>
-                {step.id}
-            </div>
-
-            {/* Icon Circle */}
-            <div className={cn(
-                "w-24 h-24 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 relative transition-all duration-500",
-                step.glowColor
-            )}>
-                {step.icon}
-
-                {/* Subtle Pulse Ring */}
-                <div className={cn(
-                    "absolute inset-0 rounded-full border opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-ping",
-                    step.color.replace("text-", "border-")
-                )} />
-            </div>
-
-            {/* Title */}
-            <h3 className={cn("text-xl font-bold mb-3", step.color)}>
-                {step.title}
-            </h3>
-
-            {/* Description */}
-            <p className="text-gray-400 text-sm leading-relaxed max-w-[200px]">
-                {step.description}
-            </p>
-        </motion.div>
-    );
-}
-
-// --- Animated Arrow Component ---
-interface AnimatedArrowProps {
-    fromColor: string;
-    toColor: string;
-    delay?: number;
-}
-
-export const AnimatedArrow = ({ fromColor, toColor, delay = 0 }: AnimatedArrowProps) => {
-    const gradientId = `arrowGrad-${fromColor.replace(/[^a-zA-Z0-9]/g, '')}-${delay}`;
-
-    return (
-        <div className="flex items-center justify-center w-16 md:w-32 h-16 md:h-12">
-            <svg
-                viewBox="0 0 60 20"
-                className="w-full h-full"
-                fill="none"
-            >
-                {/* Arrow path */}
-                <motion.path
-                    d="M5 10 L50 10"
-                    stroke={`url(#${gradientId})`}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: 1, opacity: 1 }}
-                    transition={{
-                        pathLength: { duration: 1.5, repeat: Infinity, repeatDelay: 1, delay },
-                        opacity: { duration: 0.5, delay },
-                    }}
-                />
-
-                {/* Arrow head */}
-                <motion.path
-                    d="M45 5 L50 10 L45 15"
-                    stroke={toColor}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity, delay }}
-                />
-
-                {/* Flowing particles */}
-                {[0, 1, 2].map((i) => (
-                    <motion.circle
-                        key={i}
-                        r={1.5}
-                        fill={toColor}
-                        initial={{ cx: 5, cy: 10, opacity: 0 }}
-                        animate={{
-                            cx: [5, 25, 50],
-                            opacity: [0, 0.8, 0],
-                        }}
-                        transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            delay: delay + i * 0.4,
-                            ease: 'easeInOut',
-                        }}
-                    />
-                ))}
-
-                <defs>
-                    <linearGradient id={gradientId} x1="0%" y1="50%" x2="100%" y2="50%">
-                        <stop offset="0%" stopColor={fromColor} />
-                        <stop offset="100%" stopColor={toColor} />
-                    </linearGradient>
-                </defs>
-            </svg>
+        
         </div>
     );
-};
-
+}

@@ -11,18 +11,18 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-[#131313]">
-            <ContactHero />
+        <div className="min-h-screen bg-[#131313]">
+            {/* <ContactHero /> */}
+                 <ConversationStarter />
             <div className="max-w-7xl mx-auto w-full px-6 pb-24 grid grid-cols-1 lg:grid-cols-2 gap-16">
                 {/* <ContactForm /> */}
-                <ContactInfo />
-                 <ConversationStarter />
-                <div className="w-full h-64 bg-white/5 rounded-2xl border border-white/10 overflow-hidden relative group">
+                {/* <ContactInfo /> */}
+                {/* <div className="w-full h-64 bg-white/5 rounded-2xl border border-white/10 overflow-hidden relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0A2540] to-[#0A2540]" />
                 <div className="absolute inset-0 flex items-center justify-center">
                     <p className="text-white/30 font-bold group-hover:text-white/50 transition-colors">Interactive Map Integration</p>
                 </div>
-            </div>
+            </div> */}
             </div>
         </div>
     );

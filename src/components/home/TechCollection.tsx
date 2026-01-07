@@ -13,7 +13,6 @@ interface ProductView {
 }
 interface Product {
     id: string;
-
     name: string;
     label: string;
     category: string;
@@ -31,7 +30,7 @@ const products: Product[] = [
         id: 'main',
         name: 'FERMBIÔTIC',
         label: 'Main View',
-        category: 'FERMBIÔTIC',
+        category: 'FERMBIÖTIC',
         price: 299,
         image: './e.png',
         thumbnail: './e.png',
@@ -49,7 +48,7 @@ const products: Product[] = [
     {
         id: 'side',
         name: 'BLEUBIOTIC',
-        category: 'BLEUBIOTIC',
+        category: '',
         label: 'Side View',
         price: 399,
         image: '',
@@ -318,8 +317,11 @@ export function TechCollection() {
                                         onMouseLeave={() => setIsPaused(false)}
                                     >
                                         {/* {selectedProduct.name} <br /> */}
-                                        <span className="premium-text-gradient">
+                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">
                                             {selectedProduct.category}
+                                        </span><br></br>
+                                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">
+                                            {selectedProduct.name}
                                         </span>
                                     </h1>
                                     <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed max-w-sm">

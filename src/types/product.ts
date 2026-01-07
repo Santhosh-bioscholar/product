@@ -15,6 +15,18 @@ export interface Benefit {
     description: string;
 }
 
+export interface LeftMetrics {
+    name: string;
+    value: number;
+    suffix: string;
+    color: string;
+}
+export interface RightMetrics {
+    name: string;
+    value: number;
+    suffix: string;
+    color: string;
+}
 export interface HowItWorksStep {
     id: string;
     step: number;
@@ -47,6 +59,8 @@ export interface ProductData {
         description: string;
         highlights: string[];
     };
+    leftMetrics :LeftMetrics[];
+rightMetrics :RightMetrics[];
     benefits: Benefit[];
     howItWorks: {
         title: string;

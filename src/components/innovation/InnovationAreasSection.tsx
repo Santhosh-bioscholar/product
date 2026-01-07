@@ -252,7 +252,7 @@ const InnovationAreasSection = () => {
                         className={`font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                             }`}
                     >
-                        Five Pillars of
+                        Three Pillars of
                         <span className="block gradient-text">Breakthrough Science</span>
                     </h2>
                 </div>

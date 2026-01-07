@@ -7,6 +7,8 @@ import BenefitsSection from './BenefitsSection';
 import HowItWorksSection from './HowItWorksSection';
 import UsageSection from './UsageSection';
 import SectionDivider from './SectionDivider';
+import CodeMetricsTable from './CodeMetricsTable';
+import ProductPageParticles from './ProductPageParticles';
 import ProcessFlowSection from './ProcessFlowSection';
 // import ProcessFlowSection from './ProcessFlowSection';
 
@@ -44,12 +46,14 @@ export const ProductPage = ({ product }: ProductPageProps) => {
     }, [product]);
 
     return (
-        <div className="min-h-screen bg-background relative ">
+        <div className="min-h-screen relative ">
             {/* Noise overlay */}
-            <div className="noise-overlay" />
+            <div className="noise-overla" />
+
+            <ProductPageParticles />
 
             {/* Scroll progress indicator */}
-            <ScrollProgress />
+            {/* <ScrollProgress /> */}
 
             {/* Hero Section */}
             <HeroSection product={product} />
@@ -81,8 +85,10 @@ export const ProductPage = ({ product }: ProductPageProps) => {
             {/* Usage & Applications Section */}
             <UsageSection product={product} />
 
+            
+
             {/* Footer spacer */}
-            <div className="h-32" />
+            {/* <div className="h-32" /> */}
         </div>
     );
 };

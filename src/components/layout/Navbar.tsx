@@ -7,174 +7,178 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-    {
-      title:"HOME",
-      href:"/"
-    },
-    {
-        title: "PRODUCT",
-        href: "/products",
-        dropdown: [
-            { title: "ALL PRODUCTS", href: "/products" },
-            { title: "FERMBIOTIC", href: "/products/fermbiotic" },
-            { title: "BLEUBIOTIC", href: "/products/bleubiotic" },
-            { title: "SPIROTIC", href: "/products/spirotic" },
-            { title: "ALGABIOTIC", href: "/products/algabiotic" },
-            { title: "GLOWBIOTIC", href: "/products/glowbiotic" },
-        ],
-    },
-    {
-        title: "ABOUT US",
-        href: "/about",
-    },
-     {
-        title: "INNOVATION",
-        href: "/innovation",
-        
-    },
-    {
-        title: "CONTACT",
-        href: "/contact",
-        dropdown: null,
-    },
+  { title: "HOME", href: "/" },
+  {
+    title: "PRODUCT",
+    href: "/products",
+    dropdown: [
+      // { title: "ALL PRODUCTS", href: "/products" },
+      { title: "FERMBIOTIC", href: "/products/fermbiotic" },
+      { title: "BLEUBIOTIC", href: "/products/bleubiotic" },
+      { title: "SPIROTIC", href: "/products/spirotic" },
+      { title: "ALGABIOTIC", href: "/products/algabiotic" },
+      { title: "GLOWBIOTIC", href: "/products/glowbiotic" },
+    ],
+  },
+  { title: "ABOUT US", href: "/about" },
+  { title: "INNOVATION", href: "/innovation" },
+  { title: "CONTACT", href: "/contact" },
 ];
 
 export function Navbar() {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    return (
-        <nav
-            className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                scrolled ? "bg-[#131313]/20 backdrop-blur-md py-1 bg-[#131313]" : "bg-transparent py-1 bg-[#131313]"
-            )}
+  return (
+    <nav
+    
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ease-in-out",
+        scrolled ? "bg-[#131313]" : "bg-transparent"
+      )}
+    >
+        
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <Link
+          href="/"
+          className={cn(
+            "text-2xl font-bold tracking-widest transition-colors duration-500",
+            scrolled ? "text-white" : "text-white"
+          )}
         >
-            <div className="relative max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                {/* Logo */}
-                <Link href="/" className="text-2xl font-bold tracking-widest text-white flex items-center gap-2">
-                    {/* <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-green-400 to-blue-500 animate-pulse" />
-                    AROORA */}
-                    <img src='../images (3).png' className="w-[80px]" />
-                </Link>
+          <img src="../images (3).png" className="w-[80px]" alt="Logo" />
+        </Link>
 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
-                    {navItems.map((item, index) => (
-                        <div
-                            key={index}
-                            className="relative group h-16 flex items-center"
-                            onMouseEnter={() => setHoveredIndex(index)}
-                            onMouseLeave={() => setHoveredIndex(null)}
-                        >
-                            <Link
-                                href={item.href}
-                                className="text-sm font-medium tracking-wider text-white/80 hover:text-white transition-colors flex items-center gap-1 group-hover:text-green-400"
-                            >
-                                {item.title}
-                                {item.dropdown && <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />}
-                            </Link>
-
-                            {/* Dropdown */}
-                            <AnimatePresence>
-                                {hoveredIndex === index && item.dropdown && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-                                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                                        exit={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-                                        transition={{ duration: 0.3, ease: "easeOut" }}
-                                        className="absolute top-full left-1/2 -translate-x-1/2 w-64 pt-4"
-                                    >
-                                        <div className="bg-[#0A2540]/90 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-2xl p-4 relative">
-                                            {/* Algae Particle Placeholder Effect */}
-                                            <div className="absolute inset-0 opacity-20 pointer-events-none">
-                                                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(15,165,125,0.2),_transparent_70%)] animate-pulse" />
-                                            </div>
-
-                                            <div className="flex flex-col gap-2 relative z-10">
-                                                {item.dropdown.map((subItem, subIndex) => (
-                                                    <Link
-                                                        key={subIndex}
-                                                        href={subItem.href}
-                                                        className="text-white/70 hover:text-[#0FA57D] hover:bg-white/5 px-3 py-2 rounded-lg transition-all text-sm tracking-wide"
-                                                    >
-                                                        {subItem.title}
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Mobile Menu Toggle */}
-                <button
-                    className="md:hidden text-white"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >
-                    {mobileMenuOpen ? <X /> : <Menu />}
-                </button>
-            </div>
-
-            {/* Mobile Menu Overlay */}
-            <AnimatePresence>
-                {mobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "100vh" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden fixed top-20 left-0 w-full bg-[#0A2540] z-40 overflow-y-auto"
-                    >
-                        <div className="p-6 flex flex-col gap-6">
-                            {navItems.map((item, index) => (
-                                <div key={index} className="flex flex-col gap-4">
-                                    <Link
-                                        href={item.href}
-                                        onClick={() => setMobileMenuOpen(false)}
-                                        className="text-xl font-bold text-white"
-                                    >
-                                        {item.title}
-                                    </Link>
-                                    {item.dropdown && (
-                                        <div className="pl-4 flex flex-col gap-3 border-l border-white/10">
-                                            {item.dropdown.map((subItem, subIndex) => (
-                                                <Link
-                                                    key={subIndex}
-                                                    href={subItem.href}
-                                                    onClick={() => setMobileMenuOpen(false)}
-                                                    className="text-white/60 hover:text-green-400"
-                                                >
-                                                    {subItem.title}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item, index) => (
+            <div
+              key={index}
+              className="relative group h-16 flex items-center"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+        <Link
+  href={item.href}
+  className={cn(
+    "text-sm font-medium tracking-wider flex items-center gap-1 transition-all duration-300",
+    scrolled
+      ? "text-white/80 hover:text-white"
+      : "text-white/80 bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-cyan-400 hover:to-green-400"
+  )}
+>
+                {item.title}
+                {item.dropdown && (
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                 )}
-            </AnimatePresence>
-        </nav>
-    );
-}
+              </Link>
 
+              {/* Dropdown */}
+              <AnimatePresence>
+                {hoveredIndex === index && item.dropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.25 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 w-64 pt-4"
+                  >
+                    <div
+                      className={cn(
+                        "rounded-xl shadow-xl p-4 border backdrop-blur-md",
+                        scrolled
+                          ? "bg-[#0A2540]/90 border-white/10"
+                          : "bg-[#0A2540]/90 border-white/10"
+                      )}
+                    >
+                      <div className="flex flex-col gap-2">
+                        {item.dropdown.map((subItem, subIndex) => (
+                          <Link
+                            key={subIndex}
+                            href={subItem.href}
+                            className={cn(
+                              "px-3 py-2 rounded-lg text-sm transition-colors",
+                              scrolled
+                                ? "text-white/70 hover:text-white hover:bg-white/10"
+                                : "text-white/70 hover:text-black hover:bg-black/5"
+                            )}
+                          >
+                            {subItem.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className={cn(
+            "md:hidden transition-colors",
+            scrolled ? "text-white" : "text-black"
+          )}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? <X /> : <Menu />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "100vh", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-black text-white overflow-hidden"
+          >
+            <div className="p-6 flex flex-col gap-6">
+              {navItems.map((item, index) => (
+                <div key={index}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xl font-bold"
+                  >
+                    {item.title}
+                  </Link>
+
+                  {item.dropdown && (
+                    <div className="mt-3 ml-4 flex flex-col gap-2 border-l border-white/20 pl-4">
+                      {item.dropdown.map((subItem, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          href={subItem.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="text-white/70 hover:text-white"
+                        >
+                          {subItem.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
+}

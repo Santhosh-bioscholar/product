@@ -35,26 +35,7 @@ export const TimelineAnimation = () => {
     return (
         <div ref={containerRef} className="relative inline-flex flex-col items-center py-20 mx-auto">
             {/* Stage indicators */}
-            <div className="absolute top-0 left-0 right-0 flex flex-row justify-between pt-8 px-2">
-                {["01", "02", "03"].map((num, i) => (
-                    <motion.span
-                        key={num}
-                        className="text-xs font-mono"
-                        initial={{ opacity: 0.2 }}
-                        animate={{
-                            opacity: activeStage > i ? 1 : 0.2,
-                            color: activeStage > i
-                                ? i === 0 ? "hsl(25 40% 60%)"
-                                    : i === 1 ? "hsl(175 70% 50%)"
-                                        : "hsl(170 60% 50%)"
-                                : "hsl(220 10% 40%)"
-                        }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        {num}
-                    </motion.span>
-                ))}
-            </div>
+          
 
             {/* Timeline */}
             <motion.div

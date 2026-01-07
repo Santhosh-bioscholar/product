@@ -4,6 +4,7 @@ import { Oxygenation } from "@/components/home/Oxygenation";
 import { TechCollection } from "@/components/home/TechCollection";
 import { LuminaReveal } from "@/components/home/LuminaReveal";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { Marqu } from "@/components/home/Marqu";
 
 export default function Home() {
   return (
@@ -48,6 +49,7 @@ Animal food Products
       {/* <ProductShowcase /> */}
      
       <Sustainability />
+    <Marqu/>
 
     </div>
   );

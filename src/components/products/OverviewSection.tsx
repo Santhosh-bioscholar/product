@@ -3,6 +3,7 @@ import { Check } from 'lucide-react';
 import { ProductData } from '@/types/product';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 import OverviewBenefitsDiagram from './OverviewBenefitsDiagram';
+import CodeMetricsTable from './CodeMetricsTable';
 
 interface OverviewSectionProps {
     product: ProductData;
@@ -25,7 +26,7 @@ export const OverviewSection = ({ product }: OverviewSectionProps) => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: '-100px' }}
-                    className="grid lg:grid-cols-2 gap-8 items-center"
+                    className="grid lg:grid-cols-2 gap-8 items-"
                 >
                     {/* Left content */}
                     <div className="space-y-8">
@@ -74,7 +75,8 @@ export const OverviewSection = ({ product }: OverviewSectionProps) => {
 
                     {/* Right visual */}
                     <div className="relative flex justify-center lg:justify-center">
-                        <OverviewBenefitsDiagram benefits={product.benefits} productName={product.name} />
+                        {/* <OverviewBenefitsDiagram benefits={product.benefits} productName={product.name} /> */}
+                        <CodeMetricsTable  leftMetrics={product.leftMetrics} rightMetrics={product.rightMetrics}/>
                     </div>
                 </motion.div>
             </div>
