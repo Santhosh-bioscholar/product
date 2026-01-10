@@ -11,14 +11,21 @@ interface OverviewSectionProps {
 
 export const OverviewSection = ({ product }: OverviewSectionProps) => {
     return (
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative py-20 overflow-hidden h-200">
             {/* Background */}
-            <div
-                className="absolute inset-0"
-                style={{
-                    background: `radial-gradient(ellipse 60% 40% at 50% 0%, hsl(var(--primary) / 0.06) 0%, transparent 50%)`,
-                }}
-            />
+         <div
+  className="absolute inset-0"
+  style={{
+    backgroundImage: `
+    
+      url("/P10.png")
+    `,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+/>
+
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div
@@ -53,7 +60,7 @@ export const OverviewSection = ({ product }: OverviewSectionProps) => {
                         {/* Highlights */}
                         <motion.div
                             variants={staggerContainer}
-                            className="grid grid-cols-2 gap-4"
+                            className="grid grid-cols-1 gap-8 pl-7 pt-5"
                         >
                             {product.overview.highlights.map((highlight, index) => (
                                 <motion.div
@@ -74,10 +81,10 @@ export const OverviewSection = ({ product }: OverviewSectionProps) => {
                     </div>
 
                     {/* Right visual */}
-                    <div className="relative flex justify-center lg:justify-center">
-                        {/* <OverviewBenefitsDiagram benefits={product.benefits} productName={product.name} /> */}
+                    {/* <div className="relative flex justify-center lg:justify-center">
+                        {/* <OverviewBenefitsDiagram benefits={product.benefits} productName={product.name} /> 
                         <CodeMetricsTable  leftMetrics={product.leftMetrics} rightMetrics={product.rightMetrics}/>
-                    </div>
+                    </div> */}
                 </motion.div>
             </div>
         </section>
