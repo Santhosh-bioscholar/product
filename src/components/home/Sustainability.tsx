@@ -45,7 +45,7 @@ export function Sustainability() {
                                     {/* Left: Timeline Animation */}
                   <motion.div
       ref={ref}
-      className="order-2 md:pr-20 lg:order-1 flex justify-center " 
+      className="order-2 md:pl-19 lg:order-1 flex justify-center " 
       initial={{ opacity: 0, x: -30 }}
       animate={controls}
       variants={{
@@ -58,7 +58,7 @@ export function Sustainability() {
         {/* SVG ZOOM-IN + ROTATE (ON VIEW) */}
         <motion.img
           src="/gradiend-color-logo.svg"
-          className="h-80"
+          className="h-60 pt-6 "
           alt="Logo"
           style={{ originX: 0.5, originY: 0.5 }}
           initial={{ scale: 0.6, rotate: 0 }}
@@ -100,7 +100,7 @@ export function Sustainability() {
         {showText && (
           <>
             <motion.p
-              className="absolute left-[230px] w-64 bottom-75  text-lg text-[#D44861]"
+              className="absolute left-[160px] w-64 bottom-50  text-lg text-[#D44861]"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -109,16 +109,16 @@ export function Sustainability() {
             </motion.p>
 
             <motion.p
-              className="absolute left-[-120px]  w-6 bottom-[32px] text-[#96A741] text-lg"
+              className="absolute left-[-240px]  w-64 bottom-[27px] text-[#96A741] text-lg"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Clinically Evaluated Solutions
+              Clinically EvaluatedSolutions
             </motion.p>
 
             <motion.p
-              className="absolute left-[319px]  w-64 bottom-[-1px] text-[#B24D78] text-lg"
+              className="absolute left-[210px]  w-64 bottom-[-14px] text-[#B24D78] text-lg"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}

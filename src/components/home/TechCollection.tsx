@@ -267,7 +267,7 @@ export function TechCollection() {
                             </motion.div>
                             {/* -------------------- */}
                         </div>
-                        <div className="mt-7 p-4 ml-[140px] rounded-xl bg-[#192233]/50 border border-gray-200 dark:border-[#232f48] w-[510px] h-[90px] relative overflow-hidden">
+                        <div className="mt-34 p-4 ml-[140px] rounded-xl bg-[#192233]/50 border border-gray-200 dark:border-[#232f48] w-[510px] h-[90px] relative overflow-hidden">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={reviews[currentReviewIndex].id}

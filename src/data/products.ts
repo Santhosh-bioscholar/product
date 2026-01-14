@@ -1,251 +1,7 @@
 import { ProductData } from '@/types/product';
 
 export const products: Record<string, ProductData> = {
-    fermbiotic: {
-        id: 'fermbiotic',
-        name: 'Fermbiotic',
-        tagline: 'Fermentation Science for Gut Vitality',
-        description: 'Advanced probiotic formula powered by precision fermentation technology. Cultivate a thriving gut microbiome with billions of beneficial bacteria.',
-        themeColor: '#22c55e',
-        cssVariable: '--fermbiotic',
-        animationType: 'microbiome',
-        bannerImage: '/bleubiotic.png',
-        benefitIcons: [
-            { id: 'gut', icon: 'Heart', label: 'Gut Health' },
-            { id: 'shield', icon: 'Shield', label: 'Immunity' },
-            { id: 'leaf', icon: 'Leaf', label: 'Natural' },
-            { id: 'energy', icon: 'Zap', label: 'Energy' },
-        ],
-        overview: {
-            title: 'The Science of Fermentation',
-            subtitle: 'Precision-Engineered Probiotics',
-            description: 'Fermbiotic harnesses centuries-old fermentation wisdom combined with cutting-edge biotechnology. Our proprietary strain selection delivers targeted gut support with clinically-proven efficacy.',
-            highlights: ['50 Billion CFU', 'pH-Protected Delivery', '12 Strain Complex', 'Clinically Tested'],
-        },
-
-leftMetrics : [
-    { name: "Protein", value: 62.7, suffix: "%", color: "primary" },
-    { name: "Moisture", value: 6.2, suffix: "%", color: "accent" },
-    { name: "Energy", value: 384.2, suffix: "Kcal", color: "secondary" },
-    { name: "Total dietary fibre", value: 4.1, suffix: "%", color: "primary" },
-    { name: "Beta-carotene", value: 2.2, suffix: "%", color: "accent" },
-    { name: "Phycocyanin", value: 11.7, suffix: "%", color: "secondary" },
-    { name: "Total xanthophyll", value: 1.3, suffix: "%", color: "primary" },
-    { name: "Phosphorus", value: 1.6, suffix: "%", color: "accent" },
-    { name: "Potassium", value: 2.8, suffix: "%", color: "secondary" },
-    { name: "Calcium", value: 1.9, suffix: "%", color: "primary" },
-    { name: "Sodium", value: 0.7, suffix: "%", color: "accent" },
-    { name: "Magnesium", value: 1.2, suffix: "%", color: "secondary" },
-],
-
- rightMetrics :  [
-    { name: "Iron", value: 2.4, suffix: "%", color: "primary" },
-    { name: "Zinc", value: 1.2, suffix: "%", color: "accent" },
-    { name: "Tryptophan", value: 2.57, suffix: "%", color: "secondary" },
-    { name: "Threonine", value: 5.3, suffix: "%", color: "primary" },
-    { name: "Tyrosine", value: 1.06, suffix: "%", color: "accent" },
-    { name: "Valine", value: 3.25, suffix: "%", color: "secondary" },
-    { name: "Methionine", value: 1.87, suffix: "%", color: "primary" },
-    { name: "Lysine", value: 2.86, suffix: "%", color: "accent" },
-    { name: "Isoleucine", value: 4.42, suffix: "%", color: "secondary" },
-    { name: "Leucine", value: 1.63, suffix: "%", color: "primary" },
-    { name: "Phenylalanine", value: 3.15, suffix: "%", color: "accent" },
-    { name: "Total Amino Acids", value: 56.10, suffix: "%", color: "secondary" },
-],
-
-        benefits: [
-            { id: 'b1', icon: 'Dna', title: 'Microbiome Balance', description: 'Restore and maintain optimal gut flora diversity with precision-selected bacterial strains.' },
-            { id: 'b2', icon: 'Shield', title: 'Immune Support', description: '70% of your immune system lives in your gut. Strengthen it with targeted probiotics.' },
-            { id: 'b3', icon: 'Brain', title: 'Gut-Brain Axis', description: 'Support cognitive function through the gut-brain connection with mood-enhancing strains.' },
-            { id: 'b4', icon: 'Activity', title: 'Digestive Wellness', description: 'Optimize nutrient absorption and reduce digestive discomfort naturally.' },
-            { id: 'b5', icon: 'Flame', title: 'Metabolic Boost', description: 'Enhance metabolic function with strains that support healthy weight management.' },
-            { id: 'b6', icon: 'Sparkles', title: 'Skin Clarity', description: 'Clear skin starts in the gut. Balance inflammation from within.' },
-        ],
-        howItWorks: {
-            title: 'How Fermbiotic Works',
-            subtitle: 'Your Journey to Gut Health',
-            steps: [
-                { id: 's1', step: 1, icon: 'Pill', title: 'Targeted Delivery', description: 'pH-resistant capsules ensure probiotics reach your intestines intact.' },
-                { id: 's2', step: 2, icon: 'Microscope', title: 'Colony Formation', description: 'Beneficial bacteria establish colonies along your intestinal wall.' },
-                { id: 's3', step: 3, icon: 'Workflow', title: 'Ecosystem Balance', description: 'Harmful bacteria are displaced as your microbiome rebalances.' },
-             { id: 's4', step: 4, icon: 'Sparkles', title: 'Systemic Benefits', description: 'Experience improved digestion, immunity, and overall wellness.' },
-            ],
-        },
-        usage: {
-            title: 'Intended Uses',
-            subtitle: 'Versatile Gut Support',
-            applications: [
-                { id: 'u1', icon: 'Sun', title: 'Daily Wellness', description: 'One capsule daily with food for ongoing gut support.' },
-                { id: 'u2', icon: 'Pill', title: 'Post-Antibiotic', description: 'Restore gut flora after antibiotic treatment.' },
-                { id: 'u3', icon: 'Plane', title: 'Travel Support', description: 'Protect your gut microbiome while traveling.' },
-                { id: 'u4', icon: 'Dumbbell', title: 'Athletic Performance', description: 'Optimize nutrient absorption for peak performance.' },
-            ],
-        },
-        dividers: ['bubbles', 'molecular', 'wave', 'pulse'],
-    },
-    bleubiotic: {
-        id: 'bleubiotic',
-        name: 'Bleubiotic',
-        tagline: 'Cellular Purification & Antioxidant Defense',
-        description: 'Revolutionary detoxification complex harnessing blue-spectrum antioxidants. Neutralize free radicals and illuminate your cellular health.',
-        themeColor: '#3b82f6',
-        cssVariable: '--bleubiotic',
-        animationType: 'lightwave',
-        bannerImage: '/bleubiotic.png',
-        benefitIcons: [
-            { id: 'detox', icon: 'Droplets', label: 'Detox' },
-            { id: 'antioxidant', icon: 'Sun', label: 'Antioxidant' },
-            { id: 'clarity', icon: 'Eye', label: 'Clarity' },
-            { id: 'vitality', icon: 'Heart', label: 'Vitality' },
-        ],
-        overview: {
-            title: 'The Power of Blue',
-            subtitle: 'Antioxidant Illumination',
-            description: 'Bleubiotic combines rare blue-pigmented compounds with advanced detoxification pathways. Experience cellular renewal through the power of phycocyanin and anthocyanins.',
-            highlights: ['Blue Spirulina Extract', 'Glutathione Enhanced', 'Heavy Metal Chelation', 'DNA Protection'],
-        },
-        
-
-  leftMetrics : [
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-],
-
- rightMetrics :  [
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-],
-        benefits: [
-            { id: 'b1', icon: 'Droplets', title: 'Deep Detoxification', description: 'Chelate heavy metals and toxins with precision molecular binding.' },
-            { id: 'b2', icon: 'Sun', title: 'Antioxidant Shield', description: '6000x more potent than vitamin C. Ultimate free radical protection.' },
-            { id: 'b3', icon: 'Eye', title: 'Visual Clarity', description: 'Protect retinal cells with targeted blue-light filtering compounds.' },
-            { id: 'b4', icon: 'Heart', title: 'Cardiovascular Support', description: 'Reduce oxidative stress on blood vessels and heart tissue.' },
-            { id: 'b5', icon: 'Brain', title: 'Cognitive Protection', description: 'Shield neurons from oxidative damage and inflammation.' },
-            { id: 'b6', icon: 'Zap', title: 'Energy Revival', description: 'Optimize mitochondrial function for sustained energy.' },
-        ],
-        howItWorks: {
-            title: 'How Bleubiotic Works',
-            subtitle: 'Cellular Illumination Process',
-            steps: [
-                { id: 's1', step: 1, icon: 'Scan', title: 'Toxin Detection', description: 'Smart molecules identify and target harmful compounds.' },
-                { id: 's2', step: 2, icon: 'Link', title: 'Molecular Binding', description: 'Chelating agents safely bind toxins for elimination.' },
-                { id: 's3', step: 3, icon: 'Shield', title: 'Antioxidant Flood', description: 'Blue pigments neutralize free radicals throughout your body.' },
-                { id: 's4', step: 4, icon: 'Sparkles', title: 'Cellular Renewal', description: 'Clean cells regenerate faster and function optimally.' },
-            ],
-        },
-        usage: {
-            title: 'Intended Uses',
-            subtitle: 'Purification Protocols',
-            applications: [
-                { id: 'u1', icon: 'RefreshCw', title: 'Daily Detox', description: 'Morning ritual for ongoing cellular cleansing.' },
-                { id: 'u2', icon: 'Monitor', title: 'Digital Wellness', description: 'Blue light protection for heavy screen users.' },
-                { id: 'u3', icon: 'Wind', title: 'Environmental Shield', description: 'Defense against pollution and environmental toxins.' },
-                { id: 'u4', icon: 'Clock', title: 'Anti-Aging Protocol', description: 'Combat oxidative aging at the cellular level.' },
-            ],
-        },
-        dividers: ['pulse', 'wave', 'molecular', 'bubbles'],
-    },
-    spirotic: {
-        id: 'spirotic',
-        name: 'Spirotic',
-        tagline: 'The Spiral of Life Force',
-        description: 'Ancient superfood reimagined with modern bioavailability. Spirulina\'s spiral structure delivers complete nutrition in its most absorbable form.',
-        themeColor: '#14b8a6',
-        cssVariable: '--spirotic',
-        animationType: 'spiral',
-          bannerImage: '/bleubiotic.png',
-        benefitIcons: [
-            { id: 'nutrition', icon: 'Apple', label: 'Nutrition' },
-            { id: 'protein', icon: 'Dumbbell', label: 'Protein' },
-            { id: 'endurance', icon: 'Activity', label: 'Endurance' },
-            { id: 'recovery', icon: 'RefreshCw', label: 'Recovery' },
-        ],
-        overview: {
-            title: 'Nature\'s Perfect Spiral',
-            subtitle: 'Complete Nutrition',
-            description: 'Spirotic delivers the world\'s most nutrient-dense superfood in a revolutionary spiral-delivery system. Each serving contains complete protein, essential fatty acids, and concentrated chlorophyll.',
-            highlights: ['65% Complete Protein', 'Iron & B12 Rich', 'Chlorophyll Dense', 'Sustainable Source'],
-        },
-  leftMetrics : [
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-],
-
- rightMetrics :  [
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-],
-        benefits: [
-            { id: 'b1', icon: 'Apple', title: 'Complete Nutrition', description: '100+ nutrients in bioavailable spiral-bound form.' },
-            { id: 'b2', icon: 'Dumbbell', title: 'Plant Protein Power', description: '65% digestible protein with all essential amino acids.' },
-            { id: 'b3', icon: 'Activity', title: 'Endurance Enhancement', description: 'Increase oxygen utilization and reduce fatigue.' },
-            { id: 'b4', icon: 'Leaf', title: 'Chlorophyll Cleanse', description: 'Natural blood builder and cellular oxygenator.' },
-            { id: 'b5', icon: 'Moon', title: 'Iron Absorption', description: 'Highly bioavailable iron for energy and vitality.' },
-            { id: 'b6', icon: 'Recycle', title: 'Sustainable Wellness', description: 'Eco-conscious nutrition with minimal environmental impact.' },
-        ],
-        howItWorks: {
-            title: 'How Spirotic Works',
-            subtitle: 'Spiral Delivery System',
-            steps: [
-                { id: 's1', step: 1, icon: 'Waves', title: 'Spiral Absorption', description: 'Unique cell structure ensures maximum nutrient uptake.' },
-                { id: 's2', step: 2, icon: 'Droplet', title: 'Cellular Hydration', description: 'Nutrients bind with water for deep cellular delivery.' },
-                { id: 's3', step: 3, icon: 'Flame', title: 'Energy Activation', description: 'Mitochondria receive concentrated fuel for ATP production.' },
-                { id: 's4', step: 4, icon: 'TrendingUp', title: 'Performance Elevation', description: 'Experience sustained energy and enhanced recovery.' },
-            ],
-        },
-        usage: {
-            title: 'Intended Uses',
-            subtitle: 'Versatile Superfood',
-            applications: [
-                { id: 'u1', icon: 'Coffee', title: 'Morning Boost', description: 'Add to smoothies for sustained morning energy.' },
-                { id: 'u2', icon: 'Timer', title: 'Pre-Workout', description: 'Enhance endurance 30 minutes before exercise.' },
-                { id: 'u3', icon: 'Utensils', title: 'Meal Enhancement', description: 'Boost any meal\'s nutritional profile.' },
-                { id: 'u4', icon: 'Sparkles', title: 'Recovery Support', description: 'Post-workout nutrition for faster recovery.' },
-            ],
-        },
-        dividers: ['wave', 'bubbles', 'pulse', 'molecular'],
-    },
-    algabiotic: {
+     algabiotic: {
         id: 'algabiotic',
         name: 'Algabiotic',
         tagline: 'Ocean Intelligence for Growth',
@@ -253,48 +9,75 @@ leftMetrics : [
         themeColor: '#0ea5e9',
         cssVariable: '--algabiotic',
         animationType: 'ripple',
-          bannerImage: '/bleubiotic.png',
-        benefitIcons: [
-            { id: 'growth', icon: 'TrendingUp', label: 'Growth' },
-            { id: 'yield', icon: 'BarChart3', label: 'Yield' },
-            { id: 'sustainable', icon: 'Recycle', label: 'Sustainable' },
-            { id: 'marine', icon: 'Waves', label: 'Marine' },
+        bannerImage: '/bleubiotic.png',
+       
+           benefitIcons: [
+            { id: 'gut', icon: 'Heart', label: 'Gut Health' },
+            { id: 'shield', icon: 'Shield', label: 'Immunity' },
+            { id: 'leaf', icon: 'Leaf', label: 'Natural' },
+            { id: 'energy', icon: 'Zap', label: 'Energy' },
         ],
+        doctorRecom: {
+            image: '/p5doc5.png',
+ quote:'Algabiotic is a CAA-approved, world-class shrimp nutrition supplement that promotes optimal growth, strong immunity, and smooth molting cycles. Its eco-friendly formulation supports sustainable aquaculture and improved bio-economic outcomes.',
+            doctorName: 'Dr. Elena Rodriguez'
+        },
+         immuneSystem: {
+            title: 'Immune Related',
+            subtitle: 'Gene Expression',
+            description: 'Analyzing transcriptional responses in the Lysozyme, Toll-like receptor, and IMD pathways. Interactive visualization of mRNA expression levels across control and treatment groups.',
+            genes: [
+                { name: 'Lysozyme', controlValue: 35, treatmentValue: 85, controlLabel: 'a', treatmentLabel: 'c' },
+                { name: 'Toll-like receptor', controlValue: 30, treatmentValue: 80, controlLabel: 'a', treatmentLabel: 'c' },
+                { name: 'IMD', controlValue: 40, treatmentValue: 82, controlLabel: 'a', treatmentLabel: 'c' },
+            ]
+        },
+        specs: {
+            feedingInstructions: "Mix thoroughly with standard pelleted feed at a ratio of 30 grams per 1 kilogram of feed. Apply binder (fish oil or water-based polymer) to ensure complete adherence. Allow to dry for 20 minutes before broadcasting.",
+            dosage: { value: "30g/kg", label: "Dosage" },
+            binderReq: { value: "Gelatin/Oil", label: "Binder" },
+            cycle: { value: "Daily", label: "Cycle" },
+            storage: {
+                temp: "Below 25°C",
+                conditions: ["Cool & Dry", "No Sunlight"]
+            },
+            shelfLife: "24 Months"
+        },
         overview: {
             title: 'Ocean-Powered Growth',
             subtitle: 'Marine Biotechnology',
             description: 'Algabiotic leverages marine microalgae to accelerate growth in aquaculture and agriculture. Our proprietary blend enhances nutrient uptake and promotes natural development.',
             highlights: ['Marine Microalgae', 'Growth Factors', 'Sustainable Production', 'Aquaculture Optimized'],
         },
-      leftMetrics : [
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-],
+        leftMetrics: [
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+        ],
 
- rightMetrics :  [
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-],
+        rightMetrics: [
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+        ],
         benefits: [
             { id: 'b1', icon: 'TrendingUp', title: 'Accelerated Growth', description: 'Boost growth rates by up to 40% with natural marine compounds.' },
             { id: 'b2', icon: 'Shield', title: 'Disease Resistance', description: 'Strengthen immune systems naturally for healthier populations.' },
@@ -323,8 +106,399 @@ leftMetrics : [
                 { id: 'u4', icon: 'FlaskConical', title: 'Research Applications', description: 'Controlled growth studies and development.' },
             ],
         },
+        pristineShowcase: {
+            backgroundImage: '/unnamed.png',
+            cards: [
+                // Far Depth
+                { title: 'Increases Body Weight', description: ' Drives faster growth through superior protein utilization.', icon: 'trending_up' },
+                { title: ' Improves Survival Rate', description: ' Enhances shrimp resilience under culture conditions.', icon: 'favorite' },
+                // Mid Depth
+                { title: 'Infection Prevention', description: 'Reduces bacterial and viral disease pressure.', icon: 'shield' },
+                { title: 'Easy Molting', description: 'Supports smooth and stress-free shell molting.', icon: 'autorenew' },
+                { title: 'High Nutrient Uptake', description: ' Maximizes absorption of essential nutrients.', icon: 'bolt' },
+                // Near Depth
+                { title: ' Disease Resistance', description: ' Strengthens natural immune defense mechanisms.', icon: 'security' },
+                { title: 'Better FCR', description: ' Improves feed conversion efficiency.', icon: 'palette' },
+                { title: '  PL Survival Boost', description: 'Increases post-larvae survival rates.', icon: 'format_size' },
+                { title: ' Gut Health', description: ' Promotes beneficial gut microbiota balance. ', icon: 'forest' },
+            ]
+        },
         dividers: ['wave', 'bubbles', 'molecular', 'pulse'],
     },
+    fermbiotic: {
+        id: 'fermbiotic',
+        name: 'Fermbiotic',
+        tagline: 'Fermentation Science for Gut Vitality',
+        description: 'Advanced probiotic formula powered by precision fermentation technology. Cultivate a thriving gut microbiome with billions of beneficial bacteria.',
+        themeColor: '#22c55e',
+        cssVariable: '--fermbiotic',
+        animationType: 'microbiome',
+        bannerImage: '/bleubiotic.png',
+        benefitIcons: [
+            { id: 'growth', icon: 'TrendingUp', label: 'Growth' },
+            { id: 'yield', icon: 'BarChart3', label: 'Yield' },
+            { id: 'sustainable', icon: 'Recycle', label: 'Sustainable' },
+            { id: 'marine', icon: 'Waves', label: 'Marine' },
+        ],
+        doctorRecom: {
+            image: '/p2doc5.png',
+            quote: 'Fermbiotic is a next-generation fermented algal protein that improves protein bioavailability, digestion, and gut microbiome balance for humans and animals. Its probiotic-rich green-white technology supports immunity, detoxification, and sustained energy.',
+            doctorName: 'Dr. Arjun Mehta'
+        },
+        immuneSystem: {
+            title: 'Immune Related',
+            subtitle: 'Gene Expression',
+            description: 'Analyzing transcriptional responses in the Lysozyme, Toll-like receptor, and IMD pathways. Interactive visualization of mRNA expression levels across control and treatment groups.',
+            genes: [
+                { name: 'Lysozyme', controlValue: 35, treatmentValue: 85, controlLabel: 'a', treatmentLabel: 'c' },
+                { name: 'Toll-like receptor', controlValue: 30, treatmentValue: 80, controlLabel: 'a', treatmentLabel: 'c' },
+                { name: 'IMD', controlValue: 40, treatmentValue: 82, controlLabel: 'a', treatmentLabel: 'c' },
+            ]
+        },
+        specs: {
+            feedingInstructions: "Mix thoroughly with standard pelleted feed at a ratio of 5 grams per 1 kilogram of feed. Apply binder (fish oil or water-based polymer) to ensure complete adherence. Allow to dry for 20 minutes before broadcasting.",
+            dosage: { value: "5g/kg", label: "Dosage" },
+            binderReq: { value: "Required", label: "Binder" },
+            cycle: { value: "Daily", label: "Cycle" },
+            storage: {
+                temp: "Below 25°C",
+                conditions: ["Cool & Dry", "No Sunlight"]
+            },
+            shelfLife: "24 Months"
+        },
+        overview: {
+            title: 'The Science of Fermentation',
+            subtitle: 'Precision-Engineered Probiotics',
+            description: 'Fermbiotic harnesses centuries-old fermentation wisdom combined with cutting-edge biotechnology. Our proprietary strain selection delivers targeted gut support with clinically-proven efficacy.',
+            highlights: ['50 Billion CFU', 'pH-Protected Delivery', '12 Strain Complex', 'Clinically Tested'],
+        },
+
+        leftMetrics: [
+            { name: "Protein", value: 62.7, suffix: "%", color: "primary" },
+            { name: "Moisture", value: 6.2, suffix: "%", color: "accent" },
+            { name: "Energy", value: 384.2, suffix: "Kcal", color: "secondary" },
+            { name: "Total dietary fibre", value: 4.1, suffix: "%", color: "primary" },
+            { name: "Beta-carotene", value: 2.2, suffix: "%", color: "accent" },
+            { name: "Phycocyanin", value: 11.7, suffix: "%", color: "secondary" },
+            { name: "Total xanthophyll", value: 1.3, suffix: "%", color: "primary" },
+            { name: "Phosphorus", value: 1.6, suffix: "%", color: "accent" },
+            { name: "Potassium", value: 2.8, suffix: "%", color: "secondary" },
+            { name: "Calcium", value: 1.9, suffix: "%", color: "primary" },
+            { name: "Sodium", value: 0.7, suffix: "%", color: "accent" },
+            { name: "Magnesium", value: 1.2, suffix: "%", color: "secondary" },
+        ],
+
+        rightMetrics: [
+            { name: "Iron", value: 2.4, suffix: "%", color: "primary" },
+            { name: "Zinc", value: 1.2, suffix: "%", color: "accent" },
+            { name: "Tryptophan", value: 2.57, suffix: "%", color: "secondary" },
+            { name: "Threonine", value: 5.3, suffix: "%", color: "primary" },
+            { name: "Tyrosine", value: 1.06, suffix: "%", color: "accent" },
+            { name: "Valine", value: 3.25, suffix: "%", color: "secondary" },
+            { name: "Methionine", value: 1.87, suffix: "%", color: "primary" },
+            { name: "Lysine", value: 2.86, suffix: "%", color: "accent" },
+            { name: "Isoleucine", value: 4.42, suffix: "%", color: "secondary" },
+            { name: "Leucine", value: 1.63, suffix: "%", color: "primary" },
+            { name: "Phenylalanine", value: 3.15, suffix: "%", color: "accent" },
+            { name: "Total Amino Acids", value: 56.10, suffix: "%", color: "secondary" },
+        ],
+
+        benefits: [
+            { id: 'b1', icon: 'Dna', title: 'Microbiome Balance', description: 'Restore and maintain optimal gut flora diversity with precision-selected bacterial strains.' },
+            { id: 'b2', icon: 'Shield', title: 'Immune Support', description: '70% of your immune system lives in your gut. Strengthen it with targeted probiotics.' },
+            { id: 'b3', icon: 'Brain', title: 'Gut-Brain Axis', description: 'Support cognitive function through the gut-brain connection with mood-enhancing strains.' },
+            { id: 'b4', icon: 'Activity', title: 'Digestive Wellness', description: 'Optimize nutrient absorption and reduce digestive discomfort naturally.' },
+            { id: 'b5', icon: 'Flame', title: 'Metabolic Boost', description: 'Enhance metabolic function with strains that support healthy weight management.' },
+            { id: 'b6', icon: 'Sparkles', title: 'Skin Clarity', description: 'Clear skin starts in the gut. Balance inflammation from within.' },
+        ],
+        howItWorks: {
+            title: 'How Fermbiotic Works',
+            subtitle: 'Your Journey to Gut Health',
+            steps: [
+                { id: 's1', step: 1, icon: 'Pill', title: 'Targeted Delivery', description: 'pH-resistant capsules ensure probiotics reach your intestines intact.' },
+                { id: 's2', step: 2, icon: 'Microscope', title: 'Colony Formation', description: 'Beneficial bacteria establish colonies along your intestinal wall.' },
+                { id: 's3', step: 3, icon: 'Workflow', title: 'Ecosystem Balance', description: 'Harmful bacteria are displaced as your microbiome rebalances.' },
+                { id: 's4', step: 4, icon: 'Sparkles', title: 'Systemic Benefits', description: 'Experience improved digestion, immunity, and overall wellness.' },
+            ],
+        },
+        usage: {
+            title: 'Intended Uses',
+            subtitle: 'Versatile Gut Support',
+            applications: [
+                { id: 'u1', icon: 'Sun', title: 'Daily Wellness', description: 'One capsule daily with food for ongoing gut support.' },
+                { id: 'u2', icon: 'Pill', title: 'Post-Antibiotic', description: 'Restore gut flora after antibiotic treatment.' },
+                { id: 'u3', icon: 'Plane', title: 'Travel Support', description: 'Protect your gut microbiome while traveling.' },
+                { id: 'u4', icon: 'Dumbbell', title: 'Athletic Performance', description: 'Optimize nutrient absorption for peak performance.' },
+            ],
+        },
+        pristineShowcase: {
+            backgroundImage: '/unnamed.png',
+            cards: [
+                // Far Depth (2 cards)
+                { title: 'Digestion Boost', description: 'Enhances nutrient breakdown for better absorption.', icon: 'trending_up' },
+                { title: 'Natural Defense', description: 'Strengthens natural barriers against pathogens.', icon: 'shield' },
+                // Mid Depth (3 cards)
+                { title: 'Gut Flora', description: 'Restores healthy bacterial balance.', icon: 'eco' },
+                { title: 'Metabolic Aid', description: 'Supports efficient energy metabolism.', icon: 'bolt' },
+                { title: 'Bloat Relief', description: 'Reduces discomfort and digestive bloating.', icon: 'autorenew' },
+                // Near Depth (4 cards)
+                { title: 'Immune Trigger', description: 'Activates key immune response markers.', icon: 'favorite' },
+                { title: 'Mood Support', description: 'Gut-brain axis support for mental clarity.', icon: 'psychology' },
+                { title: 'Fast Acting', description: 'Rapid colonization for quick results.', icon: 'speed' },
+                { title: 'pH Balanced', description: 'Optimized for survival in stomach acid.', icon: 'science' },
+            ]
+        },
+        dividers: ['bubbles', 'molecular', 'wave', 'pulse'],
+    },
+    bleubiotic: {
+        id: 'bleubiotic',
+        name: 'Bleubiotic',
+        tagline: 'Cellular Purification & Antioxidant Defense',
+        description: 'Revolutionary detoxification complex harnessing blue-spectrum antioxidants. Neutralize free radicals and illuminate your cellular health.',
+        themeColor: '#3b82f6',
+        cssVariable: '--bleubiotic',
+        animationType: 'lightwave',
+        bannerImage: '/bleubiotic.png',
+        benefitIcons: [
+            { id: 'detox', icon: 'Droplets', label: 'Detox' },
+            { id: 'antioxidant', icon: 'Sun', label: 'Antioxidant' },
+            { id: 'clarity', icon: 'Eye', label: 'Clarity' },
+            { id: 'vitality', icon: 'Heart', label: 'Vitality' },
+        ],
+        doctorRecom: {
+            image: '/p3doc5.png',
+             quote:'Bleubiotic is a powerful antioxidant formulation combining phycocyanin with probiotics and postbiotics to support detoxification, anti-aging, and cellular health. It is ideal for daily wellness and metabolic balance.',
+            doctorName: 'Dr. Rajiv Sharma'
+        },
+        immuneSystem: {
+            title: 'Cellular Detox',
+            subtitle: 'Activity Levels',
+            description: 'Comparison of oxidative stress markers and antioxidant enzyme activity. Higher treatment values indicate superior cellular protection and toxin elimination.',
+            genes: [
+                { name: 'SOD Activity', controlValue: 40, treatmentValue: 90, controlLabel: 'base', treatmentLabel: 'high' },
+                { name: 'GSH Levels', controlValue: 35, treatmentValue: 88, controlLabel: 'low', treatmentLabel: 'peak' },
+                { name: 'Lipid Perox.', controlValue: 80, treatmentValue: 25, controlLabel: 'high', treatmentLabel: 'low' }, // Inverse expected, but using same structure for now
+            ]
+        },
+        specs: {
+            feedingInstructions: "Take one capsule daily with morning water. For enhanced detoxification during high-stress periods, a second capsule may be taken in the evening. Consistent daily use recommended.",
+            dosage: { value: "1 Cap", label: "Daily" },
+            binderReq: { value: "None", label: "Binder" },
+            cycle: { value: "Morning", label: "Timing" },
+            storage: {
+                temp: "Room Temp",
+                conditions: ["Dry Place", "Sealed"]
+            },
+            shelfLife: "18 Months"
+        },
+        overview: {
+            title: 'The Power of Blue',
+            subtitle: 'Antioxidant Illumination',
+            description: 'Bleubiotic combines rare blue-pigmented compounds with advanced detoxification pathways. Experience cellular renewal through the power of phycocyanin and anthocyanins.',
+            highlights: ['Blue Spirulina Extract', 'Glutathione Enhanced', 'Heavy Metal Chelation', 'DNA Protection'],
+        },
+
+
+        leftMetrics: [
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+        ],
+
+        rightMetrics: [
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+        ],
+        benefits: [
+            { id: 'b1', icon: 'Droplets', title: 'Deep Detoxification', description: 'Chelate heavy metals and toxins with precision molecular binding.' },
+            { id: 'b2', icon: 'Sun', title: 'Antioxidant Shield', description: '6000x more potent than vitamin C. Ultimate free radical protection.' },
+            { id: 'b3', icon: 'Eye', title: 'Visual Clarity', description: 'Protect retinal cells with targeted blue-light filtering compounds.' },
+            { id: 'b4', icon: 'Heart', title: 'Cardiovascular Support', description: 'Reduce oxidative stress on blood vessels and heart tissue.' },
+            { id: 'b5', icon: 'Brain', title: 'Cognitive Protection', description: 'Shield neurons from oxidative damage and inflammation.' },
+            { id: 'b6', icon: 'Zap', title: 'Energy Revival', description: 'Optimize mitochondrial function for sustained energy.' },
+        ],
+        howItWorks: {
+            title: 'How Bleubiotic Works',
+            subtitle: 'Cellular Illumination Process',
+            steps: [
+                { id: 's1', step: 1, icon: 'Scan', title: 'Toxin Detection', description: 'Smart molecules identify and target harmful compounds.' },
+                { id: 's2', step: 2, icon: 'Link', title: 'Molecular Binding', description: 'Chelating agents safely bind toxins for elimination.' },
+                { id: 's3', step: 3, icon: 'Shield', title: 'Antioxidant Flood', description: 'Blue pigments neutralize free radicals throughout your body.' },
+                { id: 's4', step: 4, icon: 'Sparkles', title: 'Cellular Renewal', description: 'Clean cells regenerate faster and function optimally.' },
+            ],
+        },
+        usage: {
+            title: 'Intended Uses',
+            subtitle: 'Purification Protocols',
+            applications: [
+                { id: 'u1', icon: 'RefreshCw', title: 'Daily Detox', description: 'Morning ritual for ongoing cellular cleansing.' },
+                { id: 'u2', icon: 'Monitor', title: 'Digital Wellness', description: 'Blue light protection for heavy screen users.' },
+                { id: 'u3', icon: 'Wind', title: 'Environmental Shield', description: 'Defense against pollution and environmental toxins.' },
+                { id: 'u4', icon: 'Clock', title: 'Anti-Aging Protocol', description: 'Combat oxidative aging at the cellular level.' },
+            ],
+        },
+        pristineShowcase: {
+            backgroundImage: '/unnamed.png',
+            cards: [
+                // Far Depth
+                { title: 'Cell Clarity', description: 'Clears cellular debris for optimal function.', icon: 'cleaning_services' },
+                { title: 'Toxin Bind', description: 'Traps heavy metals for safe elimination.', icon: 'link' },
+                // Mid Depth
+                { title: 'Liver Support', description: 'Aids natural liver detoxification pathways.', icon: 'medical_services' },
+                { title: 'Free Radicals', description: 'Neutralizes oxidative stress markers.', icon: 'close' },
+                { title: 'Skin Purify', description: 'Promotes clear complexion from within.', icon: 'face' },
+                // Near Depth
+                { title: 'Blue Shield', description: 'Protects cells from digital light stress.', icon: 'visibility' },
+                { title: 'Energy flow', description: 'Unblocks metabolic energy pathways.', icon: 'waves' },
+                { title: 'Anti-Aging', description: 'Slows cellular aging processes.', icon: 'hourglass_empty' },
+                { title: 'Pure Vitality', description: 'Restores natural zest and vigor.', icon: 'self_improvement' },
+            ]
+        },
+        dividers: ['pulse', 'wave', 'molecular', 'bubbles'],
+    },
+    spirotic: {
+        id: 'spirotic',
+        name: 'Spirotic',
+        tagline: 'The Spiral of Life Force',
+        description: 'Ancient superfood reimagined with modern bioavailability. Spirulina\'s spiral structure delivers complete nutrition in its most absorbable form.',
+        themeColor: '#14b8a6',
+        cssVariable: '--spirotic',
+        animationType: 'spiral',
+        bannerImage: '/bleubiotic.png',
+        benefitIcons: [
+            { id: 'nutrition', icon: 'Apple', label: 'Nutrition' },
+            { id: 'protein', icon: 'Dumbbell', label: 'Protein' },
+            { id: 'endurance', icon: 'Activity', label: 'Endurance' },
+            { id: 'recovery', icon: 'RefreshCw', label: 'Recovery' },
+        ],
+        doctorRecom: {
+            image: '/p4doc4.png',
+ quote:'Spirotic Spirulina Powder is a natural superfood rich in protein, vitamins, and antioxidants that enhances immunity, energy levels, and overall nutrition. Recommended for daily dietary supplementation in humans and animal feed.',
+            doctorName: 'Dr. Ananya Rao'
+        },
+        immuneSystem: {
+            title: 'Performance',
+            subtitle: 'Recovery Markers',
+            description: 'Analysis of key athletic performance indicators including hemoglobin regeneration, muscle protein synthesis signaling, and inflammatory response reduction.',
+            genes: [
+                { name: 'Hemoglobin', controlValue: 45, treatmentValue: 75, controlLabel: 'std', treatmentLabel: 'opt' },
+                { name: 'Protein Synth', controlValue: 40, treatmentValue: 85, controlLabel: 'base', treatmentLabel: 'enh' },
+                { name: 'Inflammation', controlValue: 70, treatmentValue: 30, controlLabel: 'high', treatmentLabel: 'red' },
+            ]
+        },
+        specs: {
+            feedingInstructions: "Mix one scoop (10g) into 300ml of water, smoothie, or juice. Shake well until fully dissolved. Best consumed 30 minutes before workout or immediately after for recovery.",
+            dosage: { value: "10g", label: "Scoop" },
+            binderReq: { value: "Liquid", label: "Mix With" },
+            cycle: { value: "Pre/Post", label: "Workout" },
+            storage: {
+                temp: "Cool Dry",
+                conditions: ["No Moisture", "Dark"]
+            },
+            shelfLife: "12 Months"
+        },
+        overview: {
+            title: 'Nature\'s Perfect Spiral',
+            subtitle: 'Complete Nutrition',
+            description: 'Spirotic delivers the world\'s most nutrient-dense superfood in a revolutionary spiral-delivery system. Each serving contains complete protein, essential fatty acids, and concentrated chlorophyll.',
+            highlights: ['65% Complete Protein', 'Iron & B12 Rich', 'Chlorophyll Dense', 'Sustainable Source'],
+        },
+        leftMetrics: [
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+        ],
+
+        rightMetrics: [
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+        ],
+        benefits: [
+            { id: 'b1', icon: 'Apple', title: 'Complete Nutrition', description: '100+ nutrients in bioavailable spiral-bound form.' },
+            { id: 'b2', icon: 'Dumbbell', title: 'Plant Protein Power', description: '65% digestible protein with all essential amino acids.' },
+            { id: 'b3', icon: 'Activity', title: 'Endurance Enhancement', description: 'Increase oxygen utilization and reduce fatigue.' },
+            { id: 'b4', icon: 'Leaf', title: 'Chlorophyll Cleanse', description: 'Natural blood builder and cellular oxygenator.' },
+            { id: 'b5', icon: 'Moon', title: 'Iron Absorption', description: 'Highly bioavailable iron for energy and vitality.' },
+            { id: 'b6', icon: 'Recycle', title: 'Sustainable Wellness', description: 'Eco-conscious nutrition with minimal environmental impact.' },
+        ],
+        howItWorks: {
+            title: 'How Spirotic Works',
+            subtitle: 'Spiral Delivery System',
+            steps: [
+                { id: 's1', step: 1, icon: 'Waves', title: 'Spiral Absorption', description: 'Unique cell structure ensures maximum nutrient uptake.' },
+                { id: 's2', step: 2, icon: 'Droplet', title: 'Cellular Hydration', description: 'Nutrients bind with water for deep cellular delivery.' },
+                { id: 's3', step: 3, icon: 'Flame', title: 'Energy Activation', description: 'Mitochondria receive concentrated fuel for ATP production.' },
+                { id: 's4', step: 4, icon: 'TrendingUp', title: 'Performance Elevation', description: 'Experience sustained energy and enhanced recovery.' },
+            ],
+        },
+        usage: {
+            title: 'Intended Uses',
+            subtitle: 'Versatile Superfood',
+            applications: [
+                { id: 'u1', icon: 'Coffee', title: 'Morning Boost', description: 'Add to smoothies for sustained morning energy.' },
+                { id: 'u2', icon: 'Timer', title: 'Pre-Workout', description: 'Enhance endurance 30 minutes before exercise.' },
+                { id: 'u3', icon: 'Utensils', title: 'Meal Enhancement', description: 'Boost any meal\'s nutritional profile.' },
+                { id: 'u4', icon: 'Sparkles', title: 'Recovery Support', description: 'Post-workout nutrition for faster recovery.' },
+            ],
+        },
+        pristineShowcase: {
+            backgroundImage: '/unnamed.png',
+            cards: [
+                // Far Depth
+                { title: 'Nutrient Dense', description: 'Packed with vitamins and minerals.', icon: 'apps' },
+                { title: 'Muscle Fuel', description: 'High quality plant protein source.', icon: 'fitness_center' },
+                // Mid Depth
+                { title: 'Blood Health', description: 'Rich iron content supports hemoglobin.', icon: 'water_drop' },
+                { title: 'Oxygenation', description: 'Chlorophyll boosts oxygen delivery.', icon: 'air' },
+                { title: 'Endurance', description: 'Sustains energy for long activities.', icon: 'timer' },
+                // Near Depth
+                { title: 'Alkalizing', description: 'Balances body pH levels.', icon: 'balance' },
+                { title: 'Detoxifying', description: 'Natural cleanser for the body.', icon: 'spa' },
+                { title: 'Bioavailable', description: 'Easily absorbed spiral structure.', icon: 'all_inclusive' },
+                { title: 'Sustainable', description: 'Eco-friendly minimal footprint.', icon: 'recycling' },
+            ]
+        },
+        dividers: ['wave', 'bubbles', 'pulse', 'molecular'],
+    },
+   
     glowbiotic: {
         id: 'glowbiotic',
         name: 'Glowbiotic',
@@ -333,48 +507,74 @@ leftMetrics : [
         themeColor: '#ec4899',
         cssVariable: '--glowbiotic',
         animationType: 'bioluminescence',
-          bannerImage: '/bleubiotic.png',
+        bannerImage: '/bleubiotic.png',
         benefitIcons: [
             { id: 'glow', icon: 'Sparkles', label: 'Radiance' },
             { id: 'color', icon: 'Palette', label: 'Vitality' },
             { id: 'light', icon: 'Sun', label: 'Energy' },
             { id: 'beauty', icon: 'Star', label: 'Beauty' },
         ],
+        doctorRecom: {
+            image: '/p1doc5.png',
+              quote:'Glowbiotic is specially formulated to enhance vibrant coloration, immunity, and lifespan of ornamental fish and shrimps. Regular use supports overall health and aesthetic quality in ornamental aquatic systems.',
+            doctorName: 'Dr. Kajal'
+        },
+        immuneSystem: {
+            title: 'Dermal Health',
+            subtitle: 'Bio-Markers',
+            description: 'Quantification of collagen synthesis levels, cellular hydration retention, and elasticity markers in skin tissue cultures treated with Glowbiotic.',
+            genes: [
+                { name: 'Collagen I', controlValue: 35, treatmentValue: 88, controlLabel: 'base', treatmentLabel: 'inc' },
+                { name: 'Elastin', controlValue: 40, treatmentValue: 78, controlLabel: 'std', treatmentLabel: 'sup' },
+                { name: 'Hydration', controlValue: 45, treatmentValue: 85, controlLabel: 'dry', treatmentLabel: 'hyd' },
+            ]
+        },
+        specs: {
+            feedingInstructions: "For optimal absorption, take two capsules before bed. This aligns with the body's natural nightly repair cycle. Ensure adequate water intake throughout the day.",
+            dosage: { value: "2 Caps", label: "Nightly" },
+            binderReq: { value: "Water", label: "Take With" },
+            cycle: { value: "Bedtime", label: "Timing" },
+            storage: {
+                temp: "Cool Dark",
+                conditions: ["No Heat", "Sealed"]
+            },
+            shelfLife: "24 Months"
+        },
         overview: {
             title: 'The Science of Glow',
             subtitle: 'Bioluminescent Beauty',
             description: 'Glowbiotic harnesses rare bioluminescent compounds to activate your natural radiance. Our spectrum-shifting formula promotes skin luminosity, hair vitality, and overall vibrancy.',
             highlights: ['Bioluminescent Extracts', 'Collagen Activation', 'Spectrum Nutrients', 'Visible Results'],
         },
-      leftMetrics : [
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-],
+        leftMetrics: [
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+        ],
 
- rightMetrics :  [
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-    { name: "", value: 0, suffix: "%", color: "primary" },
-    { name: "", value: 0, suffix: "%", color: "accent" },
-    { name: "", value: 0, suffix: "%", color: "secondary" },
-],
+        rightMetrics: [
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+            { name: "", value: 0, suffix: "%", color: "primary" },
+            { name: "", value: 0, suffix: "%", color: "accent" },
+            { name: "", value: 0, suffix: "%", color: "secondary" },
+        ],
         benefits: [
             { id: 'b1', icon: 'Sparkles', title: 'Skin Luminosity', description: 'Activate cellular radiance for a natural, healthy glow.' },
             { id: 'b2', icon: 'Palette', title: 'Color Vitality', description: 'Enhance natural pigmentation and vibrancy.' },
@@ -402,6 +602,23 @@ leftMetrics : [
                 { id: 'u3', icon: 'Calendar', title: 'Event Prep', description: 'Intensive protocol before special occasions.' },
                 { id: 'u4', icon: 'RefreshCw', title: 'Seasonal Reset', description: 'Quarterly intensive for renewed radiance.' },
             ],
+        },
+        pristineShowcase: {
+            backgroundImage: '/unnamed.png',
+            cards: [
+                // Far Depth
+                { title: 'Inner Glow', description: 'Activates radiance from within.', icon: 'light_mode' },
+                { title: 'Hydration', description: 'Locks in cellular moisture.', icon: 'water_drop' },
+                // Mid Depth
+                { title: 'Skin Elastic', description: 'Supports collagen for firm skin.', icon: 'gesture' },
+                { title: 'Hair Shine', description: 'Enhances hair strength and luster.', icon: 'face_retouching_natural' },
+                { title: 'Nail Strength', description: 'Fortifies nails against breakage.', icon: 'front_hand' },
+                // Near Depth
+                { title: 'UV Defense', description: 'Natural support against UV stress.', icon: 'umbrella' },
+                { title: 'Even Tone', description: 'Promotes balanced skin pigmentation.', icon: 'contrast' },
+                { title: 'Cell Renew', description: 'Accelerates skin cell turnover.', icon: 'update' },
+                { title: 'Youthful', description: 'Combats signs of visible aging.', icon: 'auto_awesome' },
+            ]
         },
         dividers: ['pulse', 'molecular', 'wave', 'bubbles'],
     },

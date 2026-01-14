@@ -1,0 +1,1 @@
+src/components/products/ProductPage.tsx(91,14): error TS2741: Property 'className' is missing in type '{ product: ProductData; }' but required in type 'UsageSectionProps'.

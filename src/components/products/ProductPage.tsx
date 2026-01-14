@@ -5,11 +5,15 @@ import HeroSection from './HeroSection';
 import OverviewSection from './OverviewSection';
 import BenefitsSection from './BenefitsSection';
 import HowItWorksSection from './HowItWorksSection';
-import UsageSection from './UsageSection';
 import SectionDivider from './SectionDivider';
 import CodeMetricsTable from './CodeMetricsTable';
 import ProductPageParticles from './ProductPageParticles';
 import ProcessFlowSection from './ProcessFlowSection';
+import { DigitalProductLabel } from './DigitalProductLabel';
+import DoctorRecom from './DoctorRecom';
+import Immune from './Immune';
+import { PristineShowcase } from './PristineShowcase';
+import NeonBounceBanner from './NeonBounceBanner';
 // import ProcessFlowSection from './ProcessFlowSection';
 
 interface ProductPageProps {
@@ -74,8 +78,7 @@ export const ProductPage = ({ product }: ProductPageProps) => {
             {/* <SectionDivider type={product.dividers[2]} /> */}
 
             {/* How It Works Section */}
-            <HowItWorksSection product={product} />
-
+            {/* <DigitalProductLabel/> */}
             {/* Process Flow Section */}
             {/* <ProcessFlowSection /> */}
 
@@ -83,9 +86,17 @@ export const ProductPage = ({ product }: ProductPageProps) => {
             {/* <SectionDivider type={product.dividers[3]} /> */}
 
             {/* Usage & Applications Section */}
-            <UsageSection product={product} />
+            {/* <NeonBounceBanner/> */}
+            {['algabiotic', 'spirotic'].includes(product.id) && (
+                <Immune product={product} />
+            )}
+            {/* <UsageSection product={product} /> */}
+            {/* <UsageSection/> */}
+            <PristineShowcase product={product} />
+            <HowItWorksSection product={product} />
+            <DoctorRecom product={product} />
 
-            
+
 
             {/* Footer spacer */}
             {/* <div className="h-32" /> */}

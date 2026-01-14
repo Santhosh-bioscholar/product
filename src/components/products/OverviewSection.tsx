@@ -11,9 +11,9 @@ interface OverviewSectionProps {
 
 export const OverviewSection = ({ product }: OverviewSectionProps) => {
     return (
-        <section className="relative py-20 overflow-hidden h-200">
+        <section className="relative py-20 overflow-hidden h-200 ">
             {/* Background */}
-         <div
+         {/* <div
   className="absolute inset-0"
   style={{
     backgroundImage: `
@@ -24,10 +24,10 @@ export const OverviewSection = ({ product }: OverviewSectionProps) => {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
   }}
-/>
+/> */}
 
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container  mx-auto px-6 relative z-10">
                 <motion.div
                     variants={staggerContainer}
                     initial="hidden"
@@ -79,7 +79,26 @@ export const OverviewSection = ({ product }: OverviewSectionProps) => {
                             ))}
                         </motion.div>
                     </div>
+ <div className="relative  overflow-hidden ">
+      <img
+        src="/poi.png"
+        alt="Image"
+        
+        className="object-cover h-full"
+      />
 
+      {/* Gradient Overlay */}
+      <div className="
+        absolute inset-0
+        bg-gradient-to-t from-[#131313]/250 via-transparent to-transparent
+         bg-gradient-to-b from-[#131313]/250 via-transparent to-transparent
+       
+        before:absolute before:inset-0
+        before:bg-gradient-to-b before:from-[#131313]/250 before:via-transparent before:to-transparent
+        after:absolute after:inset-0
+        after:bg-gradient-to-r after:from-[#131313]/250 after:via-transparent after:to-transparent
+      " />
+    </div>
                     {/* Right visual */}
                     {/* <div className="relative flex justify-center lg:justify-center">
                         {/* <OverviewBenefitsDiagram benefits={product.benefits} productName={product.name} /> 

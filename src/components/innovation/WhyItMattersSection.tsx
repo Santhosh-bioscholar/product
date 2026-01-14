@@ -173,26 +173,7 @@ const WhyItMattersSection = () => {
                     </blockquote>
                     
                 </div>
-                 <div className="relative flex flex-col justify-center min-h-[560px] w-full bg-orange-50 dark:bg-slate-900 overflow-hidden">
-{/* <!-- Background Image with Overlay --> */}
-{/* <!-- The gradient creates the 'warm and inviting' feel requested, transitioning from a solid warm cream to the image --> */}
-<div
-  className="absolute inset-0 bg-cover bg-right bg-no-repeat z-0 opacity-100"
-  data-alt="Silhouettes of medical professionals and patients talking in a bright warm office"
-  style={{
-    backgroundImage: `
-      linear-gradient(
-        90deg,
-        #fff7ed 30%,
-        rgba(255, 247, 237, 0.85) 60%,
-        rgba(255, 247, 237, 0.2) 100%
-      ),
-      url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJoiSvRkZPCdyoSRYy2kI9Su7jkxlSaOuO8e2izL2EIV2MExyOGyz8NLqguSppz5BaM9kU5s32l7LGbMYUkgsRTa0L1O8xCyExE1K3rvRr9gCiZGRFSQz7zcktABmila0x427pal5kL7wGo381yA8jBpwQ85blUxfYdufh8RP7XCWjWoQ6vUmotTyUEB_TjxDcl36hkPReE_h8_OEJWh0QkgfClHGXAOpSctHQsLV_60Ut3UyGlyGAzupSMImrZMLaPGoY3dLpGc8u")
-    `,
-  }}
-/>
-
-                </div>
+               
             </div>
         </section>
     );

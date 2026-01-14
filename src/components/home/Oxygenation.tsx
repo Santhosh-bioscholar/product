@@ -19,7 +19,9 @@ export function Oxygenation() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <img src="./43.png" className="h-[720px]"/>
+                        <img src="./Desktop - 13 (5).png" className="h-[520px]"/>
+          {/* <div className="absolute inset-0 bg-gradient-to-b from-[#131313] via-transparent to-[#131313]"></div> */}
+
                         
                     </motion.div>
 

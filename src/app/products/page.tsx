@@ -1,6 +1,9 @@
 import { ProductsHero } from "@/components/products/ProductsHero";
 import { ProductCategory } from "@/components/products/ProductCategory";
 import { ProductSustainability } from "@/components/products/ProductSustainability";
+import { DigitalProductLabel } from "@/components/products/DigitalProductLabel";
+import { PristineShowcase } from "@/components/products/PristineShowcase";
+import NeonBounceBanner from "@/components/products/NeonBounceBanner";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -59,8 +62,19 @@ export default function ProductsPage() {
                 products={animalfoodProducts}
                 align="right"
             />
+
+
+            <div className="w-full mt-20">
+                <DigitalProductLabel />
+            </div>
+
+            <PristineShowcase />
+
+            <div className="w-full">
+                <NeonBounceBanner />
+            </div>
+
             {/* <ProductSustainability /> */}
         </div>
     );
 }
-

@@ -10,13 +10,13 @@ const navItems = [
   { title: "HOME", href: "/" },
   {
     title: "PRODUCT",
-    href: "/products",
+    href: "/products/algabiotic",
     dropdown: [
       // { title: "ALL PRODUCTS", href: "/products" },
+      { title: "ALGABIOTIC", href: "/products/algabiotic" },
+      { title: "SPIROTIC", href: "/products/spirotic" },
       { title: "FERMBIOTIC", href: "/products/fermbiotic" },
       { title: "BLEUBIOTIC", href: "/products/bleubiotic" },
-      { title: "SPIROTIC", href: "/products/spirotic" },
-      { title: "ALGABIOTIC", href: "/products/algabiotic" },
       { title: "GLOWBIOTIC", href: "/products/glowbiotic" },
     ],
   },

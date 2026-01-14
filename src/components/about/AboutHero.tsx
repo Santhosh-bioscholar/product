@@ -20,8 +20,10 @@ export function AboutHero() {
             aria-labelledby="company-overview-title"
         >
             <div className="absolute inset-0  ">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#131313] via-transparent to-[#131313]"></div>
+
                 {/* <ProteinFoldingAnimation /> */}
-                <img src="about.png" className="w-full " />
+                <img src="about31.png" className="w-full " />
             </div>
             <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-1 items-center">
                 {/* Left Content */}

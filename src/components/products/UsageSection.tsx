@@ -1,156 +1,290 @@
-import { motion } from 'framer-motion';
-import * as LucideIcons from 'lucide-react';
-import { ProductData } from '@/types/product';
-import { staggerContainer, staggerItem } from '@/lib/animations';
-import GlassmorphismCard from './GlassmorphismCard';
+"use client";
 
-interface UsageSectionProps {
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+interface HowItWorksSectionProps {
     product: ProductData;
 }
 
-export const UsageSection = ({ product }: UsageSectionProps) => {
-    const getIcon = (iconName: string) => {
-        const Icon = (LucideIcons as any)[iconName];
-        return Icon || LucideIcons.Circle;
-    };
+export const PristineCrustacean = () => {
+    const containerRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const container = containerRef.current;
+        if (!container) return;
+
+        const handleMouseMove = (e: MouseEvent) => {
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
+
+            const x = (clientX - innerWidth / 2) / innerWidth;
+            const y = (clientY - innerHeight / 2) / innerHeight;
+
+            container.style.setProperty("--mouse-x", x.toString());
+            container.style.setProperty("--mouse-y", y.toString());
+
+            const cards = container.querySelectorAll(".floating-card");
+            cards.forEach((card) => {
+                const depthClass = Array.from(card.classList).find((cls) =>
+                    cls.startsWith("depth-")
+                );
+                let depth = 20; // default
+                if (depthClass === "depth-near") depth = 80;
+                if (depthClass === "depth-mid") depth = 40;
+                if (depthClass === "depth-far") depth = -30;
+
+                const moveX = x * depth;
+                const moveY = y * depth;
+
+                (card as HTMLElement).style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+            });
+        };
+
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => window.removeEventListener("mousemove", handleMouseMove);
+    }, []);
 
     return (
-        <section className="relative py-32 overflow-hidden">
-            {/* Background */}
-            <div
-                className="absolute inset-0"
-                style={{
-                    background: `
-            radial-gradient(ellipse 60% 40% at 80% 20%, hsl(var(--primary) / 0.06) 0%, transparent 50%),
-            radial-gradient(ellipse 40% 30% at 20% 80%, hsl(var(--primary) / 0.04) 0%, transparent 50%)
-          `,
-                }}
-            />
-
-            <div className="container mx-auto px-6 relative z-10">
-                {/* Header */}
-                <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: '-100px' }}
-                    className="text-center mb-20"
-                >
-                    <motion.span
-                        variants={staggerItem}
-                        className="text-primary text-sm font-semibold tracking-widest uppercase"
+        <div className="bg-background-dark font-jakarta text-gray-100 antialiased overflow-x-hidden min-h-screen">
+            <header className="absolute top-0 w-full z-50 px-12 py-8 flex justify-between items-center">
+                <div className="flex items-center space-x-3">
+                    <span className="material-symbols-outlined text-luxury-gold text-4xl">
+                        scuba_diving
+                    </span>
+                    <span className="font-display text-2xl tracking-[0.3em] text-white uppercase font-bold">
+                        Aquaria
+                    </span>
+                </div>
+                <nav className="hidden lg:flex space-x-12 items-center">
+                    <Link
+                        href="#"
+                        className="text-xs tracking-[0.2em] text-white/70 hover:text-luxury-gold transition-colors uppercase font-medium"
                     >
-                        {product.usage.subtitle}
-                    </motion.span>
-                    <motion.h2
-                        variants={staggerItem}
-                        className="text-4xl md:text-5xl font-bold tracking-tight mt-4"
+                        The Origin
+                    </Link>
+                    <Link
+                        href="#"
+                        className="text-xs tracking-[0.2em] text-white/70 hover:text-luxury-gold transition-colors uppercase font-medium"
                     >
-                        {product.usage.title}
-                    </motion.h2>
-                </motion.div>
-
-                {/* Applications Grid */}
-                <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: '-50px' }}
-                    className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-                >
-                    {product.usage.applications.map((app, index) => {
-                        const Icon = getIcon(app.icon);
-
-                        return (
-                            <motion.div
-                                key={app.id}
-                                variants={staggerItem}
-                            >
-                                <GlassmorphismCard
-                                    className="h-full text-center group"
-                                    hover
-                                    delay={index * 0.1}
-                                >
-                                    <div className="space-y-4">
-                                        {/* Icon */}
-                                        <motion.div
-                                            className="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center relative"
-                                            whileHover={{ scale: 1.1 }}
-                                            transition={{ duration: 0.3 }}
-                                        >
-                                            <Icon className="w-8 h-8 text-primary neon-stroke" />
-
-                                            {/* Hover glow */}
-                                            <motion.div
-                                                className="absolute inset-0 rounded-full"
-                                                initial={{ opacity: 0 }}
-                                                whileHover={{ opacity: 1 }}
-                                                style={{
-                                                    background: 'radial-gradient(circle, hsl(var(--primary) / 0.3), transparent)',
-                                                    filter: 'blur(10px)',
-                                                }}
-                                            />
-                                        </motion.div>
-
-                                        {/* Title */}
-                                        <h3 className="text-xl font-semibold text-foreground">
-                                            {app.title}
-                                        </h3>
-
-                                        {/* Description */}
-                                        <p className="text-muted-foreground text-sm leading-relaxed">
-                                            {app.description}
-                                        </p>
-                                    </div>
-
-                                    {/* Animated border on hover */}
-                                    <motion.div
-                                        className="absolute inset-0 rounded-2xl pointer-events-none"
-                                        initial={{ opacity: 0 }}
-                                        whileHover={{ opacity: 1 }}
-                                        style={{
-                                            background: `
-                        linear-gradient(90deg, hsl(var(--primary) / 0.3) 0%, transparent 50%, hsl(var(--primary) / 0.3) 100%)
-                      `,
-                                            backgroundSize: '200% 100%',
-                                            padding: '1px',
-                                            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                                            WebkitMaskComposite: 'xor',
-                                            maskComposite: 'exclude',
-                                            borderRadius: 'inherit',
-                                        }}
-                                    />
-                                </GlassmorphismCard>
-                            </motion.div>
-                        );
-                    })}
-                </motion.div>
-
-                {/* CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 }}
-                    className="text-center mt-16"
-                >
-                    <motion.button
-                        className="px-10 py-5 rounded-full bg-primary text-primary-foreground font-semibold text-lg relative overflow-hidden"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.4)' }}
+                        Science
+                    </Link>
+                    <Link
+                        href="#"
+                        className="text-xs tracking-[0.2em] text-white/70 hover:text-luxury-gold transition-colors uppercase font-medium"
                     >
-                        <span className="relative z-10">Get Started with {product.name}</span>
-                        <motion.div
-                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                            animate={{ x: ['-100%', '100%'] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                        />
-                    </motion.button>
-                </motion.div>
-            </div>
-        </section>
+                        Sustainability
+                    </Link>
+                    <button className="px-8 py-3 bg-white/5 border border-luxury-gold/30 text-luxury-gold text-[10px] tracking-[0.3em] uppercase hover:bg-luxury-gold hover:text-black transition-all duration-500 cursor-pointer">
+                        Inquiry
+                    </button>
+                </nav>
+            </header>
+
+            <main
+                ref={containerRef}
+                className="relative min-h-screen w-full flex items-center justify-center overflow-hidden parallax-container"
+            >
+                <div className="absolute inset-0 z-0">
+                    <img
+                        alt="Macro photography of premium shrimp"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGGPYnJwPGxZfARJW09_HoI8qhn0t9yl3_gx3QDCpamL_2pEmwDUIUg64v2wV8RnpIht0IMpSWU0rv2ljJ0-Y6bFA6dbPft3EoWPtUDmKOKAcUbZ-npraHT6iAA33shfeTGq_JVsTb-BGXN-5qrnWKIfw6sUabHDLc9tssAInTkhSoS120dPa1GjtG1-bl_WiQgNjhP6YYeR8Pp2GWWUJWDpFoleY0nvQ49jrYr4oJ2BTfg9Wzqd_9DP23PUASVA2fzjFusDIfwvcg"
+                        layout="fill"
+                        objectFit="cover"
+                        className="opacity-60 scale-110 !w-full !h-full"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+                </div>
+
+                <div className="relative z-20 text-center max-w-4xl px-6 pointer-events-none">
+                    <span className="text-luxury-gold uppercase tracking-[0.8em] text-[10px] font-bold block mb-6">
+                        Marine Mastery
+                    </span>
+                    <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-white leading-none mb-8">
+                        Pristine <br /> <span className="italic font-light">Elegance</span>
+                    </h1>
+                    <p className="text-gray-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed font-light tracking-wide uppercase">
+                        A three-dimensional exploration of superior aquaculture.
+                    </p>
+                </div>
+
+                <div className="floating-card depth-far top-[15%] left-[10%] w-56">
+                    <div className="flex items-center gap-3">
+                        <span className="material-symbols-outlined text-luxury-gold/60 text-lg">
+                            science
+                        </span>
+                        <span className="text-[10px] uppercase tracking-widest font-bold text-gray-200">
+                            Bio-Floc Tech
+                        </span>
+                    </div>
+                    <p className="text-[9px] text-gray-500 mt-2 leading-relaxed">
+                        Advanced microbial balance for natural immunity.
+                    </p>
+                </div>
+
+                <div className="floating-card depth-far bottom-[20%] right-[15%] w-52">
+                    <div className="flex items-center gap-3">
+                        <span className="material-symbols-outlined text-luxury-gold/60 text-lg">
+                            public
+                        </span>
+                        <span className="text-[10px] uppercase tracking-widest font-bold text-gray-200">
+                            Net-Zero
+                        </span>
+                    </div>
+                    <p className="text-[9px] text-gray-500 mt-2 leading-relaxed">
+                        Completely circular ecosystem management.
+                    </p>
+                </div>
+
+                <div className="floating-card depth-mid top-[25%] right-[20%] w-60">
+                    <div className="flex items-center gap-3">
+                        <span className="material-symbols-outlined text-luxury-gold text-xl">
+                            water_drop
+                        </span>
+                        <span className="text-[11px] uppercase tracking-widest font-bold text-gray-200">
+                            Deep Sea Purity
+                        </span>
+                    </div>
+                    <p className="text-[10px] text-gray-400 mt-2">
+                        Triple-filtered ocean currents mimic wild habitats.
+                    </p>
+                </div>
+
+                <div className="floating-card depth-mid bottom-[10%] left-[20%] w-64">
+                    <div className="flex items-center gap-3">
+                        <span className="material-symbols-outlined text-luxury-gold text-xl">
+                            restaurant
+                        </span>
+                        <span className="text-[11px] uppercase tracking-widest font-bold text-gray-200">
+                            Chef Selection
+                        </span>
+                    </div>
+                    <p className="text-[10px] text-gray-400 mt-2">
+                        Hand-picked for visual symmetry and peak size.
+                    </p>
+                </div>
+
+                <div className="floating-card depth-mid top-[45%] left-[5%] w-56">
+                    <div className="flex items-center gap-3">
+                        <span className="material-symbols-outlined text-luxury-gold text-xl">
+                            token
+                        </span>
+                        <span className="text-[11px] uppercase tracking-widest font-bold text-gray-200">
+                            Traceable
+                        </span>
+                    </div>
+                    <p className="text-[10px] text-gray-400 mt-2">
+                        Blockchain identity for every individual harvest.
+                    </p>
+                </div>
+
+                <div className="floating-card depth-near top-[12%] right-[40%] w-64">
+                    <div className="flex items-center gap-4">
+                        <div className="glowing-dot"></div>
+                        <span className="text-xs uppercase tracking-[0.2em] font-bold text-white">
+                            Mineral Diet
+                        </span>
+                    </div>
+                    <p className="text-[11px] text-gray-300 mt-3 leading-relaxed">
+                        Organic micro-algae nutrition for deep natural pigment.
+                    </p>
+                </div>
+
+                <div className="floating-card depth-near bottom-[35%] right-[8%] w-64">
+                    <div className="flex items-center gap-4">
+                        <div className="glowing-dot"></div>
+                        <span className="text-xs uppercase tracking-[0.2em] font-bold text-white">
+                            Snap Texture
+                        </span>
+                    </div>
+                    <p className="text-[11px] text-gray-300 mt-3 leading-relaxed">
+                        Cold-water growth cycles ensure a firm, luxury bite.
+                    </p>
+                </div>
+
+                <div className="floating-card depth-near bottom-[15%] right-[35%] w-60">
+                    <div className="flex items-center gap-4">
+                        <div className="glowing-dot"></div>
+                        <span className="text-xs uppercase tracking-[0.2em] font-bold text-white">
+                            Flash Harvest
+                        </span>
+                    </div>
+                    <p className="text-[11px] text-gray-300 mt-3 leading-relaxed">
+                        Instant cooling at peak freshness levels.
+                    </p>
+                </div>
+
+                <div className="floating-card depth-near top-[60%] left-[12%] w-64">
+                    <div className="flex items-center gap-4">
+                        <div className="glowing-dot"></div>
+                        <span className="text-xs uppercase tracking-[0.2em] font-bold text-white">
+                            Umami Rich
+                        </span>
+                    </div>
+                    <p className="text-[11px] text-gray-300 mt-3 leading-relaxed">
+                        Natural amino acid elevation for savory finish.
+                    </p>
+                </div>
+
+                <div className="floating-card depth-near top-[30%] left-[30%] w-52">
+                    <div className="flex items-center gap-4">
+                        <div className="glowing-dot"></div>
+                        <span className="text-xs uppercase tracking-[0.2em] font-bold text-white">
+                            Zero Meds
+                        </span>
+                    </div>
+                    <p className="text-[11px] text-gray-300 mt-3 leading-relaxed">
+                        Pure biology. No antibiotics, ever.
+                    </p>
+                </div>
+
+                <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center">
+                    <div className="w-px h-24 bg-gradient-to-b from-luxury-gold via-luxury-gold/30 to-transparent"></div>
+                    <span className="text-[9px] tracking-[0.5em] text-white/40 uppercase mt-4">
+                        Begin Journey
+                    </span>
+                </div>
+            </main>
+
+            <footer className="bg-background-dark border-t border-white/5 py-16 px-12 relative z-10">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 text-white/40 text-[10px] uppercase tracking-[0.3em]">
+                    <div className="flex items-center space-x-2">
+                        <span className="text-luxury-gold font-bold">AQUARIA</span>
+                        <span>© 2024 Signature Series</span>
+                    </div>
+                    <div className="flex space-x-12">
+                        <Link
+                            href="#"
+                            className="hover:text-luxury-gold transition-colors"
+                        >
+                            Ethics
+                        </Link>
+                        <Link
+                            href="#"
+                            className="hover:text-luxury-gold transition-colors"
+                        >
+                            Logistics
+                        </Link>
+                        <Link
+                            href="#"
+                            className="hover:text-luxury-gold transition-colors"
+                        >
+                            Press
+                        </Link>
+                    </div>
+                    <div className="flex space-x-6 text-luxury-gold">
+                        <span className="material-symbols-outlined text-base cursor-pointer hover:scale-110 transition-transform">
+                            share
+                        </span>
+                        <span className="material-symbols-outlined text-base cursor-pointer hover:scale-110 transition-transform">
+                            language
+                        </span>
+                    </div>
+                </div>
+            </footer>
+        </div>
     );
 };
-
-export default UsageSection;
