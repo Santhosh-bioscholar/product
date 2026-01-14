@@ -4,6 +4,7 @@ import { ProductSustainability } from "@/components/products/ProductSustainabili
 import { DigitalProductLabel } from "@/components/products/DigitalProductLabel";
 import { PristineShowcase } from "@/components/products/PristineShowcase";
 import NeonBounceBanner from "@/components/products/NeonBounceBanner";
+import { products } from "@/data/products";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -68,7 +69,7 @@ export default function ProductsPage() {
                 <DigitalProductLabel />
             </div>
 
-            <PristineShowcase />
+            <PristineShowcase product={products.algabiotic} />
 
             <div className="w-full">
                 <NeonBounceBanner />

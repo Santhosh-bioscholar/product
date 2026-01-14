@@ -1,0 +1,22 @@
+
+> product-site-1@0.1.0 build
+> next build
+
+   ▲ Next.js 16.0.10 (Turbopack)
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 4.4s
+   Running TypeScript ...
+Failed to compile.
+
+./src/components/products/index.ts:7:10
+Type error: Module '"./UsageSection"' has no exported member 'UsageSection'.
+
+[0m [90m  5 |[39m [36mexport[39m { [33mBenefitsSection[39m } [36mfrom[39m [32m'./BenefitsSection'[39m[33m;[39m
+ [90m  6 |[39m [36mexport[39m { [33mHowItWorksSection[39m } [36mfrom[39m [32m'./HowItWorksSection'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mexport[39m { [33mUsageSection[39m } [36mfrom[39m [32m'./UsageSection'[39m[33m;[39m
+ [90m    |[39m          [31m[1m^[22m[39m
+ [90m  8 |[39m [36mexport[39m { [33mSectionDivider[39m } [36mfrom[39m [32m'./SectionDivider'[39m[33m;[39m
+ [90m  9 |[39m [36mexport[39m { [33mScrollProgress[39m } [36mfrom[39m [32m'./ScrollProgress'[39m[33m;[39m
+ [90m 10 |[39m [36mexport[39m { [33mFloatingParticles[39m } [36mfrom[39m [32m'./FloatingParticles'[39m[33m;[39m[0m
+Next.js build worker exited with code: 1 and signal: null

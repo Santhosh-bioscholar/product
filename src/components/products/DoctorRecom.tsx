@@ -7,7 +7,7 @@ import { FadeIn } from '../animations/FadeIn';
 
 interface UsageSectionProps {
     product: ProductData;
-    className: string;
+    className?: string;
 }
 
 export const DoctorRecom = ({ className, product }: UsageSectionProps) => {

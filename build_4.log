@@ -5,32 +5,18 @@
    ▲ Next.js 16.0.10 (Turbopack)
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 5.4s
+ ✓ Compiled successfully in 4.3s
    Running TypeScript ...
-   Collecting page data using 11 workers ...
-   Generating static pages using 11 workers (0/15) ...
-   Generating static pages using 11 workers (3/15) 
-   Generating static pages using 11 workers (7/15) 
-   Generating static pages using 11 workers (11/15) 
- ✓ Generating static pages using 11 workers (15/15) in 1006.7ms
-   Finalizing page optimization ...
+Failed to compile.
 
-Route (app)
-┌ ○ /
-├ ○ /_not-found
-├ ○ /about
-├ ○ /contact
-├ ○ /global-impact
-├ ○ /innovation
-├ ○ /products
-├ ● /products/[id]
-│ ├ /products/fermbiotic
-│ ├ /products/bleubiotic
-│ ├ /products/spirotic
-│ └ [+2 more paths]
-└ ○ /products/enhanced
+./src/components/products/UsageSection.tsx:8:14
+Type error: Cannot find name 'ProductData'.
 
-
-○  (Static)  prerendered as static content
-●  (SSG)     prerendered as static HTML (uses generateStaticParams)
-
+[0m [90m  6 |[39m
+ [90m  7 |[39m [36minterface[39m [33mHowItWorksSectionProps[39m {
+[31m[1m>[22m[39m[90m  8 |[39m     product[33m:[39m [33mProductData[39m[33m;[39m
+ [90m    |[39m              [31m[1m^[22m[39m
+ [90m  9 |[39m }
+ [90m 10 |[39m
+ [90m 11 |[39m [36mexport[39m [36mconst[39m [33mPristineCrustacean[39m [33m=[39m () [33m=>[39m {[0m
+Next.js build worker exited with code: 1 and signal: null

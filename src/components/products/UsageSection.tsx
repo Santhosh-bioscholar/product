@@ -3,12 +3,13 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ProductData } from "@/types/product";
 
 interface HowItWorksSectionProps {
     product: ProductData;
 }
 
-export const PristineCrustacean = () => {
+export const UsageSection = () => {
     const containerRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
@@ -90,10 +91,7 @@ export const PristineCrustacean = () => {
                     <img
                         alt="Macro photography of premium shrimp"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGGPYnJwPGxZfARJW09_HoI8qhn0t9yl3_gx3QDCpamL_2pEmwDUIUg64v2wV8RnpIht0IMpSWU0rv2ljJ0-Y6bFA6dbPft3EoWPtUDmKOKAcUbZ-npraHT6iAA33shfeTGq_JVsTb-BGXN-5qrnWKIfw6sUabHDLc9tssAInTkhSoS120dPa1GjtG1-bl_WiQgNjhP6YYeR8Pp2GWWUJWDpFoleY0nvQ49jrYr4oJ2BTfg9Wzqd_9DP23PUASVA2fzjFusDIfwvcg"
-                        layout="fill"
-                        objectFit="cover"
-                        className="opacity-60 scale-110 !w-full !h-full"
-                        priority
+                        className="opacity-60 scale-110 !w-full !h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
                     <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
