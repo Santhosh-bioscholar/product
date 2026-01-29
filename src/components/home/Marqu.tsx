@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 export function Marqu() {
   const images = [
-    "s1.png","s2.png","s3.png","s4.png","s5.png",
-    "s6.png","s7.png","s8.png","s9.png","s10.png",
-    "s11.png","s12.png","s13.png","s14.png","s15.png",
-    "s16.png","s17.png"
+    "s1-Picsart-AiImageEnhancer.png","s2-Picsart-AiImageEnhancer.png","s3-Picsart-AiImageEnhancer.png","s4-Picsart-AiImageEnhancer.png","s5-Picsart-AiImageEnhancer.png",
+    "s6-Picsart-AiImageEnhancer.png","s7-Picsart-AiImageEnhancer.png","s8-Picsart-AiImageEnhancer.png","s9-Picsart-AiImageEnhancer.png","s10-Picsart-AiImageEnhancer.png",
+    "s11-Picsart-AiImageEnhancer.png","s12-Picsart-AiImageEnhancer.png","s13-Picsart-AiImageEnhancer.png","s14-Picsart-AiImageEnhancer.png","s15-Picsart-AiImageEnhancer.png",
+    "s16-Picsart-AiImageEnhancer.png","s17-Picsart-AiImageEnhancer.png"
   ];
 
   return (

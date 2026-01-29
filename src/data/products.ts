@@ -1,17 +1,17 @@
 import { ProductData } from '@/types/product';
 
 export const products: Record<string, ProductData> = {
-     algabiotic: {
+    algabiotic: {
         id: 'algabiotic',
-        name: 'Algabiotic',
+        name: 'Algabiôtic',
         tagline: 'Ocean Intelligence for Growth',
         description: 'Marine biotechnology breakthrough for aquaculture and agriculture. Harness the growth-promoting power of oceanic microalgae.',
         themeColor: '#0ea5e9',
         cssVariable: '--algabiotic',
         animationType: 'ripple',
         bannerImage: '/bleubiotic.png',
-       
-           benefitIcons: [
+
+        benefitIcons: [
             { id: 'gut', icon: 'Heart', label: 'Gut Health' },
             { id: 'shield', icon: 'Shield', label: 'Immunity' },
             { id: 'leaf', icon: 'Leaf', label: 'Natural' },
@@ -19,10 +19,10 @@ export const products: Record<string, ProductData> = {
         ],
         doctorRecom: {
             image: '/p5doc5.png',
- quote:'Algabiotic is a CAA-approved, world-class shrimp nutrition supplement that promotes optimal growth, strong immunity, and smooth molting cycles. Its eco-friendly formulation supports sustainable aquaculture and improved bio-economic outcomes.',
+            quote: 'Algabiôtic is a CAA-approved, world-class shrimp nutrition supplement that promotes optimal growth, strong immunity, and smooth molting cycles. Its eco-friendly formulation supports sustainable aquaculture and improved bio-economic outcomes.',
             doctorName: 'Dr. Elena Rodriguez'
         },
-         immuneSystem: {
+        immuneSystem: {
             title: 'Immune Related',
             subtitle: 'Gene Expression',
             description: 'Analyzing transcriptional responses in the Lysozyme, Toll-like receptor, and IMD pathways. Interactive visualization of mRNA expression levels across control and treatment groups.',
@@ -45,8 +45,9 @@ export const products: Record<string, ProductData> = {
         },
         overview: {
             title: 'Ocean-Powered Growth',
+              overImage: '/bleubiotic.png',
             subtitle: 'Marine Biotechnology',
-            description: 'Algabiotic leverages marine microalgae to accelerate growth in aquaculture and agriculture. Our proprietary blend enhances nutrient uptake and promotes natural development.',
+            description: 'Algabiôtic leverages marine microalgae to accelerate growth in aquaculture and agriculture. Our proprietary blend enhances nutrient uptake and promotes natural development.',
             highlights: ['Marine Microalgae', 'Growth Factors', 'Sustainable Production', 'Aquaculture Optimized'],
         },
         leftMetrics: [
@@ -127,13 +128,14 @@ export const products: Record<string, ProductData> = {
     },
     fermbiotic: {
         id: 'fermbiotic',
-        name: 'Fermbiotic',
+        name: 'Fermbiôtic',
         tagline: 'Fermentation Science for Gut Vitality',
         description: 'Advanced probiotic formula powered by precision fermentation technology. Cultivate a thriving gut microbiome with billions of beneficial bacteria.',
         themeColor: '#22c55e',
         cssVariable: '--fermbiotic',
         animationType: 'microbiome',
         bannerImage: '/bleubiotic.png',
+        
         benefitIcons: [
             { id: 'growth', icon: 'TrendingUp', label: 'Growth' },
             { id: 'yield', icon: 'BarChart3', label: 'Yield' },
@@ -142,7 +144,7 @@ export const products: Record<string, ProductData> = {
         ],
         doctorRecom: {
             image: '/p2doc5.png',
-            quote: 'Fermbiotic is a next-generation fermented algal protein that improves protein bioavailability, digestion, and gut microbiome balance for humans and animals. Its probiotic-rich green-white technology supports immunity, detoxification, and sustained energy.',
+            quote: 'Fermbiôtic is a next-generation fermented algal protein that improves protein bioavailability, digestion, and gut microbiome balance for humans and animals. Its probiotic-rich green-white technology supports immunity, detoxification, and sustained energy.',
             doctorName: 'Dr. Arjun Mehta'
         },
         immuneSystem: {
@@ -168,6 +170,7 @@ export const products: Record<string, ProductData> = {
         },
         overview: {
             title: 'The Science of Fermentation',
+              overImage: '/desk.png',
             subtitle: 'Precision-Engineered Probiotics',
             description: 'Fermbiotic harnesses centuries-old fermentation wisdom combined with cutting-edge biotechnology. Our proprietary strain selection delivers targeted gut support with clinically-proven efficacy.',
             highlights: ['50 Billion CFU', 'pH-Protected Delivery', '12 Strain Complex', 'Clinically Tested'],
@@ -252,7 +255,7 @@ export const products: Record<string, ProductData> = {
     },
     bleubiotic: {
         id: 'bleubiotic',
-        name: 'Bleubiotic',
+        name: 'Bleubiôtic',
         tagline: 'Cellular Purification & Antioxidant Defense',
         description: 'Revolutionary detoxification complex harnessing blue-spectrum antioxidants. Neutralize free radicals and illuminate your cellular health.',
         themeColor: '#3b82f6',
@@ -267,7 +270,7 @@ export const products: Record<string, ProductData> = {
         ],
         doctorRecom: {
             image: '/p3doc5.png',
-             quote:'Bleubiotic is a powerful antioxidant formulation combining phycocyanin with probiotics and postbiotics to support detoxification, anti-aging, and cellular health. It is ideal for daily wellness and metabolic balance.',
+            quote: 'Bleubiôtic is a powerful antioxidant formulation combining phycocyanin with probiotics and postbiotics to support detoxification, anti-aging, and cellular health. It is ideal for daily wellness and metabolic balance.',
             doctorName: 'Dr. Rajiv Sharma'
         },
         immuneSystem: {
@@ -293,8 +296,9 @@ export const products: Record<string, ProductData> = {
         },
         overview: {
             title: 'The Power of Blue',
+              overImage: '/bleubiotic.png',
             subtitle: 'Antioxidant Illumination',
-            description: 'Bleubiotic combines rare blue-pigmented compounds with advanced detoxification pathways. Experience cellular renewal through the power of phycocyanin and anthocyanins.',
+            description: 'Bleubiôtic combines rare blue-pigmented compounds with advanced detoxification pathways. Experience cellular renewal through the power of phycocyanin and anthocyanins.',
             highlights: ['Blue Spirulina Extract', 'Glutathione Enhanced', 'Heavy Metal Chelation', 'DNA Protection'],
         },
 
@@ -337,7 +341,7 @@ export const products: Record<string, ProductData> = {
             { id: 'b6', icon: 'Zap', title: 'Energy Revival', description: 'Optimize mitochondrial function for sustained energy.' },
         ],
         howItWorks: {
-            title: 'How Bleubiotic Works',
+            title: 'How Bleubiôtic Works',
             subtitle: 'Cellular Illumination Process',
             steps: [
                 { id: 's1', step: 1, icon: 'Scan', title: 'Toxin Detection', description: 'Smart molecules identify and target harmful compounds.' },
@@ -377,7 +381,7 @@ export const products: Record<string, ProductData> = {
     },
     spirotic: {
         id: 'spirotic',
-        name: 'Spirotic',
+        name: 'Spirôtic',
         tagline: 'The Spiral of Life Force',
         description: 'Ancient superfood reimagined with modern bioavailability. Spirulina\'s spiral structure delivers complete nutrition in its most absorbable form.',
         themeColor: '#14b8a6',
@@ -392,7 +396,7 @@ export const products: Record<string, ProductData> = {
         ],
         doctorRecom: {
             image: '/p4doc4.png',
- quote:'Spirotic Spirulina Powder is a natural superfood rich in protein, vitamins, and antioxidants that enhances immunity, energy levels, and overall nutrition. Recommended for daily dietary supplementation in humans and animal feed.',
+            quote: 'Spirôtic Spirulina Powder is a natural superfood rich in protein, vitamins, and antioxidants that enhances immunity, energy levels, and overall nutrition. Recommended for daily dietary supplementation in humans and animal feed.',
             doctorName: 'Dr. Ananya Rao'
         },
         immuneSystem: {
@@ -418,8 +422,9 @@ export const products: Record<string, ProductData> = {
         },
         overview: {
             title: 'Nature\'s Perfect Spiral',
+              overImage: '/bleubiotic.png',
             subtitle: 'Complete Nutrition',
-            description: 'Spirotic delivers the world\'s most nutrient-dense superfood in a revolutionary spiral-delivery system. Each serving contains complete protein, essential fatty acids, and concentrated chlorophyll.',
+            description: 'Spirôticdelivers the world\'s most nutrient-dense superfood in a revolutionary spiral-delivery system. Each serving contains complete protein, essential fatty acids, and concentrated chlorophyll.',
             highlights: ['65% Complete Protein', 'Iron & B12 Rich', 'Chlorophyll Dense', 'Sustainable Source'],
         },
         leftMetrics: [
@@ -480,7 +485,7 @@ export const products: Record<string, ProductData> = {
             ],
         },
         pristineShowcase: {
-            backgroundImage: '/unnamed.png',
+            backgroundImage: '/fish.png',
             cards: [
                 // Far Depth
                 { title: 'Nutrient Dense', description: 'Packed with vitamins and minerals.', icon: 'apps' },
@@ -498,10 +503,10 @@ export const products: Record<string, ProductData> = {
         },
         dividers: ['wave', 'bubbles', 'pulse', 'molecular'],
     },
-   
+
     glowbiotic: {
         id: 'glowbiotic',
-        name: 'Glowbiotic',
+        name: 'GlowBiôtic',
         tagline: 'Bioluminescent Vitality Complex',
         description: 'Inspired by nature\'s light-producing organisms. Activate your inner radiance with spectrum-shifting bio-compounds.',
         themeColor: '#ec4899',
@@ -516,7 +521,7 @@ export const products: Record<string, ProductData> = {
         ],
         doctorRecom: {
             image: '/p1doc5.png',
-              quote:'Glowbiotic is specially formulated to enhance vibrant coloration, immunity, and lifespan of ornamental fish and shrimps. Regular use supports overall health and aesthetic quality in ornamental aquatic systems.',
+            quote: 'GlowBiôtic is specially formulated to enhance vibrant coloration, immunity, and lifespan of ornamental fish and shrimps. Regular use supports overall health and aesthetic quality in ornamental aquatic systems.',
             doctorName: 'Dr. Kajal'
         },
         immuneSystem: {
@@ -542,8 +547,9 @@ export const products: Record<string, ProductData> = {
         },
         overview: {
             title: 'The Science of Glow',
+              overImage: '/bleubiotic.png',
             subtitle: 'Bioluminescent Beauty',
-            description: 'Glowbiotic harnesses rare bioluminescent compounds to activate your natural radiance. Our spectrum-shifting formula promotes skin luminosity, hair vitality, and overall vibrancy.',
+            description: 'GlowBiôtic harnesses rare bioluminescent compounds to activate your natural radiance. Our spectrum-shifting formula promotes skin luminosity, hair vitality, and overall vibrancy.',
             highlights: ['Bioluminescent Extracts', 'Collagen Activation', 'Spectrum Nutrients', 'Visible Results'],
         },
         leftMetrics: [

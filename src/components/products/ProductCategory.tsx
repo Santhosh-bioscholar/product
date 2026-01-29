@@ -20,7 +20,7 @@ interface ProductCategoryProps {
 
 export function ProductCategory({ title, description, products, align = "left" }: ProductCategoryProps) {
     return (
-        <section className="py-24 px-6 bg-[#131313] border-b border-white/5">
+        <section className="py-24 px-6  border-b border-white/5">
             <div className="max-w-7xl mx-auto">
                 <div className={`flex flex-col gap-6 mb-16 ${align === "right" ? "md:text-center md:items-center" : "md:text-center md:items-center"}`}>
                     <FadeIn direction="up">
@@ -33,7 +33,7 @@ export function ProductCategory({ title, description, products, align = "left" }
                     {/* <span className="block text-white">The Great</span> */}
                 </h2>
                     </FadeIn>
-                </div>
+                </div>  
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {products.map((product, i) => (

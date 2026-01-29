@@ -4,7 +4,7 @@ import ScrollProgress from './ScrollProgress';
 import HeroSection from './HeroSection';
 import OverviewSection from './OverviewSection';
 import BenefitsSection from './BenefitsSection';
-import HowItWorksSection from './HowItWorksSection';
+// import HowItWorksSection from './HowItWorksSection';
 import SectionDivider from './SectionDivider';
 import CodeMetricsTable from './CodeMetricsTable';
 import ProductPageParticles from './ProductPageParticles';
@@ -14,6 +14,12 @@ import DoctorRecom from './DoctorRecom';
 import Immune from './Immune';
 import { PristineShowcase } from './PristineShowcase';
 import NeonBounceBanner from './NeonBounceBanner';
+import HowItWorksSection from './HowItWorksSection';
+import Japanese from './Jap';
+import Rev from './Rev';
+import CellularHealth from './CellularHealth';
+import { GutHealthBanner } from './GutHealthBanner';
+import { AboutSwiper } from './AboutSwiper';
 // import ProcessFlowSection from './ProcessFlowSection';
 
 interface ProductPageProps {
@@ -22,7 +28,7 @@ interface ProductPageProps {
 
 export const ProductPage = ({ product }: ProductPageProps) => {
     // Update CSS variables for product-specific theming
-    useEffect(() => {
+       useEffect(() => {
         const root = document.documentElement;
 
         // Set the primary color to the product's theme color
@@ -47,17 +53,18 @@ export const ProductPage = ({ product }: ProductPageProps) => {
             root.style.setProperty('--ring', '142 70% 45%');
             root.style.setProperty('--accent', '142 70% 45%');
         };
+
     }, [product]);
 
     return (
-        <div className="min-h-screen relative ">
+        <div className="min-h-screen   relative  bg-background">
             {/* Noise overlay */}
             <div className="noise-overla" />
-
+  
             <ProductPageParticles />
 
-            {/* Scroll progress indicator */}
-            {/* <ScrollProgress /> */}
+            Scroll progress indicator
+            <ScrollProgress />
 
             {/* Hero Section */}
             <HeroSection product={product} />
@@ -89,14 +96,33 @@ export const ProductPage = ({ product }: ProductPageProps) => {
             {/* <NeonBounceBanner/> */}
             {['algabiotic', 'spirotic'].includes(product.id) && (
                 <Immune product={product} />
+                // <Japanese/>
+            )}
+               {['fermbiotic'].includes(product.id) && (
+                // <Immune product={product} />
+                <Japanese/>
+                // <CellularHealth/>
+            )}
+             {['fermbiotic'].includes(product.id) && (
+                // <Immune product={product} />
+                // <Japanese/>
+                <CellularHealth/>
+                //  <GutHealthBanner />
             )}
             {/* <UsageSection product={product} /> */}
             {/* <UsageSection/> */}
-            <PristineShowcase product={product} />
+            {/* <PristineShowcase product={product} /> */}
             <HowItWorksSection product={product} />
-            <DoctorRecom product={product} />
+            {/* <DoctorRecom product={product} /> */}
 
-
+             {['fermbiotic'].includes(product.id) && (
+                // <Immune product={product} />
+                // <Japanese/>
+                // <CellularHealth/>
+                //  <GutHealthBanner />
+                <AboutSwiper/>
+            )}
+{/* <Rev/> */}
 
             {/* Footer spacer */}
             {/* <div className="h-32" /> */}

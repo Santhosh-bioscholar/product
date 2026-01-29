@@ -17,7 +17,7 @@ export const TimelineConnector = ({ progress, fromColor, toColor }: TimelineConn
     const to = colorMap[toColor];
 
     return (
-        <div className="relative w-24 md:w-32 flex items-center justify-center">
+        <div className="relative w-24 md:w-23 flex items-center justify-center">
             {/* Horizontal line */}
             <div className="relative h-0.5 w-full bg-white/10 rounded-full overflow-hidden">
                 {/* Progress fill */}

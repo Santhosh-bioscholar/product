@@ -34,7 +34,7 @@ const HeavyQuote = ({ className }: { className?: string }) => (
 
 export function QuoteSection() {
     return (
-        <div className="relative w-full py-32  px-6 md:px-20 container">
+        <div className="relative w-full py-32  px-6 md:px-0 ">
             <h2 className="text-2xl lg:text-4xl font-semibold text-foreground mb-1 text-center">
              CEO{" "}
             <span className=" text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400">

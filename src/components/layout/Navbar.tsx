@@ -23,6 +23,7 @@ const navItems = [
   { title: "ABOUT US", href: "/about" },
   { title: "INNOVATION", href: "/innovation" },
   { title: "CONTACT", href: "/contact" },
+ 
 ];
 
 export function Navbar() {

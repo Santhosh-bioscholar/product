@@ -34,7 +34,7 @@ export function Oxygenation() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         <ContentBlock />
-                        <TimelineAnimation />
+                        {/* <TimelineAnimation /> */}
                     </motion.div>
                 </div>
             </div>

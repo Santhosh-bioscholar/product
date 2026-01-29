@@ -12,6 +12,7 @@ export const metadata = {
 export default function InnovationPage() {
     return (
         <main className="min-h-screen md:pt-25">
+            
             {/* <HeroBanner /> */}
             <InnovationAreasSection />
             <PhilosophySection />

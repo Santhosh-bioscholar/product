@@ -37,14 +37,8 @@ export function Footer() {
                         Pioneering sustainable biotech solutions for a cleaner, healthier future.
                         Harnessing the power of algae and nature's intelligence.
                     </p>
-                     <div className="flex items-center gap-3">
-                            <Phone className="w-5 h-5 text-[#0FA57D] shrink-0" />
-                            <span>+91 98765 43210</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <Mail className="w-5 h-5 text-[#0FA57D] shrink-0" />
-                            <span>info@aroorabiotech.com</span>
-                        </div>
+                    
+                      
                 </div>
 
                 {/* Quick Links */}
@@ -80,7 +74,7 @@ export function Footer() {
                  <div className="flex flex-col gap-4">
                     <h3 className="text-lg font-bold text-[#0FA57D]">Our Products</h3>
                     <nav className="flex flex-col gap-2">
-                        {["fermbiotic", "bleubiotic", "spirotic", "algabiotic","glowbiotic"].map((item) => (
+                        {["Fermbiotic", "bleubiotic", "spirotic", "algabiotic","glowbiotic"].map((item) => (
                             <Link
                                 key={item}
                                 href={`/${item.toLowerCase()}`}
@@ -94,7 +88,7 @@ export function Footer() {
                  <div className="flex flex-col gap-4">
                     <h3 className="text-lg font-bold text-[#0FA57D]">Our Products</h3>
                     <nav className="flex flex-col gap-2">
-                        {["fermbiotic", "bleubiotic", "spirotic", "algabiotic","glowbiotic"].map((item) => (
+                        {["Fermbiotic", "bleubiotic", "spirotic", "algabiotic","glowbiotic"].map((item) => (
                             <Link
                                 key={item}
                                 href={`/${item.toLowerCase()}`}

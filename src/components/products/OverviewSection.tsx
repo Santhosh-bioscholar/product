@@ -11,7 +11,7 @@ interface OverviewSectionProps {
 
 export const OverviewSection = ({ product }: OverviewSectionProps) => {
     return (
-        <section className="relative py-20 overflow-hidden h-200 ">
+        <section className="relative py-30 overflow-hidden h-200 ">
             {/* Background */}
          {/* <div
   className="absolute inset-0"
@@ -79,26 +79,33 @@ export const OverviewSection = ({ product }: OverviewSectionProps) => {
                             ))}
                         </motion.div>
                     </div>
- <div className="relative  overflow-hidden ">
+ {/* <div className="relative w-full overflow-hidden ">
       <img
-        src="/poi.png"
+        src={product.overview.overImage}
         alt="Image"
         
         className="object-cover h-full"
       />
 
+   
+    </div> */}
+     <div className="relative hidden lg:block  h-[500px] ">
+                            <div className="absolute inset-0  rounded-full"></div>
+                           <div className='relative'>
+
+                           <img
+  className=" z-10 w-full aspect-square  h-[500px]  overflow-hidden bg-center bg-cover group scale-x-[-] "
+  src={product.overview.overImage}
+/>
+<div className="absolute inset-x-0 bottom-0 h-[90px] bg-gradient-to-t from-[#131313] via-transparent to-transparent" />
+<div className="absolute inset-y-0 left-0 w-[40px] bg-gradient-to-r from-[#131313] to-transparent" />
+<div className="absolute inset-y-0 right-0 w-[60px] bg-gradient-to-l from-[#131313] to-transparent" /> 
+<div className="absolute inset-x-0 top-0 h-[30px] bg-gradient-to-b from-[#131313] to-transparent" />
+               </div>
+
+
+                        </div>
       {/* Gradient Overlay */}
-      <div className="
-        absolute inset-0
-        bg-gradient-to-t from-[#131313]/250 via-transparent to-transparent
-         bg-gradient-to-b from-[#131313]/250 via-transparent to-transparent
-       
-        before:absolute before:inset-0
-        before:bg-gradient-to-b before:from-[#131313]/250 before:via-transparent before:to-transparent
-        after:absolute after:inset-0
-        after:bg-gradient-to-r after:from-[#131313]/250 after:via-transparent after:to-transparent
-      " />
-    </div>
                     {/* Right visual */}
                     {/* <div className="relative flex justify-center lg:justify-center">
                         {/* <OverviewBenefitsDiagram benefits={product.benefits} productName={product.name} /> 

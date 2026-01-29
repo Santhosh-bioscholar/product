@@ -11,7 +11,7 @@ export const ProductSelector = ({ currentProduct, onSelectProduct }: ProductSele
     const allProducts = getAllProducts();
 
     const colorMap: Record<string, string> = {
-        fermbiotic: 'bg-fermbiotic',
+        Fermbiotic: 'bg-Fermbiotic',
         bleubiotic: 'bg-bleubiotic',
         spirotic: 'bg-spirotic',
         algabiotic: 'bg-algabiotic',

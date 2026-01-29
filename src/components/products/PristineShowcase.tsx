@@ -165,7 +165,7 @@ export const PristineShowcase = ({ product }: HowItWorksSectionProps) => {
           <div className="floating-card depth-mid top-[45%] left-[2%] md:left-[5%] w-48 md:w-56 hidden md:block">
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary-gold text-xl">{product.pristineShowcase.cards[4].icon}</span>
-              <span className="text-[11px] uppercase tracking-widest font-bold font-sans-jakarta text-white">
+              <span className="text-[11px] upp379ercase tracking-widest font-bold font-sans-jakarta text-white">
                 {product.pristineShowcase.cards[4].title}
               </span>
             </div>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const humanfoodProducts = [
     {
-        id: "fermbiotic",
+        id: "Fermbiotic",
         name: "Fermbiotic",
         desc: "Advanced fermentation technology ensuring maximum nutrient absorption and gut health support.",
         gradient: "from-blue-600 to-purple-600",
@@ -50,7 +50,7 @@ const animalfoodProducts = [
 
 export default function ProductsPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-[#131313]">
+        <div className="flex flex-col min-h-screen ">
             <ProductsHero />
             <ProductCategory
                 title="Human food Products"

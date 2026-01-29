@@ -58,6 +58,7 @@ export interface ProductData {
         subtitle: string;
         description: string;
         highlights: string[];
+        overImage:string;
     };
     leftMetrics: LeftMetrics[];
     rightMetrics: RightMetrics[];

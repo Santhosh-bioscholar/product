@@ -1,10 +1,22 @@
-import { AboutHero } from "@/components/about/AboutHero";
+// import { AboutHero } from "@/components/about/AboutHero";
+import Header from "@/components/about/Header";
+import HeroTitle from "@/components/about/HeroTitle";
+import QuoteCard from "@/components/about/QuoteCard";
+import BottomControls from "@/components/about/BottomControls";
+import SocialSidebar from "@/components/about/SocialSidebar";
+
 import { OurPurpose } from "@/components/about/OurPurpose";
 import { SustainabilityValues } from "@/components/about/SustainabilityValues";
 import { GlobalPresence } from "@/components/about/GlobalPresence";
 import { EvolutionHealthyFuture } from "@/components/about/EvolutionHealthyFuture";
 import { QuoteSection } from "@/components/about/QuoteSection";
+import { SDGFloatingGrid } from "@/components/about/SDGFloatingGrid";
+import { ScalingNatureWisdom } from "@/components/about/ScalingNatureWisdom";
+import CellularHealth from "@/components/products/CellularHealth";
 import { Metadata } from "next";
+import { AboutHero } from "@/components/about/AboutHero";
+import { GutHealthBanner } from "@/components/products/GutHealthBanner";
+import { AboutSwiper } from "@/components/products/AboutSwiper";
 
 export const metadata: Metadata = {
     title: "About Us | Aroora Biotech",
@@ -13,13 +25,22 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-[#131313]">
+        <div className="flex flex-col min-h-screen">
+            {/* <AboutHero /> */}
             <AboutHero />
-            <OurPurpose />
+
+
+            <ScalingNatureWisdom />
+            {/* <OurPurpose /> */}
             <SustainabilityValues />
+            {/* <SDGFloatingGrid /> */}
+
             {/* <EvolutionHealthyFuture /> */}
             {/* <GlobalPresence /> */}
+
             <QuoteSection />
+            {/* <CellularHealth /> */}
+            {/* <AboutSwiper /> */}
         </div>
     );
 }

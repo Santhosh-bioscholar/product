@@ -28,7 +28,7 @@ interface Product {
 const products: Product[] = [
     {
         id: 'main',
-        name: 'FERMBIÔTIC',
+        name: 'Fermbiotic',
         label: 'Main View',
         category: 'FERMBIÖTIC',
         price: 299,

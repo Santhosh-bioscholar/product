@@ -39,7 +39,7 @@ const ProductPageParticles = () => {
             {particles.map((particle) => (
                 <div
                     key={particle.id}
-                    className="absolute rounded-full opacity-20 animate-float"
+                    className="absolute rounded-full opacity-40 animate-float"
                     style={{
                         left: `${particle.x}%`,
                         top: `${particle.y}%`,

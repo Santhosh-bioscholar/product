@@ -5,21 +5,17 @@
    ▲ Next.js 16.0.10 (Turbopack)
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 5.5s
+ ✓ Compiled successfully in 4.9s
    Running TypeScript ...
-Failed to compile.
-
-./src/components/about/ImpactWithoutBordersTimeline.tsx:273:26
-Type error: 'Icon' cannot be used as a JSX component.
-  Its type '({ isActive }: { isActive: boolean; }) => void' is not a valid JSX element type.
-    Type '({ isActive }: { isActive: boolean; }) => void' is not assignable to type '(props: any) => ReactNode | Promise<ReactNode>'.
-      Type 'void' is not assignable to type 'ReactNode | Promise<ReactNode>'.
-
-[0m [90m 271 |[39m                         transition[33m=[39m{{ duration[33m:[39m [35m0.4[39m }}
- [90m 272 |[39m                     [33m>[39m
-[31m[1m>[22m[39m[90m 273 |[39m                         [33m<[39m[33mIcon[39m isActive[33m=[39m{isActive} [33m/[39m[33m>[39m
- [90m     |[39m                          [31m[1m^[22m[39m
- [90m 274 |[39m                     [33m<[39m[33m/[39m[33mmotion[39m[33m.[39mdiv[33m>[39m
- [90m 275 |[39m                 [33m<[39m[33m/[39m[33mmotion[39m[33m.[39mdiv[33m>[39m
- [90m 276 |[39m[0m
-Next.js build worker exited with code: 1 and signal: null
+   Collecting page data using 11 workers ...
+   Generating static pages using 11 workers (0/15) ...
+Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: Attempted to call createMotionComponent() from the server but createMotionComponent is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+    at <unknown> (.next/server/chunks/ssr/_64464174._.js:1:6994)
+    at Object.get (.next/server/chunks/ssr/_64464174._.js:3:95818)
+    at e3 (.next/server/chunks/ssr/_64464174._.js:3:107194)
+    at stringify (<anonymous>) {
+  digest: '335419138'
+}
+Export encountered an error on /page: /, exiting the build.
+ ⨯ Next.js build worker exited with code: 1 and signal: null

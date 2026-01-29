@@ -4,6 +4,7 @@ import { AncientEarthIcon } from "./AncientEarthIcon";
 import { OxygenRiseIcon } from "./OxygenRiseIcon";
 import { ModernLifeIcon } from "./ModernLifeIcon";
 import { TimelineConnector } from "./TimelineConnector";
+import { AlgaeEarthIcon } from "./AlgaeEarthIcon";
 
 export const TimelineAnimation = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -59,6 +60,21 @@ export const TimelineAnimation = () => {
                     fromColor="ancient"
                     toColor="oxygen"
                 />
+                   <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={isInView ? { scale: 1, opacity: 1 } : {}}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                    <AlgaeEarthIcon isActive={activeStage >= 1} />
+                        
+                </motion.div>
+
+                {/* Connector 1 */}
+                <TimelineConnector
+                    progress={getStageProgress(2)}
+                    fromColor="ancient"
+                    toColor="oxygen"
+                />
 
                 {/* Stage 2: Oxygen Rise */}
                 <motion.div
@@ -87,7 +103,7 @@ export const TimelineAnimation = () => {
             </motion.div>
 
             {/* Era labels */}
-            <motion.div
+            {/* <motion.div
                 className="absolute bottom-0 left-0 right-0 flex flex-row justify-between pb-8 text-xs px-2"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
@@ -96,7 +112,7 @@ export const TimelineAnimation = () => {
                 <span className="text-[10px] text-gray-500 text-left w-20">~4.5 BYA</span>
                 <span className="text-[10px] text-gray-500 text-center w-20">~2.4 BYA</span>
                 <span className="text-[10px] text-gray-500 text-right w-20">Present Day</span>
-            </motion.div>
+            </motion.div> */}
         </div>
     );
 };

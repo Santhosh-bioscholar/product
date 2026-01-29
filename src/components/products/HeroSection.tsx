@@ -20,7 +20,7 @@ export const HeroSection = ({ product }: HeroSectionProps) => {
 
         const timer = setTimeout(() => {
             setIntroComplete(true);
-        }, 2500);
+        }, 500);
         return () => clearTimeout(timer);
     }, [product.bannerImage]);
 
@@ -49,7 +49,7 @@ export const HeroSection = ({ product }: HeroSectionProps) => {
                 className="absolute inset-0 z-1"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: introComplete ? 1 : 0 }}
-                transition={{ duration: 4, delay: 0.2 }}
+                transition={{ duration: 2, delay: 0.1 }}
             >
                 {product.bannerImage ? (
                     <>
