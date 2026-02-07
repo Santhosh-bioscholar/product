@@ -33,7 +33,7 @@ export const OverviewSection = ({ product }: OverviewSectionProps) => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: '-100px' }}
-                    className="grid lg:grid-cols-2 gap-8 items-"
+                    className="grid lg:grid-cols-2 gap-8 items-center"
                 >
                     {/* Left content */}
                     <div className="space-y-8">
@@ -89,18 +89,18 @@ export const OverviewSection = ({ product }: OverviewSectionProps) => {
 
    
     </div> */}
-     <div className="relative hidden lg:block  h-[500px] ">
+     <div className="relative hidden lg:block  h-[500px] place-items-center">
                             <div className="absolute inset-0  rounded-full"></div>
                            <div className='relative'>
 
                            <img
-  className=" z-10 w-full aspect-square  h-[500px]  overflow-hidden bg-center bg-cover group scale-x-[-] "
+  className=" z-10 w-[500px] aspect-square  h-[500px]  overflow-hidden bg-center bg-cover group scale-x-[-] "
   src={product.overview.overImage}
 />
-<div className="absolute inset-x-0 bottom-0 h-[90px] bg-gradient-to-t from-[#131313] via-transparent to-transparent" />
-<div className="absolute inset-y-0 left-0 w-[40px] bg-gradient-to-r from-[#131313] to-transparent" />
-<div className="absolute inset-y-0 right-0 w-[60px] bg-gradient-to-l from-[#131313] to-transparent" /> 
-<div className="absolute inset-x-0 top-0 h-[30px] bg-gradient-to-b from-[#131313] to-transparent" />
+<div className="absolute inset-x-0 bottom-0 h-[90px] bg-gradient-to-t from-[hsl(150_50%_4%)] via-transparent to-transparent" />
+<div className="absolute inset-y-0 left-0 w-[40px] bg-gradient-to-r from-[hsl(150_50%_4%)]  to-transparent" />
+<div className="absolute inset-y-0 right-[0px] w-[60px] bg-gradient-to-l from-[hsl(150_50%_4%)]  to-transparent" /> 
+<div className="absolute inset-x-0 top-0 h-[30px] bg-gradient-to-b from-[hsl(150_50%_4%)]  to-transparent" />
                </div>
 
 

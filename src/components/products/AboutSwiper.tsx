@@ -30,7 +30,7 @@ export const AboutSwiper = () => {
     }, []);
 
     return (
-        <section className="relative w-full h-[550px] py-10 container mx-auto">
+        <section className="relative w-full h-[550px] pb-20 container mx-auto">
             <style jsx global>{`
                 .about-swiper .swiper {
                     width: 100%;
@@ -89,11 +89,11 @@ export const AboutSwiper = () => {
                <Swiper
   direction={direction}
   loop={true}
-  autoplay={{
-    delay: 3000, 
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  }}
+  // autoplay={{
+  //   delay: 3000, 
+  //   disableOnInteraction: false,
+  //   pauseOnMouseEnter: true,
+  // }}
   breakpoints={{
     640: {
       slidesPerView: 1,
@@ -130,10 +130,10 @@ export const AboutSwiper = () => {
 <span className="material-symbols-rounded text-sm">star</span>
 <span className="material-symbols-rounded text-sm">star</span>
 </div>
-<p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed text-lg italic">
+<p className="mt-6 h-36 text-gray-700 dark:text-gray-300 leading-relaxed text-lg italic">
                  Fermbiotic™ is recognized for its enhanced protein bioavailability and improved digestibility achieved through advanced probiotic fermentation. It represents a next-generation sustainable protein source for optimized human nutrition.      </p>
 <div className="mt-8 pt-8 border-t border-gray-100 dark:border-white/10 flex items-center gap-4">
-<img alt="Brooklyn Simmons portrait" className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20" src=""/>
+<img alt="Brooklyn Simmons portrait" className="w-15 h-17 p-2 rounded-full object-cover ring-2 ring-primary/20" src="/p2doc5.png"/>
 <div>
 <h4 className="font-bold text-gray-900 dark:text-white">Brooklyn Simmons</h4>
 <p className="text-sm text-gray-500 dark:text-gray-400">Nutrition scientists</p>
@@ -152,10 +152,11 @@ export const AboutSwiper = () => {
 <span className="material-symbols-rounded text-sm">star</span>
 <span className="material-symbols-rounded text-sm">star</span>
 </div>
-<p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed text-lg italic">
+<p className="mt-6 h-36 text-gray-700 dark:text-gray-300 leading-relaxed text-lg italic">
                       Fermbiotic™ supports gut microbiome balance by delivering fermented algal protein enriched with beneficial metabolites and EPS. Its formulation aligns with modern microbiome-focused nutritional science.  </p>
 <div className="mt-8 pt-8 border-t border-gray-100 dark:border-white/10 flex items-center gap-4">
-<img alt="Brooklyn Simmons portrait" className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20" src=""/>
+<img alt="Brooklyn Simmons portrait" className="w-15 h-17 p-2 rounded-full object-cover ring-2 ring-primary/20" src="/p1doc5.png"/>
+
 <div>
 <h4 className="font-bold text-gray-900 dark:text-white">Brooklyn Simmons</h4>
 <p className="text-sm text-gray-500 dark:text-gray-400">Microbiome researchers</p>
@@ -173,10 +174,11 @@ export const AboutSwiper = () => {
 <span className="material-symbols-rounded text-sm">star</span>
 <span className="material-symbols-rounded text-sm">star</span>
 </div>
-<p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed text-lg italic">
+<p className="mt-6 h-36 text-gray-700 dark:text-gray-300 leading-relaxed text-lg italic">
                      Fermbiotic™ offers superior functionality, clean-label compatibility, and improved absorption for advanced food and nutraceutical applications. Its fermented profile enables premium, gut-friendly product innovation.   </p>
 <div className="mt-8 pt-8 border-t border-gray-100 dark:border-white/10 flex items-center gap-4">
-<img alt="Brooklyn Simmons portrait" className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20" src=""/>
+<img alt="Brooklyn Simmons portrait" className="w-15 h-17 p-2 rounded-full object-cover ring-2 ring-primary/20" src="/p3doc5.png"/>
+
 <div>
 <h4 className="font-bold text-gray-900 dark:text-white">Brooklyn Simmons</h4>
 <p className="text-sm text-gray-500 dark:text-gray-400">Functional food formulators</p>
@@ -194,18 +196,21 @@ export const AboutSwiper = () => {
 <span className="material-symbols-rounded text-sm">star</span>
 <span className="material-symbols-rounded text-sm">star</span>
 </div>
-<p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed text-lg italic">
+<p className="mt-6 md:h-36 text-gray-700 dark:text-gray-300 leading-relaxed text-lg italic">
                             "I've been using their cold-pressed oils and organic lentils for months now, and I can honestly say the quality is unmatched. It feels good to finally find a brand I can trust for my family's health."
                         </p>
+                        <div>
+                          
+                        </div>
 <div className="mt-8 pt-8 border-t border-gray-100 dark:border-white/10 flex items-center gap-4">
-<img alt="Brooklyn Simmons portrait" className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20" src=""/>
+<img alt="Brooklyn Simmons portrait" className="w-15 h-17 p-2 rounded-full object-cover ring-2 ring-primary/20" src="/p5doc5.png"/>
+
 <div>
 <h4 className="font-bold text-gray-900 dark:text-white">Brooklyn Simmons</h4>
 <p className="text-sm text-gray-500 dark:text-gray-400">Clinical nutrition experts</p>
 </div>
 </div>
 </div></SwiperSlide>
- 
                     {/* <SwiperSlide>Resize me!</SwiperSlide>
                     <SwiperSlide>Resize me!</SwiperSlide>
                     <SwiperSlide>Resize me!</SwiperSlide>

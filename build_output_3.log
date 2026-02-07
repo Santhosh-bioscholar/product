@@ -1,0 +1,53 @@
+
+> product-site-1@0.1.0 build
+> next build
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   ▲ Next.js 16.0.10 (Turbopack)
+
+   Creating an optimized production build ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Found 3 warnings while optimizing generated CSS:
+
+Issue #1:
+[2m│   }[22m
+[2m│ }[22m
+[2m│[22m @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+[2m┆[22m        [33m[2m^--[22m @import rules must precede all rules aside from @charset and @layer statements[39m
+[2m┆[22m
+[2m│ @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');[22m
+[2m│ @import url('https://fonts.googleapis.com/icon?family=Material+Icons');[22m
+
+Issue #2:
+[2m│ }[22m
+[2m│ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');[22m
+[2m│[22m @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+[2m┆[22m        [33m[2m^--[22m @import rules must precede all rules aside from @charset and @layer statements[39m
+[2m┆[22m
+[2m│ @import url('https://fonts.googleapis.com/icon?family=Material+Icons');[22m
+[2m│ @layer base {[22m
+
+Issue #3:
+[2m│ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');[22m
+[2m│ @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');[22m
+[2m│[22m @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+[2m┆[22m        [33m[2m^--[22m @import rules must precede all rules aside from @charset and @layer statements[39m
+[2m┆[22m
+[2m│ @layer base {[22m
+[2m│   :root {[22m
+
+ ✓ Compiled successfully in 5.6s
+   Running TypeScript ...
+Failed to compile.
+
+./src/components/home/ProductBanner.tsx:26:7
+Type error: Type 'StaticImageData' is not assignable to type 'string | Blob | undefined'.
+
+[0m [90m 24 |[39m   [33m>[39m
+ [90m 25 |[39m     [33m<[39m[33mimg[39m
+[31m[1m>[22m[39m[90m 26 |[39m       src[33m=[39m{cookies[cookieIndex [33m%[39m [35m3[39m]}
+ [90m    |[39m       [31m[1m^[22m[39m
+ [90m 27 |[39m       alt[33m=[39m[32m"Floating cookie"[39m
+ [90m 28 |[39m       className[33m=[39m[32m"w-full h-full object-contain drop-shadow-lg"[39m
+ [90m 29 |[39m     [33m/[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null

@@ -100,10 +100,10 @@ export default function Home() {
       {/* <CompanyOverview /> */}
       {/* <ProductShowcase /> */}
 
-      {/* <Sustainability /> */}
-      {/* <Sus /> */}
-      {/* <LifecycleGlassOrbs /> */}
-      {/* <Marqu /> */}
+      <Sustainability />
+      <Sus />
+      <LifecycleGlassOrbs />
+      <Marqu />
 
       <HomeSwiper />
 

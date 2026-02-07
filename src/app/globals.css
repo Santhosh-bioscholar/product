@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import "tailwindcss";
@@ -39,6 +39,7 @@
   --font-mono: var(--font-mono);
   --font-arsenal: var(--font-arsenal-sc);
   --font-lexend: 'Lexend', sans-serif;
+  --font-serif: 'Playfair Display', serif;
 
 
   --color-sidebar-background: hsl(var(--sidebar-background));
@@ -90,6 +91,11 @@
   --color-gut-bg-light: #f5f8f5;
   --color-gut-bg-dark: #102210;
   --color-gut-accent-blue: #1a73e8;
+
+  /* Clinical Data View Colors */
+  --color-clinical-dark: #050505;
+  --color-clinical-border: #1a1a1a;
+  --color-clinical-accent: #60a5fa;
 }
 
 @layer base {
@@ -442,6 +448,36 @@
 
   .bio-gradient-gut {
     background: radial-gradient(circle at center, #1b271b 0%, var(--color-gut-bg-dark) 100%);
+  }
+
+  /* Clinical Data Design System */
+  .clinical-panel {
+    @apply border border-clinical-border  backdrop-blur-sm p-10 relative overflow-hidden;
+  }
+
+  .data-label {
+    font-family: var(--font-mono);
+    @apply text-[10px] uppercase tracking-[0.2em] text-clinical-accent/60 mb-2 block;
+  }
+
+  .thin-border {
+    @apply border-[0.5px] border-white/10;
+  }
+
+  .glow-point {
+    @apply w-1.5 h-1.5 rounded-full bg-clinical-accent shadow-[0_0_8px_rgba(59,130,246,0.8)];
+  }
+
+  .scan-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+    width: 100%;
+    position: absolute;
+  }
+
+  .grid-bg {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+    background-size: 40px 40px;
   }
 }
 

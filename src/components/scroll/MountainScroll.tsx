@@ -41,8 +41,8 @@ export default function MountainScroll() {
       ScrollTrigger.defaults({ scroller: content });
 
       ScrollTrigger.scrollerProxy(content, {
-        scrollTop(value) {
-          if (arguments.length) {
+        scrollTop(value?: number) {
+          if (value !== undefined) {
             return setProp(-value);
           }
           return -getProp("y") as number;
@@ -63,8 +63,10 @@ export default function MountainScroll() {
           end: () => height - document.documentElement.clientHeight,
           scrub: smoothness || 3,
           onRefresh: (self) => {
-            gsap.killTweensOf(self.animation);
-            self.animation!.progress(self.progress);
+            if (self.animation) {
+              gsap.killTweensOf(self.animation);
+              self.animation.progress(self.progress);
+            }
           }
         }
       });

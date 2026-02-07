@@ -64,6 +64,7 @@ export default function RootLayout({
         <Navbar />
         <main className="min-h-screen ">
           <SmoothCursor />
+       
           {children}
         </main>
         <Footer />

@@ -2,21 +2,40 @@
 > product-site-1@0.1.0 build
 > next build
 
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
    ▲ Next.js 16.0.10 (Turbopack)
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 4.0s
-   Running TypeScript ...
-Failed to compile.
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Error: Cannot apply unknown utility class `shadow-[0_0_8px_rgba(59,`
+    [2m[at onInvalidCandidate (/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/node_modules/tailwindcss/dist/lib.js:21:1511)][0m
+    [2m[at Te (/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/node_modules/tailwindcss/dist/lib.js:16:36326)][0m
+    [2m[at /home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/node_modules/tailwindcss/dist/lib.js:21:355][0m
+    [2m[at Rr (/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/node_modules/tailwindcss/dist/lib.js:3:1718)][0m
+    [2m[at _ (/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/node_modules/tailwindcss/dist/lib.js:3:1377)][0m
+    [2m[at $e (/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/node_modules/tailwindcss/dist/lib.js:21:172)][0m
+    [2m[at un (/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/node_modules/tailwindcss/dist/lib.js:38:294)][0m
+    [2m[at async cn (/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/node_modules/tailwindcss/dist/lib.js:38:631)][0m
+    [2m[at async Xr (/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/node_modules/@tailwindcss/node/dist/index.js:10:3417)][0m
+    [2m[at async I (/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/node_modules/@tailwindcss/postcss/dist/index.js:10:3977)][0m
 
-./src/components/products/ProductPage.tsx:97:14
-Type error: Property 'className' is missing in type '{ product: ProductData; }' but required in type 'UsageSectionProps'.
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/src/app/globals.css:1:1: Cannot apply unknown utility class `shadow-[0_0_8px_rgba(59,`
+    at Input.error (node_modules/postcss/lib/input.js:135:16) [/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/.next/build/chunks/node_modules_fe693df6._.js:4651:22]
+    at Root.error (node_modules/postcss/lib/node.js:146:32) [/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/.next/build/chunks/node_modules_fe693df6._.js:928:38]
+    [at Object.Once (/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/node_modules/@tailwindcss/postcss/dist/index.js:10:6911)]
+    at async LazyResult.runAsync (node_modules/postcss/lib/lazy-result.js:293:11) [/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/.next/build/chunks/node_modules_fe693df6._.js:6206:21]
+    at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34) [/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/.next/build/chunks/[root-of-the-server]__51225daf._.js:146:36]
+    at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23) [/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/.next/build/chunks/[root-of-the-server]__974941ed._.js:443:31]
 
-[0m [90m  95 |[39m             [33m<[39m[33mPristineShowcase[39m product[33m=[39m{product} [33m/[39m[33m>[39m
- [90m  96 |[39m             [33m<[39m[33mHowItWorksSection[39m product[33m=[39m{product} [33m/[39m[33m>[39m
-[31m[1m>[22m[39m[90m  97 |[39m             [33m<[39m[33mDoctorRecom[39m product[33m=[39m{product} [33m/[39m[33m>[39m
- [90m     |[39m              [31m[1m^[22m[39m
- [90m  98 |[39m
- [90m  99 |[39m
- [90m 100 |[39m[0m
-Next.js build worker exited with code: 1 and signal: null
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+
+    at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34) [/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/.next/build/chunks/[root-of-the-server]__51225daf._.js:146:36])
+    at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23) [/home/santhosh/Desktop/sk/project/bioscholar/project/product-site-1/.next/build/chunks/[root-of-the-server]__974941ed._.js:443:31])

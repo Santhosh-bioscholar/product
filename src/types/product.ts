@@ -42,6 +42,55 @@ export interface UsageApplication {
     description: string;
 }
 
+export interface ScientificGrowthStat {
+    label: string;
+    value: string;
+    change: string;
+    isUp: boolean;
+}
+
+export interface ScientificGrowthData {
+    subject: string;
+    title: string;
+    description: string;
+    stats: ScientificGrowthStat[];
+    image: string;
+}
+
+export interface ScientificImmuneData {
+    label: string;
+    title: string;
+    description: string;
+    chartLabels: string[];
+    data: number[];
+}
+
+export interface ScientificEnzymeItem {
+    name: string;
+    label: string;
+    data: number[];
+}
+
+export interface ScientificEnzymeData {
+    label: string;
+    title: string;
+    list: ScientificEnzymeItem[];
+}
+
+export interface ScientificUniformityData {
+    label: string;
+    title: string;
+    image: string;
+    description: string;
+}
+
+export interface ScientificData {
+    growth: ScientificGrowthData;
+    immune: ScientificImmuneData;
+    enzymes: ScientificEnzymeData;
+    uniformity: ScientificUniformityData;
+}
+
 export interface ProductData {
     id: string;
     name: string;
@@ -58,7 +107,7 @@ export interface ProductData {
         subtitle: string;
         description: string;
         highlights: string[];
-        overImage:string;
+        overImage: string;
     };
     leftMetrics: LeftMetrics[];
     rightMetrics: RightMetrics[];
@@ -76,6 +125,7 @@ export interface ProductData {
     pristineShowcase: PristineShowcaseData;
     doctorRecom: DoctorRecomData;
     immuneSystem: ImmuneSystemData;
+    scientificData: ScientificData;
     specs: ProductSpecsData;
     dividers: [DividerType, DividerType, DividerType, DividerType];
 }

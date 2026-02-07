@@ -6,7 +6,7 @@ import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin, Phone } from "luc
 
 export function Footer() {
     return (
-        <footer className="relative bg-[#131313] text-white pt-20 pb-10 overflow-hidden">
+        <footer className="relative bg-[hsl(150_50%_4%)] text-white pt-20 pb-10 overflow-hidden">
             {/* Algae Wave Animation Background */}
             <div className="absolute bottom-0 left-0 w-full h-48 opacity-10 pointer-events-none">
                 <svg
@@ -27,10 +27,10 @@ export function Footer() {
 
             <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-12">
                 {/* Brand Column */}
-                <div className="flex flex-col gap-4">
+                {/* <div className="flex flex-col gap-4">
                     <Link href="/" className="text-2xl px-[60px] font-bold tracking-widest flex items-center ">
-                        {/* <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0FA57D] to-[#0AB3A3]" /> */}
-                <img src='../images (3).png' className="w-[80px] " />
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0FA57D] to-[#0AB3A3]" /> 
+                 <img src='../images (3).png' className="w-[80px] " /> 
                         
                     </Link>
                     <p className="text-sm text-gray-400 leading-relaxed">
@@ -39,7 +39,7 @@ export function Footer() {
                     </p>
                     
                       
-                </div>
+                </div> */}
 
                 {/* Quick Links */}
                 <div className="flex flex-col gap-4">

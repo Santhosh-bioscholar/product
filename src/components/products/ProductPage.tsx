@@ -20,6 +20,9 @@ import Rev from './Rev';
 import CellularHealth from './CellularHealth';
 import { GutHealthBanner } from './GutHealthBanner';
 import { AboutSwiper } from './AboutSwiper';
+import Blu from './Blu';
+import { ScientificData } from '../about/ScientificData';
+import { UsageSection } from './UsageSection';
 // import ProcessFlowSection from './ProcessFlowSection';
 
 interface ProductPageProps {
@@ -28,7 +31,7 @@ interface ProductPageProps {
 
 export const ProductPage = ({ product }: ProductPageProps) => {
     // Update CSS variables for product-specific theming
-       useEffect(() => {
+    useEffect(() => {
         const root = document.documentElement;
 
         // Set the primary color to the product's theme color
@@ -57,23 +60,25 @@ export const ProductPage = ({ product }: ProductPageProps) => {
     }, [product]);
 
     return (
-        <div className="min-h-screen   relative  bg-background">
+        <div className="min-h-screen bg-background  relative  ">
             {/* Noise overlay */}
             <div className="noise-overla" />
-  
+
             <ProductPageParticles />
 
-            Scroll progress indicator
+            {/* Scroll progress indicator */}
             <ScrollProgress />
 
             {/* Hero Section */}
             <HeroSection product={product} />
-
+            {/* <Immune/> */}
             {/* Divider 1 */}
             {/* <SectionDivider type={product.dividers[0]} /> */}
 
             {/* Overview Section */}
             <OverviewSection product={product} />
+            <ScientificData data={product.scientificData} />
+
 
             {/* Divider 2 */}
             {/* <SectionDivider type={product.dividers[1]} /> */}
@@ -94,36 +99,30 @@ export const ProductPage = ({ product }: ProductPageProps) => {
 
             {/* Usage & Applications Section */}
             {/* <NeonBounceBanner/> */}
-            {['algabiotic', 'spirotic'].includes(product.id) && (
-                <Immune product={product} />
-                // <Japanese/>
-            )}
-               {['fermbiotic'].includes(product.id) && (
-                // <Immune product={product} />
-                <Japanese/>
-                // <CellularHealth/>
-            )}
-             {['fermbiotic'].includes(product.id) && (
-                // <Immune product={product} />
-                // <Japanese/>
-                <CellularHealth/>
-                //  <GutHealthBanner />
-            )}
+
+
+
+            {/* 
+            {['algabiotic', 'spirotic'].includes(product.id) && (<Immune product={product} />)}
+            {['fermbiotic'].includes(product.id) && (<Japanese/>)}
+            {['fermbiotic'].includes(product.id) && ( <CellularHealth/>)}
+
+
+            {['bleubiotic'].includes(product.id) && ( <Blu/> )}
+ */}
+
+
+
+
             {/* <UsageSection product={product} /> */}
             {/* <UsageSection/> */}
             {/* <PristineShowcase product={product} /> */}
             <HowItWorksSection product={product} />
             {/* <DoctorRecom product={product} /> */}
 
-             {['fermbiotic'].includes(product.id) && (
-                // <Immune product={product} />
-                // <Japanese/>
-                // <CellularHealth/>
-                //  <GutHealthBanner />
-                <AboutSwiper/>
-            )}
-{/* <Rev/> */}
 
+            {/* <Rev/> */}
+            {/* <AboutSwiper/> */}
             {/* Footer spacer */}
             {/* <div className="h-32" /> */}
         </div>

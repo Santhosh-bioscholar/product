@@ -45,7 +45,7 @@ export const products: Record<string, ProductData> = {
         },
         overview: {
             title: 'Ocean-Powered Growth',
-              overImage: '/bleubiotic.png',
+            overImage: '/bleubiotic.png',
             subtitle: 'Marine Biotechnology',
             description: 'Algabiôtic leverages marine microalgae to accelerate growth in aquaculture and agriculture. Our proprietary blend enhances nutrient uptake and promotes natural development.',
             highlights: ['Marine Microalgae', 'Growth Factors', 'Sustainable Production', 'Aquaculture Optimized'],
@@ -124,6 +124,40 @@ export const products: Record<string, ProductData> = {
                 { title: ' Gut Health', description: ' Promotes beneficial gut microbiota balance. ', icon: 'forest' },
             ]
         },
+        scientificData: {
+            growth: {
+                subject: 'Growth Performance',
+                title: 'Better Weight Gain Matrix',
+                description: 'Controlled trials demonstrated that dietary inclusion of ALGABIOTIC at 3% significantly enhanced the growth rate and weight gain of Litopenaeus vannamei.',
+                stats: [
+                    { label: 'FCR Metric', value: '1.24', change: '8%', isUp: false },
+                    { label: 'SGR Growth', value: '+14.2%', change: '', isUp: true }
+                ],
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDvXHslu5DnTfGr4FruFp_m5z8RU5yjV5y7eiaD-mQ1s5GPiIIRqP2IYHj0K52221twDAWoKU3N39rGwamH1IFElny4W8rhU9NOvuabdUA4p-NHi0Xa2ghXPabt9Lwqd9JRmWOGmv9n_WYowkoiWKpkBzKgCkRYMqZUIUng1jAPNsBiPAQMEnWTl7pWgd3DQf4OzZwh-g-7PRVICaklQeCW4atTKIPK2QjApmcWxQ_WwMEf32ZsoUT_cw9ORno15JIQ9rkjBVD2gg5h'
+            },
+            immune: {
+                label: 'Biological Marker',
+                title: 'Immune Response',
+                description: 'Enriched with 18.58 g/100 g of C-Phycocyanin. Activates ProPO defense enzymes to fortify natural resistance.',
+                chartLabels: ['Lysozyme', 'Toll receptor', 'IMD'],
+                data: [1.0, 2.6, 0.8, 2.6, 1.4, 2.6]
+            },
+            enzymes: {
+                label: 'Enzymatic Profile',
+                title: 'Specific Growth Secretion',
+                list: [
+                    { name: 'PROTEASE', label: 'LIPASE ACTIVITY', data: [45, 85] },
+                    { name: 'PROTEASE', label: 'α-AMYLASE ALPHA', data: [45, 85] },
+                    { name: 'PROTEASE', label: 'PROTEASE DENSITY', data: [45, 85] }
+                ]
+            },
+            uniformity: {
+                label: 'Morphological Analysis',
+                title: 'Uniformity',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB_7H2BFEgmV-vVuMMQCwutRuwxVc_Cv3sozIOsIpadXYxM0BgLIhT97BEw6C5vrVtgafaPtopQP3Wx1Cejgrm4DGVJAaRxjnTlsYXI_QhAmojNreku1e7jVbvMFXg3p3Cs_FNnwzriHUCKm7LKkETwU2siBqyQDEveIeQK-lTynropJ25EXWGJYEirX9BtDvIiKlBCMKx87Qg6sWVoRkS266X6K9ODqht72sSawUeVZqck7myoeBbMdBUURGRjAoZH-EkWxa3jR1Eq',
+                description: 'Balanced nutrition optimizes gut health to ensure consistent growth across the entire population.'
+            }
+        },
         dividers: ['wave', 'bubbles', 'molecular', 'pulse'],
     },
     fermbiotic: {
@@ -135,7 +169,7 @@ export const products: Record<string, ProductData> = {
         cssVariable: '--fermbiotic',
         animationType: 'microbiome',
         bannerImage: '/bleubiotic.png',
-        
+
         benefitIcons: [
             { id: 'growth', icon: 'TrendingUp', label: 'Growth' },
             { id: 'yield', icon: 'BarChart3', label: 'Yield' },
@@ -170,7 +204,7 @@ export const products: Record<string, ProductData> = {
         },
         overview: {
             title: 'The Science of Fermentation',
-              overImage: '/desk.png',
+            overImage: '/mu.png',
             subtitle: 'Precision-Engineered Probiotics',
             description: 'Fermbiotic harnesses centuries-old fermentation wisdom combined with cutting-edge biotechnology. Our proprietary strain selection delivers targeted gut support with clinically-proven efficacy.',
             highlights: ['50 Billion CFU', 'pH-Protected Delivery', '12 Strain Complex', 'Clinically Tested'],
@@ -251,6 +285,40 @@ export const products: Record<string, ProductData> = {
                 { title: 'pH Balanced', description: 'Optimized for survival in stomach acid.', icon: 'science' },
             ]
         },
+        scientificData: {
+            growth: {
+                subject: 'Gut Health Matrix',
+                title: 'Fecal Quality Index',
+                description: 'Precision fermentation technology enhances digestibility and nutrient absorption by optimizing the intestinal biome.',
+                stats: [
+                    { label: 'Digestibility', value: '+22%', change: '', isUp: true },
+                    { label: 'Survival Rate', value: '+15%', change: '', isUp: true }
+                ],
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDvXHslu5DnTfGr4FruFp_m5z8RU5yjV5y7eiaD-mQ1s5GPiIIRqP2IYHj0K52221twDAWoKU3N39rGwamH1IFElny4W8rhU9NOvuabdUA4p-NHi0Xa2ghXPabt9Lwqd9JRmWOGmv9n_WYowkoiWKpkBzKgCkRYMqZUIUng1jAPNsBiPAQMEnWTl7pWgd3DQf4OzZwh-g-7PRVICaklQeCW4atTKIPK2QjApmcWxQ_WwMEf32ZsoUT_cw9ORno15JIQ9rkjBVD2gg5h'
+            },
+            immune: {
+                label: 'Microbial Defense',
+                title: 'Pathogen Resistance',
+                description: 'Advanced probiotic strains activate competitive exclusion, displacing harmful pathogens in the gut ecosystem.',
+                chartLabels: ['Lactobacillus', 'Bifido', 'Bacillus'],
+                data: [1.2, 3.1, 0.9, 2.8, 1.5, 3.2]
+            },
+            enzymes: {
+                label: 'Fermentation Profile',
+                title: 'Probiotic Secretion',
+                list: [
+                    { name: 'PROBIOTIC', label: 'GUT FLORA', data: [50, 95] },
+                    { name: 'PROBIOTIC', label: 'BACTERIOCIN', data: [40, 80] },
+                    { name: 'PROBIOTIC', label: 'VFA PRODUCTION', data: [60, 90] }
+                ]
+            },
+            uniformity: {
+                label: 'Biomass Distribution',
+                title: 'Size Consistency',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB_7H2BFEgmV-vVuMMQCwutRuwxVc_Cv3sozIOsIpadXYxM0BgLIhT97BEw6C5vrVtgafaPtopQP3Wx1Cejgrm4DGVJAaRxjnTlsYXI_QhAmojNreku1e7jVbvMFXg3p3Cs_FNnwzriHUCKm7LKkETwU2siBqyQDEveIeQK-lTynropJ25EXWGJYEirX9BtDvIiKlBCMKx87Qg6sWVoRkS266X6K9ODqht72sSawUeVZqck7myoeBbMdBUURGRjAoZH-EkWxa3jR1Eq',
+                description: 'Enhanced gut efficiency through fermentation ensures uniform nutrient delivery and synchronized growth cycles.'
+            }
+        },
         dividers: ['bubbles', 'molecular', 'wave', 'pulse'],
     },
     bleubiotic: {
@@ -296,7 +364,7 @@ export const products: Record<string, ProductData> = {
         },
         overview: {
             title: 'The Power of Blue',
-              overImage: '/bleubiotic.png',
+            overImage: '/Desktop - 56.png',
             subtitle: 'Antioxidant Illumination',
             description: 'Bleubiôtic combines rare blue-pigmented compounds with advanced detoxification pathways. Experience cellular renewal through the power of phycocyanin and anthocyanins.',
             highlights: ['Blue Spirulina Extract', 'Glutathione Enhanced', 'Heavy Metal Chelation', 'DNA Protection'],
@@ -377,6 +445,40 @@ export const products: Record<string, ProductData> = {
                 { title: 'Pure Vitality', description: 'Restores natural zest and vigor.', icon: 'self_improvement' },
             ]
         },
+        scientificData: {
+            growth: {
+                subject: 'Antioxidant Defense',
+                title: 'Cellular Recovery Rate',
+                description: 'Blue-spectrum antioxidants neutralize free radicals, optimizing mitochondrial function and cellular energy pathways.',
+                stats: [
+                    { label: 'Recovery Time', value: '-20%', change: '', isUp: false },
+                    { label: 'Longevity Index', value: '+12%', change: '', isUp: true }
+                ],
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDvXHslu5DnTfGr4FruFp_m5z8RU5yjV5y7eiaD-mQ1s5GPiIIRqP2IYHj0K52221twDAWoKU3N39rGwamH1IFElny4W8rhU9NOvuabdUA4p-NHi0Xa2ghXPabt9Lwqd9JRmWOGmv9n_WYowkoiWKpkBzKgCkRYMqZUIUng1jAPNsBiPAQMEnWTl7pWgd3DQf4OzZwh-g-7PRVICaklQeCW4atTKIPK2QjApmcWxQ_WwMEf32ZsoUT_cw9ORno15JIQ9rkjBVD2gg5h'
+            },
+            immune: {
+                label: 'Detox Marker',
+                title: 'Radical Scavenging',
+                description: 'Phycocyanin complex activates primary antioxidant pathways, fortifying cells against oxidative stress damage.',
+                chartLabels: ['SOD Activity', 'GSH Index', 'CAT Enzyme'],
+                data: [0.8, 2.4, 1.1, 2.9, 1.3, 2.7]
+            },
+            enzymes: {
+                label: 'Redox Profile',
+                title: 'Detoxification Activity',
+                list: [
+                    { name: 'ANTIOXIDANT', label: 'CLEANSING', data: [45, 88] },
+                    { name: 'ANTIOXIDANT', label: 'PURIFICATION', data: [55, 82] },
+                    { name: 'ANTIOXIDANT', label: 'RENEWAL', data: [50, 92] }
+                ]
+            },
+            uniformity: {
+                label: 'Vitality Standard',
+                title: 'Systemic Health',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB_7H2BFEgmV-vVuMMQCwutRuwxVc_Cv3sozIOsIpadXYxM0BgLIhT97BEw6C5vrVtgafaPtopQP3Wx1Cejgrm4DGVJAaRxjnTlsYXI_QhAmojNreku1e7jVbvMFXg3p3Cs_FNnwzriHUCKm7LKkETwU2siBqyQDEveIeQK-lTynropJ25EXWGJYEirX9BtDvIiKlBCMKx87Qg6sWVoRkS266X6K9ODqht72sSawUeVZqck7myoeBbMdBUURGRjAoZH-EkWxa3jR1Eq',
+                description: 'Reduced oxidative stress leads to healthier, more resilient populations with synchronized vital markers.'
+            }
+        },
         dividers: ['pulse', 'wave', 'molecular', 'bubbles'],
     },
     spirotic: {
@@ -387,7 +489,7 @@ export const products: Record<string, ProductData> = {
         themeColor: '#14b8a6',
         cssVariable: '--spirotic',
         animationType: 'spiral',
-        bannerImage: '/bleubiotic.png',
+        bannerImage: '/b7c665fe-4a1f-480d-bc84-580d34c60b14.png',
         benefitIcons: [
             { id: 'nutrition', icon: 'Apple', label: 'Nutrition' },
             { id: 'protein', icon: 'Dumbbell', label: 'Protein' },
@@ -422,7 +524,7 @@ export const products: Record<string, ProductData> = {
         },
         overview: {
             title: 'Nature\'s Perfect Spiral',
-              overImage: '/bleubiotic.png',
+            overImage: '/bleubiotic.png',
             subtitle: 'Complete Nutrition',
             description: 'Spirôticdelivers the world\'s most nutrient-dense superfood in a revolutionary spiral-delivery system. Each serving contains complete protein, essential fatty acids, and concentrated chlorophyll.',
             highlights: ['65% Complete Protein', 'Iron & B12 Rich', 'Chlorophyll Dense', 'Sustainable Source'],
@@ -501,6 +603,40 @@ export const products: Record<string, ProductData> = {
                 { title: 'Sustainable', description: 'Eco-friendly minimal footprint.', icon: 'recycling' },
             ]
         },
+        scientificData: {
+            growth: {
+                subject: 'Vital Force',
+                title: 'Bioavailable Protein',
+                description: 'Unique spiral cell structure ensures 95% protein digestibility and rapid assimilation into muscle tissue.',
+                stats: [
+                    { label: 'Muscle Density', value: '+18%', change: '', isUp: true },
+                    { label: 'Endurance', value: '+25%', change: '', isUp: true }
+                ],
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDvXHslu5DnTfGr4FruFp_m5z8RU5yjV5y7eiaD-mQ1s5GPiIIRqP2IYHj0K52221twDAWoKU3N39rGwamH1IFElny4W8rhU9NOvuabdUA4p-NHi0Xa2ghXPabt9Lwqd9JRmWOGmv9n_WYowkoiWKpkBzKgCkRYMqZUIUng1jAPNsBiPAQMEnWTl7pWgd3DQf4OzZwh-g-7PRVICaklQeCW4atTKIPK2QjApmcWxQ_WwMEf32ZsoUT_cw9ORno15JIQ9rkjBVD2gg5h'
+            },
+            immune: {
+                label: 'Nutritional Balance',
+                title: 'Micronutrient Uptake',
+                description: 'Over 100 bio-bound nutrients fortify the systemic immune response through optimized metabolic pathways.',
+                chartLabels: ['Hemoglobin', 'Iron Bound', 'Chlorophyll'],
+                data: [0.9, 2.5, 1.0, 2.8, 1.2, 2.6]
+            },
+            enzymes: {
+                label: 'Nutrient Profile',
+                title: 'Bioavailability Index',
+                list: [
+                    { name: 'NUTRIENT', label: 'ABSORPTION', data: [48, 91] },
+                    { name: 'NUTRIENT', label: 'SYNTHESIS', data: [42, 86] },
+                    { name: 'NUTRIENT', label: 'VITALITY', data: [52, 89] }
+                ]
+            },
+            uniformity: {
+                label: 'Population Quality',
+                title: 'Growth Symmetry',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB_7H2BFEgmV-vVuMMQCwutRuwxVc_Cv3sozIOsIpadXYxM0BgLIhT97BEw6C5vrVtgafaPtopQP3Wx1Cejgrm4DGVJAaRxjnTlsYXI_QhAmojNreku1e7jVbvMFXg3p3Cs_FNnwzriHUCKm7LKkETwU2siBqyQDEveIeQK-lTynropJ25EXWGJYEirX9BtDvIiKlBCMKx87Qg6sWVoRkS266X6K9ODqht72sSawUeVZqck7myoeBbMdBUURGRjAoZH-EkWxa3jR1Eq',
+                description: 'Complete nutrition eliminates growth bottlenecks, ensuring perfectly symmetrical development across the population.'
+            }
+        },
         dividers: ['wave', 'bubbles', 'pulse', 'molecular'],
     },
 
@@ -512,7 +648,7 @@ export const products: Record<string, ProductData> = {
         themeColor: '#ec4899',
         cssVariable: '--glowbiotic',
         animationType: 'bioluminescence',
-        bannerImage: '/bleubiotic.png',
+        bannerImage: '/7abecef8-f201-48ad-9258-253d1c066986.png',
         benefitIcons: [
             { id: 'glow', icon: 'Sparkles', label: 'Radiance' },
             { id: 'color', icon: 'Palette', label: 'Vitality' },
@@ -547,7 +683,7 @@ export const products: Record<string, ProductData> = {
         },
         overview: {
             title: 'The Science of Glow',
-              overImage: '/bleubiotic.png',
+            overImage: '/bleubiotic.png',
             subtitle: 'Bioluminescent Beauty',
             description: 'GlowBiôtic harnesses rare bioluminescent compounds to activate your natural radiance. Our spectrum-shifting formula promotes skin luminosity, hair vitality, and overall vibrancy.',
             highlights: ['Bioluminescent Extracts', 'Collagen Activation', 'Spectrum Nutrients', 'Visible Results'],
@@ -625,6 +761,40 @@ export const products: Record<string, ProductData> = {
                 { title: 'Cell Renew', description: 'Accelerates skin cell turnover.', icon: 'update' },
                 { title: 'Youthful', description: 'Combats signs of visible aging.', icon: 'auto_awesome' },
             ]
+        },
+        scientificData: {
+            growth: {
+                subject: 'Dermal Vitality',
+                title: 'Radiance Expression',
+                description: 'Spectrum-shifting compounds activate dermal repair and pigmentation markers at the cellular level.',
+                stats: [
+                    { label: 'Luminosity', value: '+40%', change: '', isUp: true },
+                    { label: 'Elasticity', value: '+18%', change: '', isUp: true }
+                ],
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDvXHslu5DnTfGr4FruFp_m5z8RU5yjV5y7eiaD-mQ1s5GPiIIRqP2IYHj0K52221twDAWoKU3N39rGwamH1IFElny4W8rhU9NOvuabdUA4p-NHi0Xa2ghXPabt9Lwqd9JRmWOGmv9n_WYowkoiWKpkBzKgCkRYMqZUIUng1jAPNsBiPAQMEnWTl7pWgd3DQf4OzZwh-g-7PRVICaklQeCW4atTKIPK2QjApmcWxQ_WwMEf32ZsoUT_cw9ORno15JIQ9rkjBVD2gg5h'
+            },
+            immune: {
+                label: 'Dermal Shield',
+                title: 'Barrier Integrity',
+                description: 'Bioluminescent factors strengthen the external defense layers, enhancing natural resilience against environmental stressors.',
+                chartLabels: ['Collagen', 'Elastin', 'Keratin'],
+                data: [1.1, 2.7, 0.9, 2.8, 1.4, 2.9]
+            },
+            enzymes: {
+                label: 'Spectrum Profile',
+                title: 'Glow Activation',
+                list: [
+                    { name: 'GLOW', label: 'LUMINOSITY', data: [55, 96] },
+                    { name: 'GLOW', label: 'PIGMENTATION', data: [48, 88] },
+                    { name: 'GLOW', label: 'RADIANCE', data: [62, 94] }
+                ]
+            },
+            uniformity: {
+                label: 'Aesthetic Standard',
+                title: 'Visual Perfection',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB_7H2BFEgmV-vVuMMQCwutRuwxVc_Cv3sozIOsIpadXYxM0BgLIhT97BEw6C5vrVtgafaPtopQP3Wx1Cejgrm4DGVJAaRxjnTlsYXI_QhAmojNreku1e7jVbvMFXg3p3Cs_FNnwzriHUCKm7LKkETwU2siBqyQDEveIeQK-lTynropJ25EXWGJYEirX9BtDvIiKlBCMKx87Qg6sWVoRkS266X6K9ODqht72sSawUeVZqck7myoeBbMdBUURGRjAoZH-EkWxa3jR1Eq',
+                description: 'Consistent spectrum delivery ensures uniform coloration and peak health across the entire biological population.'
+            }
         },
         dividers: ['pulse', 'molecular', 'wave', 'bubbles'],
     },

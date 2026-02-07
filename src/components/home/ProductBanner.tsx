@@ -12,7 +12,7 @@ interface FloatingCookieProps {
   rotation?: number;
 }
 
-const ProductBanner = ({ className, delay, size, cookieIndex, rotation = 0 }: FloatingCookieProps) => (
+const FloatingCookie = ({ className, delay, size, cookieIndex, rotation = 0 }: FloatingCookieProps) => (
   <div
     className={`absolute ${className}`}
     style={{
@@ -23,14 +23,14 @@ const ProductBanner = ({ className, delay, size, cookieIndex, rotation = 0 }: Fl
     }}
   >
     <img
-      src={cookies[cookieIndex % 3]}
+      src={cookies[cookieIndex % 3].src}
       alt="Floating cookie"
       className="w-full h-full object-contain drop-shadow-lg"
     />
   </div>
 );
 
-const HeroBanner = () => {
+const ProductBanner = () => {
   return (
     <section className="relative min-h-screen hero-gradient overflow-hidden">
       {/* Floating cookie images */}
@@ -43,7 +43,7 @@ const HeroBanner = () => {
         <FloatingCookie className="top-[18%] left-[75%] animate-float-slow" delay="0s" size={85} cookieIndex={2} rotation={30} />
         <FloatingCookie className="top-[35%] left-[5%] animate-float" delay="3s" size={110} cookieIndex={1} rotation={-25} />
         <FloatingCookie className="top-[30%] right-[3%] animate-float-delayed" delay="2.5s" size={75} cookieIndex={0} rotation={15} />
-        
+
         {/* Bottom floating cookies */}
         <FloatingCookie className="bottom-[25%] left-[10%] animate-float-slow" delay="1s" size={95} cookieIndex={2} rotation={-40} />
         <FloatingCookie className="bottom-[35%] right-[15%] animate-float" delay="0.5s" size={65} cookieIndex={1} rotation={25} />

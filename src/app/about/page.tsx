@@ -17,6 +17,10 @@ import { Metadata } from "next";
 import { AboutHero } from "@/components/about/AboutHero";
 import { GutHealthBanner } from "@/components/products/GutHealthBanner";
 import { AboutSwiper } from "@/components/products/AboutSwiper";
+import { BenefitsSection } from "@/components/about/BenefitsSection";
+import { FinalCTA } from "@/components/about/FinalCTA";
+import { NutriFeedSection } from "@/components/about/NutriFeedSection";
+import { ScientificData } from "@/components/about/ScientificData";
 
 export const metadata: Metadata = {
     title: "About Us | Aroora Biotech",
@@ -30,6 +34,9 @@ export default function AboutPage() {
             <AboutHero />
 
 
+
+
+
             <ScalingNatureWisdom />
             {/* <OurPurpose /> */}
             <SustainabilityValues />
@@ -41,6 +48,10 @@ export default function AboutPage() {
             <QuoteSection />
             {/* <CellularHealth /> */}
             {/* <AboutSwiper /> */}
+
+            {/* <BenefitsSection /> */}
+            {/* <FinalCTA /> */}
+            {/* <NutriFeedSection /> */}
         </div>
     );
 }
